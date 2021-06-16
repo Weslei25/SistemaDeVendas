@@ -46,9 +46,9 @@ In addition, there is a user with these fields:
     <td> MySql </td>
   </tr>
   <tr>
-    <td> 8. * </td>
-    <td>7.4</td>
-    <td>2.0</td>
+    <td> 3.7.0 * </td>
+    <td>5.0</td>
+    <td>8.0</td>
   </tr>
 </table>
 
