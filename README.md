@@ -1,4 +1,5 @@
-![principal](https://user-images.githubusercontent.com/76075516/122144385-c6400f00-ce29-11eb-8e76-5b45ce4a7ea2.png)
+![loginm](https://user-images.githubusercontent.com/76075516/122144833-99402c00-ce2a-11eb-97ec-363c7accb988.png)
+
 
 >status: development⚠️
 
@@ -24,13 +25,22 @@ In addition, there is a user with these fields:
 
 ## In addition to CRUD, I implement other features, such as:
 
+![principal](https://user-images.githubusercontent.com/76075516/122144896-b07f1980-ce2a-11eb-96b1-706d14f80d58.png)
+
+
 * zip query via API (pycepmail)
 * Complete verification system to validate customer and user forms.
 * Success message when creating, editing, registering among other features.
 * Profile editable by adm user.
 * User registration.
 * Sales, being able to audit the sales made in order to export the reports generated in Excel.
+
+![enviamail](https://user-images.githubusercontent.com/76075516/122145309-68acc200-ce2b-11eb-9cff-127ea314299e.png)
+
 * Sending emails using outlook, with process automation and html formatting in the backend
+
+![tsds](https://user-images.githubusercontent.com/76075516/122145181-22eff980-ce2b-11eb-917c-5c17b9286514.png)
+
 
 ## These features are under development:
 
