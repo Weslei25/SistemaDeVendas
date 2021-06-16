@@ -1,4 +1,4 @@
-<h1>Think_System</h1>
+![principal](https://user-images.githubusercontent.com/76075516/122144385-c6400f00-ce29-11eb-8e76-5b45ce4a7ea2.png)
 
 >status: development⚠️
 
