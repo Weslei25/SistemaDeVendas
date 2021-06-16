@@ -7,15 +7,13 @@
 
 ## Some fields in the main template are:
 
-+ name
-+ description
-+ repetition num
-+ sequence num
-+ hard category
-+ i know
-+ user_id
-+ image
-  
++ customer registration
++ product registration
++ automatic address lookup via zip code
++ consultation of registered products
++ product category, stock, stock control
++ sales module, possible to generate sales report
++ automated email sending  
 In addition, there is a user with these fields:
 
 + name
