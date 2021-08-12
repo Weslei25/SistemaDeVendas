@@ -40,7 +40,8 @@ In addition, there is a user with these fields:
 
 * Sending emails using outlook, with process automation and html formatting in the backend
 
-![tsds](https://user-images.githubusercontent.com/76075516/122145181-22eff980-ce2b-11eb-917c-5c17b9286514.png)
+![Screenshot_4](https://user-images.githubusercontent.com/76075516/129206655-342883fd-59c1-4523-b055-23db18036bbb.png)
+
 
 
 ## These features are under development:
