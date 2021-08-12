@@ -43,7 +43,10 @@ In addition, there is a user with these fields:
 ![Screenshot_4](https://user-images.githubusercontent.com/76075516/129206655-342883fd-59c1-4523-b055-23db18036bbb.png)
 
 
+* New screen for company registration and consultation with the integration in the api "https://receitaws.com.br/api" ,
+to facilitate the registration of companies.
 
+![Screenshot_5](https://user-images.githubusercontent.com/76075516/129207043-6e7fd53c-fd1d-4ad3-8034-a5319eec0b2a.png)
 ## These features are under development:
 
 - Further improve the sales screen to generate notes
