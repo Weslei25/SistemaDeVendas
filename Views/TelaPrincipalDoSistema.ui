@@ -447,7 +447,7 @@ background-color: rgb(84, 126, 126);</string>
            <rect>
             <x>100</x>
             <y>80</y>
-            <width>361</width>
+            <width>401</width>
             <height>20</height>
            </rect>
           </property>
@@ -467,17 +467,17 @@ background-color: rgb(84, 126, 126);</string>
          <widget class="QPushButton" name="realizarVendas_2">
           <property name="geometry">
            <rect>
-            <x>420</x>
-            <y>30</y>
-            <width>41</width>
-            <height>41</height>
+            <x>410</x>
+            <y>10</y>
+            <width>91</width>
+            <height>61</height>
            </rect>
           </property>
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="cursor">
@@ -493,7 +493,7 @@ background-color: rgb(84, 126, 126);</string>
            <string notr="true">background-color: rgb(85, 170, 255);</string>
           </property>
           <property name="text">
-           <string/>
+           <string>Salvar</string>
           </property>
           <property name="icon">
            <iconset>
@@ -501,7 +501,7 @@ background-color: rgb(84, 126, 126);</string>
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
+            <width>24</width>
             <height>77</height>
            </size>
           </property>
@@ -511,8 +511,11 @@ background-color: rgb(84, 126, 126);</string>
           <property name="autoDefault">
            <bool>true</bool>
           </property>
-          <property name="flat">
+          <property name="default">
            <bool>true</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
           </property>
          </widget>
         </widget>
@@ -537,7 +540,7 @@ background-color: rgb(84, 126, 126);</string>
 background-color: rgb(84, 126, 126);</string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="icon">
@@ -953,6 +956,9 @@ background-color: rgb(84, 126, 126);</string>
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>false</bool>
            </property>
           </widget>
           <widget class="QLineEdit" name="compleCliente">
@@ -1443,16 +1449,16 @@ background-color: rgb(84, 126, 126);</string>
            <property name="geometry">
             <rect>
              <x>758</x>
-             <y>25</y>
-             <width>51</width>
-             <height>41</height>
+             <y>15</y>
+             <width>100</width>
+             <height>51</height>
             </rect>
            </property>
            <property name="font">
             <font>
-             <pointsize>8</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="cursor">
@@ -1465,10 +1471,10 @@ background-color: rgb(84, 126, 126);</string>
             <string>Limpar Formulario</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">background-color: rgb(85, 170, 255);</string>
            </property>
            <property name="text">
-            <string/>
+            <string>Limpar</string>
            </property>
            <property name="icon">
             <iconset>
@@ -1476,15 +1482,18 @@ background-color: rgb(84, 126, 126);</string>
            </property>
            <property name="iconSize">
             <size>
-             <width>100</width>
-             <height>39</height>
+             <width>81</width>
+             <height>31</height>
             </size>
            </property>
            <property name="autoDefault">
             <bool>true</bool>
            </property>
-           <property name="flat">
+           <property name="default">
             <bool>true</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
            </property>
           </widget>
           <widget class="QLineEdit" name="cpfCliente">
@@ -1512,17 +1521,17 @@ background-color: rgb(84, 126, 126);</string>
           <widget class="QPushButton" name="salvarCliente">
            <property name="geometry">
             <rect>
-             <x>670</x>
-             <y>25</y>
-             <width>51</width>
-             <height>41</height>
+             <x>620</x>
+             <y>15</y>
+             <width>100</width>
+             <height>51</height>
             </rect>
            </property>
            <property name="font">
             <font>
-             <pointsize>8</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="cursor">
@@ -1535,10 +1544,10 @@ background-color: rgb(84, 126, 126);</string>
             <string>Salvar novo Cliente</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">background-color: rgb(85, 170, 255);</string>
            </property>
            <property name="text">
-            <string/>
+            <string>Salvar</string>
            </property>
            <property name="icon">
             <iconset>
@@ -1546,15 +1555,18 @@ background-color: rgb(84, 126, 126);</string>
            </property>
            <property name="iconSize">
             <size>
-             <width>82</width>
-             <height>39</height>
+             <width>81</width>
+             <height>31</height>
             </size>
            </property>
            <property name="autoDefault">
             <bool>true</bool>
            </property>
-           <property name="flat">
+           <property name="default">
             <bool>true</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
            </property>
           </widget>
           <widget class="QLabel" name="label_50">
@@ -1787,17 +1799,17 @@ background-color: rgb(255, 255, 255);</string>
          <widget class="QPushButton" name="cadEmpresa">
           <property name="geometry">
            <rect>
-            <x>750</x>
-            <y>71</y>
-            <width>51</width>
+            <x>740</x>
+            <y>70</y>
+            <width>111</width>
             <height>41</height>
            </rect>
           </property>
           <property name="font">
            <font>
-            <pointsize>8</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="cursor">
@@ -1810,10 +1822,10 @@ background-color: rgb(255, 255, 255);</string>
            <string>Salvar novo Cliente</string>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">background-color: rgb(85, 170, 255);</string>
           </property>
           <property name="text">
-           <string/>
+           <string>Salvar</string>
           </property>
           <property name="icon">
            <iconset>
@@ -1822,30 +1834,33 @@ background-color: rgb(255, 255, 255);</string>
           <property name="iconSize">
            <size>
             <width>93</width>
-            <height>41</height>
+            <height>26</height>
            </size>
           </property>
           <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
            <bool>true</bool>
           </property>
           <property name="flat">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
          </widget>
          <widget class="QPushButton" name="salvarCliente_4">
           <property name="geometry">
            <rect>
-            <x>820</x>
-            <y>68</y>
-            <width>51</width>
+            <x>900</x>
+            <y>70</y>
+            <width>101</width>
             <height>41</height>
            </rect>
           </property>
           <property name="font">
            <font>
-            <pointsize>8</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="cursor">
@@ -1858,10 +1873,10 @@ background-color: rgb(255, 255, 255);</string>
            <string>Limpar Formulario</string>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">background-color: rgb(85, 170, 255);</string>
           </property>
           <property name="text">
-           <string/>
+           <string>Limpar</string>
           </property>
           <property name="icon">
            <iconset>
@@ -1870,14 +1885,17 @@ background-color: rgb(255, 255, 255);</string>
           <property name="iconSize">
            <size>
             <width>93</width>
-            <height>41</height>
+            <height>30</height>
            </size>
           </property>
           <property name="autoDefault">
            <bool>true</bool>
           </property>
-          <property name="flat">
+          <property name="default">
            <bool>true</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
           </property>
          </widget>
          <widget class="QGroupBox" name="groupBox_25">
@@ -3382,9 +3400,9 @@ background-color: rgb(84, 126, 126);</string>
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>76</y>
-             <width>781</width>
-             <height>51</height>
+             <y>11</y>
+             <width>721</width>
+             <height>113</height>
             </rect>
            </property>
            <property name="font">
@@ -3404,17 +3422,17 @@ background-color: rgb(84, 126, 126);</string>
            <widget class="QPushButton" name="geraexcel">
             <property name="geometry">
              <rect>
-              <x>320</x>
-              <y>10</y>
-              <width>41</width>
-              <height>41</height>
+              <x>380</x>
+              <y>20</y>
+              <width>101</width>
+              <height>81</height>
              </rect>
             </property>
             <property name="font">
              <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -3427,10 +3445,10 @@ background-color: rgb(84, 126, 126);</string>
              <string>Gerar relatorio de vendas</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
-             <string/>
+             <string>Relatorio</string>
             </property>
             <property name="icon">
              <iconset>
@@ -3454,100 +3472,11 @@ background-color: rgb(84, 126, 126);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="pushButton_9">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="geometry">
-             <rect>
-              <x>230</x>
-              <y>10</y>
-              <width>51</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="toolTip">
-             <string>Dar baixa em vendas</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../Imagens/fdelete_256.ico</normaloff>../Imagens/fdelete_256.ico</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>37</width>
-              <height>68</height>
-             </size>
-            </property>
-            <property name="autoDefault">
+            <property name="default">
              <bool>true</bool>
             </property>
             <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="pushButton_14">
-            <property name="geometry">
-             <rect>
-              <x>400</x>
-              <y>10</y>
-              <width>41</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="toolTip">
-             <string>Consultar vendas</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>40</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="autoDefault">
-             <bool>true</bool>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QPushButton" name="pushButton_10">
@@ -3556,17 +3485,17 @@ background-color: rgb(84, 126, 126);</string>
             </property>
             <property name="geometry">
              <rect>
-              <x>20</x>
-              <y>10</y>
-              <width>41</width>
-              <height>41</height>
+              <x>120</x>
+              <y>20</y>
+              <width>101</width>
+              <height>81</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -3579,10 +3508,10 @@ background-color: rgb(84, 126, 126);</string>
              <string>Vendas parceladas</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
-             <string/>
+             <string>Parceladas</string>
             </property>
             <property name="icon">
              <iconset>
@@ -3591,30 +3520,33 @@ background-color: rgb(84, 126, 126);</string>
             <property name="iconSize">
              <size>
               <width>92</width>
-              <height>46</height>
+              <height>30</height>
              </size>
             </property>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QPushButton" name="pushButton_15">
             <property name="geometry">
              <rect>
-              <x>120</x>
-              <y>10</y>
-              <width>51</width>
-              <height>41</height>
+              <x>250</x>
+              <y>20</y>
+              <width>101</width>
+              <height>81</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -3627,10 +3559,10 @@ background-color: rgb(84, 126, 126);</string>
              <string>Vendas a vista</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
-             <string/>
+             <string>A Vista</string>
             </property>
             <property name="icon">
              <iconset>
@@ -3638,31 +3570,34 @@ background-color: rgb(84, 126, 126);</string>
             </property>
             <property name="iconSize">
              <size>
-              <width>42</width>
-              <height>70</height>
+              <width>30</width>
+              <height>64</height>
              </size>
             </property>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QPushButton" name="enviaemail">
             <property name="geometry">
              <rect>
-              <x>490</x>
-              <y>10</y>
-              <width>51</width>
-              <height>41</height>
+              <x>510</x>
+              <y>20</y>
+              <width>91</width>
+              <height>81</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -3678,7 +3613,7 @@ background-color: rgb(84, 126, 126);</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string/>
+             <string>Email</string>
             </property>
             <property name="icon">
              <iconset>
@@ -3693,24 +3628,27 @@ background-color: rgb(84, 126, 126);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QPushButton" name="realizarVendas">
             <property name="geometry">
              <rect>
               <x>620</x>
-              <y>10</y>
-              <width>51</width>
-              <height>41</height>
+              <y>20</y>
+              <width>91</width>
+              <height>81</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -3726,7 +3664,7 @@ background-color: rgb(84, 126, 126);</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string/>
+             <string>Vender</string>
             </property>
             <property name="icon">
              <iconset>
@@ -3741,18 +3679,21 @@ background-color: rgb(84, 126, 126);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
           </widget>
           <widget class="QGroupBox" name="groupBox_13">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>7</y>
-             <width>781</width>
-             <height>61</height>
+             <x>740</x>
+             <y>10</y>
+             <width>541</width>
+             <height>111</height>
             </rect>
            </property>
            <property name="font">
@@ -3775,9 +3716,9 @@ background-color: rgb(84, 126, 126);</string>
             </property>
             <property name="geometry">
              <rect>
-              <x>221</x>
-              <y>22</y>
-              <width>131</width>
+              <x>60</x>
+              <y>20</y>
+              <width>111</width>
               <height>21</height>
              </rect>
             </property>
@@ -3828,9 +3769,9 @@ background-color: rgb(255, 255, 255);</string>
            <widget class="QDateEdit" name="dateEdit_5">
             <property name="geometry">
              <rect>
-              <x>430</x>
-              <y>22</y>
-              <width>131</width>
+              <x>220</x>
+              <y>20</y>
+              <width>111</width>
               <height>21</height>
              </rect>
             </property>
@@ -3855,8 +3796,8 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
            <widget class="QLineEdit" name="lineEdit_13">
             <property name="geometry">
              <rect>
-              <x>628</x>
-              <y>22</y>
+              <x>400</x>
+              <y>20</y>
               <width>131</width>
               <height>21</height>
              </rect>
@@ -3873,9 +3814,9 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
            <widget class="QLabel" name="label_76">
             <property name="geometry">
              <rect>
-              <x>370</x>
-              <y>22</y>
-              <width>57</width>
+              <x>180</x>
+              <y>20</y>
+              <width>31</width>
               <height>16</height>
              </rect>
             </property>
@@ -3889,15 +3830,15 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Data/Fim</string>
+             <string>Fim</string>
             </property>
            </widget>
            <widget class="QLabel" name="label_77">
             <property name="geometry">
              <rect>
-              <x>150</x>
-              <y>22</y>
-              <width>66</width>
+              <x>10</x>
+              <y>20</y>
+              <width>41</width>
               <height>16</height>
              </rect>
             </property>
@@ -3911,14 +3852,14 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Data/Inicio</string>
+             <string>Inicio</string>
             </property>
            </widget>
            <widget class="QLabel" name="label_80">
             <property name="geometry">
              <rect>
-              <x>580</x>
-              <y>22</y>
+              <x>352</x>
+              <y>20</y>
               <width>44</width>
               <height>16</height>
              </rect>
@@ -3939,9 +3880,9 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
            <widget class="QComboBox" name="comboBox_6">
             <property name="geometry">
              <rect>
-              <x>20</x>
-              <y>22</y>
-              <width>111</width>
+              <x>402</x>
+              <y>58</y>
+              <width>131</width>
               <height>21</height>
              </rect>
             </property>
@@ -3956,6 +3897,104 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_14">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>60</y>
+              <width>101</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="toolTip">
+             <string>Consultar vendas</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(85, 170, 255);</string>
+            </property>
+            <property name="text">
+             <string>Total</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+            <property name="default">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_9">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>60</y>
+              <width>111</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="toolTip">
+             <string>Dar baixa em vendas</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(85, 170, 255);</string>
+            </property>
+            <property name="text">
+             <string>Deletar</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Imagens/fdelete_256.ico</normaloff>../Imagens/fdelete_256.ico</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>37</width>
+              <height>68</height>
+             </size>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+            <property name="default">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
           </widget>
@@ -4190,7 +4229,7 @@ background-color: rgb(85, 170, 255);</string>
              <x>10</x>
              <y>10</y>
              <width>630</width>
-             <height>61</height>
+             <height>131</height>
             </rect>
            </property>
            <property name="font">
@@ -4211,16 +4250,16 @@ background-color: rgb(85, 170, 255);</string>
             <property name="geometry">
              <rect>
               <x>510</x>
-              <y>16</y>
-              <width>41</width>
-              <height>31</height>
+              <y>60</y>
+              <width>111</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -4236,7 +4275,7 @@ background-color: rgb(85, 170, 255);</string>
              <string notr="true">background-color: rgb(85, 170, 255);</string>
             </property>
             <property name="text">
-             <string/>
+             <string>Atualizar</string>
             </property>
             <property name="icon">
              <iconset>
@@ -4251,8 +4290,11 @@ background-color: rgb(85, 170, 255);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QLineEdit" name="codproduto">
@@ -4339,72 +4381,20 @@ color: rgb(0, 0, 0);</string>
              <string>Quantidade/total</string>
             </property>
            </widget>
-          </widget>
-          <widget class="QGroupBox" name="groupBox_10">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>75</y>
-             <width>631</width>
-             <height>61</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-</string>
-           </property>
-           <property name="title">
-            <string/>
-           </property>
-           <widget class="QLineEdit" name="lineEdit_12">
-            <property name="geometry">
-             <rect>
-              <x>130</x>
-              <y>14</y>
-              <width>271</width>
-              <height>23</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>% para iniciais e %% para qualquer posição</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>%%</string>
-            </property>
-           </widget>
            <widget class="QPushButton" name="pushButton_7">
             <property name="geometry">
              <rect>
-              <x>430</x>
-              <y>10</y>
-              <width>50</width>
-              <height>30</height>
+              <x>360</x>
+              <y>60</y>
+              <width>121</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -4420,7 +4410,7 @@ color: rgb(0, 0, 0);</string>
              <string notr="true">background-color: rgb(85, 170, 255);</string>
             </property>
             <property name="text">
-             <string/>
+             <string>Pesquisar</string>
             </property>
             <property name="icon">
              <iconset>
@@ -4435,15 +4425,43 @@ color: rgb(0, 0, 0);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_12">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>80</y>
+              <width>211</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>% para iniciais e %% para qualquer posição</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 85, 0);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>%%</string>
             </property>
            </widget>
            <widget class="QLabel" name="label_5">
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>15</y>
+              <y>81</y>
               <width>111</width>
               <height>20</height>
              </rect>
@@ -4530,17 +4548,17 @@ color: rgb(0, 0, 0);</string>
            <widget class="QPushButton" name="deletarProduto">
             <property name="geometry">
              <rect>
-              <x>230</x>
+              <x>130</x>
               <y>80</y>
-              <width>41</width>
+              <width>121</width>
               <height>41</height>
              </rect>
             </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -4556,7 +4574,7 @@ color: rgb(0, 0, 0);</string>
              <string notr="true">background-color: rgb(85, 170, 255);</string>
             </property>
             <property name="text">
-             <string/>
+             <string>Deletar</string>
             </property>
             <property name="icon">
              <iconset>
@@ -4564,7 +4582,7 @@ color: rgb(0, 0, 0);</string>
             </property>
             <property name="iconSize">
              <size>
-              <width>43</width>
+              <width>37</width>
               <height>60</height>
              </size>
             </property>
@@ -4574,8 +4592,11 @@ color: rgb(0, 0, 0);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QLabel" name="label_19">
@@ -4627,17 +4648,17 @@ color: rgb(0, 0, 0);</string>
            <widget class="QPushButton" name="geraexcel_2">
             <property name="geometry">
              <rect>
-              <x>500</x>
-              <y>90</y>
-              <width>31</width>
-              <height>31</height>
+              <x>370</x>
+              <y>80</y>
+              <width>171</width>
+              <height>41</height>
              </rect>
             </property>
             <property name="font">
              <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -4653,7 +4674,7 @@ color: rgb(0, 0, 0);</string>
              <string notr="true">background-color: rgb(85, 170, 255);</string>
             </property>
             <property name="text">
-             <string/>
+             <string>Gerar Relatorio</string>
             </property>
             <property name="icon">
              <iconset>
@@ -4677,8 +4698,11 @@ color: rgb(0, 0, 0);</string>
             <property name="autoDefault">
              <bool>true</bool>
             </property>
-            <property name="flat">
+            <property name="default">
              <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
            <widget class="QDateEdit" name="dateEdit_8">
@@ -4911,7 +4935,6 @@ color: rgb(255, 255, 255);</string>
   <tabstop>tableWidget</tabstop>
   <tabstop>codproduto</tabstop>
   <tabstop>qtproduto</tabstop>
-  <tabstop>lineEdit_12</tabstop>
  </tabstops>
  <resources/>
  <connections/>
