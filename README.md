@@ -35,7 +35,8 @@ In addition, there is a user with these fields:
 * User registration.
 * Sales, being able to audit the sales made in order to export the reports generated in Excel.
 
-![enviamail](https://user-images.githubusercontent.com/76075516/122145309-68acc200-ce2b-11eb-9cff-127ea314299e.png)
+![Screenshot_3](https://user-images.githubusercontent.com/76075516/129206471-5489ed0f-0f88-4211-adbe-f49ebfafb7c2.png)
+
 
 * Sending emails using outlook, with process automation and html formatting in the backend
 
