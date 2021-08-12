@@ -44,9 +44,15 @@ In addition, there is a user with these fields:
 
 
 * New screen for company registration and consultation with the integration in the api "https://receitaws.com.br/api" ,
-to facilitate the registration of companies.
+* to facilitate the registration of companies.
 
 ![Screenshot_5](https://user-images.githubusercontent.com/76075516/129207043-6e7fd53c-fd1d-4ad3-8034-a5319eec0b2a.png)
+
+* New sales screen in the system, all integrated with MySQL database for secure data storage, integrating with product inventory, for inventory write-off when a new
+* product is sold.
+
+![Screenshot_6](https://user-images.githubusercontent.com/76075516/129208184-0275ae04-1962-4c51-b31b-974302ca345a.png)
+
 ## These features are under development:
 
 - Further improve the sales screen to generate notes
