@@ -24,15 +24,6 @@ conexao = mysql.connector.Connect(
     auth_plugin=entrada["auth_plugin"]
 )
 
-# conexao = sqlite3.connect('Sistema_De_Vendas.db', timeout=20)
-"""
-conexao = mysql.connector.Connect(
-    host="localhost",
-    user="Weslei",
-    password="0803",
-    database="think",
-    auth_plugin='mysql_native_password'
-)"""
 
 def chama_segunda_tela():
     
