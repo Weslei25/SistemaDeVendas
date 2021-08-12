@@ -957,17 +957,51 @@ def cadastrar_empresa():
                 aviso.show()
                 aviso.textBrowser.setText('Empresa ja cadastrada!')
             return
-
-            
-        
-        
-            
     except Exception as erro:
-        
         aviso.show()
         aviso.textBrowser.setText('{}'.format(erro))
    
 
+def arquivoaserenviado():
+   salvar = QtWidgets.QFileDialog.getOpenFileName()[0]
+   
+   telaDeEmail.lineEdit.setText(salvar)
+
+   # salvar = QtWidgets.QFileDialog.getOpenFileName()[0]
+
+def enviaremailcomarquivo():
+    
+    try:
+        # email =  think_V1@outlook.com
+        # senha = weslei080319
+        emailDestinatario = telaDeEmail.lineEdit_2.text()
+        anexodoemail = telaDeEmail.lineEdit.text()
+        anexodoemail = QFileSelector.select(anexodoemail)
+        outlook = win32.Dispatch('outlook.application')
+        
+        email = outlook.CreateItem(0)
+
+        email.To = str(emailDestinatario)
+
+        email.Subject = telaDeEmail.lineEdit_3.text()
+        email.HTMLBody = """
+
+        <p>Olá Tudo bem?</p>
+
+        <p>{}.</p>
+
+        <p>Att, .</p>
+
+        <p>Sistema De Vendas em microempresas.</p>""".format(anexodoemail)
+
+        email.Send()
+        aviso.show()
+        aviso.textBrowser.setText('Email enviado com sucesso para {}'.format(emailDestinatario))
+                
+    except Exception as erro:
+        aviso.show()
+        aviso.textBrowser.setText('{}'.format(erro))
+        return
 
 app = QtWidgets.QApplication([])
 app.setStyle ( 'fusion' )
@@ -976,7 +1010,7 @@ TelaPrincipal = uic.loadUi("views\\TelaPrincipalDoSistema.ui")
 aviso = uic.loadUi("views\\avisosnovos.ui")
 tela_progresso = uic.loadUi("views\\barradeprogreço.ui")
 telaDeLogin = uic.loadUi("views\\teladelogin.ui")
-telaDeEmail = uic.loadUi("views\\telaDeEmail.ui")
+telaDeEmail = uic.loadUi("views\\telaDeEmail2.ui")
 telaDeVendas = uic.loadUi("views\\teladevendas.ui")
 tela_cadastro = uic.loadUi("Views\\tela_cadastro.ui")
 
@@ -1000,6 +1034,9 @@ telaDeLogin.RecuperarSenha.clicked.connect(recuperasenhalogin)
 telaDeLogin.pushButton_2.clicked.connect(tela_cadastrousuario)
 tela_cadastro.pushButton.clicked.connect(cadastrar_usuario)
 TelaPrincipal.cadEmpresa.clicked.connect(cadastrar_empresa)
+telaDeEmail.pushButton_3.clicked.connect(arquivoaserenviado)
+telaDeEmail.enviaremail.clicked.connect(enviaremailcomarquivo)
+
 # Inplementando campo senha
 
 # chamando uma função externa 
