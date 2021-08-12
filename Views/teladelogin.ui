@@ -118,7 +118,8 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(56, 112, 168);</string>
+      <string notr="true">background-color: rgb(56, 112, 168);
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>admin</string>
@@ -231,6 +232,9 @@ color: rgb(255, 255, 255);</string>
        <height>18</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>Remember</string>
      </property>
@@ -306,6 +310,9 @@ color: rgb(255, 255, 255);</string>
        <width>111</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Esqueci minha senha?</string>
