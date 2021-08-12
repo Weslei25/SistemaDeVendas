@@ -65,11 +65,18 @@ In addition, there is a user with these fields:
     <td> Python </td>
     <td> PQt5 </td>
     <td> MySql </td>
+    <td> Outlook </td>
+    <td> Pandas </td>
+    <td> API </td>
   </tr>
   <tr>
     <td> 3.7.0 * </td>
     <td>5.0</td>
     <td>8.0</td>
+    <td> Outlook.com </td>
+    <td> Pandas dataframe  </td>
+    <td> pycep_correios &  https://receitaws.com.br/api </td>
+    
   </tr>
 </table>
 
