@@ -55,6 +55,10 @@ In addition, there is a user with these fields:
 
 ![Screenshot_6](https://user-images.githubusercontent.com/76075516/129208184-0275ae04-1962-4c51-b31b-974302ca345a.png)
 
+* It is also possible to send emails in the system.
+![Screenshot_9](https://user-images.githubusercontent.com/76075516/129229158-980566d7-99c1-4bf1-932f-5e0d6590fc83.png)
+
+
 ## These features are under development:
 
 - Further improve the sales screen to generate notes
