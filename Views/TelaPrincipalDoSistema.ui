@@ -490,7 +490,7 @@ background-color: rgb(84, 126, 126);</string>
            <string>Cadastrar novo produto</string>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(85, 170, 255);</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Salvar</string>
@@ -540,7 +540,7 @@ background-color: rgb(84, 126, 126);</string>
 background-color: rgb(84, 126, 126);</string>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="icon">
@@ -3950,7 +3950,7 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <string>Dar baixa em vendas</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Deletar</string>
@@ -4294,9 +4294,9 @@ background-color: rgb(85, 170, 255);</string>
             <property name="geometry">
              <rect>
               <x>510</x>
-              <y>60</y>
+              <y>40</y>
               <width>111</width>
-              <height>51</height>
+              <height>71</height>
              </rect>
             </property>
             <property name="font">
@@ -4316,7 +4316,7 @@ background-color: rgb(85, 170, 255);</string>
              <string>Atualizar estoque dos produtos</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Atualizar</string>
@@ -4363,9 +4363,9 @@ color: rgb(0, 0, 0);</string>
            <widget class="QLineEdit" name="qtproduto">
             <property name="geometry">
              <rect>
-              <x>360</x>
-              <y>20</y>
-              <width>111</width>
+              <x>110</x>
+              <y>50</y>
+              <width>121</width>
               <height>20</height>
              </rect>
             </property>
@@ -4399,15 +4399,15 @@ color: rgb(0, 0, 0);</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Codigo/Produto</string>
+             <string>Codigo/Produto:</string>
             </property>
            </widget>
            <widget class="QLabel" name="label_74">
             <property name="geometry">
              <rect>
-              <x>250</x>
-              <y>20</y>
-              <width>101</width>
+              <x>10</x>
+              <y>50</y>
+              <width>91</width>
               <height>16</height>
              </rect>
             </property>
@@ -4422,16 +4422,16 @@ color: rgb(0, 0, 0);</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Quantidade/total</string>
+             <string>Quantidade:</string>
             </property>
            </widget>
            <widget class="QPushButton" name="pushButton_7">
             <property name="geometry">
              <rect>
               <x>360</x>
-              <y>60</y>
+              <y>40</y>
               <width>121</width>
-              <height>51</height>
+              <height>71</height>
              </rect>
             </property>
             <property name="font">
@@ -4451,7 +4451,7 @@ color: rgb(0, 0, 0);</string>
              <string>Pesquisar produto</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Pesquisar</string>
@@ -4551,8 +4551,8 @@ color: rgb(255, 255, 255);</string>
             </property>
             <property name="geometry">
              <rect>
-              <x>129</x>
-              <y>50</y>
+              <x>142</x>
+              <y>69</y>
               <width>120</width>
               <height>20</height>
              </rect>
@@ -4573,8 +4573,8 @@ color: rgb(0, 0, 0);</string>
             </property>
             <property name="geometry">
              <rect>
-              <x>129</x>
-              <y>10</y>
+              <x>142</x>
+              <y>29</y>
               <width>120</width>
               <height>20</height>
              </rect>
@@ -4592,10 +4592,10 @@ color: rgb(0, 0, 0);</string>
            <widget class="QPushButton" name="deletarProduto">
             <property name="geometry">
              <rect>
-              <x>130</x>
-              <y>80</y>
-              <width>121</width>
-              <height>41</height>
+              <x>290</x>
+              <y>60</y>
+              <width>131</width>
+              <height>61</height>
              </rect>
             </property>
             <property name="font">
@@ -4615,7 +4615,7 @@ color: rgb(0, 0, 0);</string>
              <string>Deletar produto e estoque</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Deletar</string>
@@ -4646,8 +4646,8 @@ color: rgb(0, 0, 0);</string>
            <widget class="QLabel" name="label_19">
             <property name="geometry">
              <rect>
-              <x>29</x>
-              <y>10</y>
+              <x>42</x>
+              <y>29</y>
               <width>91</width>
               <height>16</height>
              </rect>
@@ -4669,8 +4669,8 @@ color: rgb(0, 0, 0);</string>
            <widget class="QLabel" name="label_64">
             <property name="geometry">
              <rect>
-              <x>27</x>
-              <y>51</y>
+              <x>40</x>
+              <y>70</y>
               <width>101</width>
               <height>20</height>
              </rect>
@@ -4692,10 +4692,10 @@ color: rgb(0, 0, 0);</string>
            <widget class="QPushButton" name="geraexcel_2">
             <property name="geometry">
              <rect>
-              <x>370</x>
-              <y>80</y>
-              <width>171</width>
-              <height>41</height>
+              <x>440</x>
+              <y>60</y>
+              <width>141</width>
+              <height>61</height>
              </rect>
             </property>
             <property name="font">
@@ -4715,7 +4715,7 @@ color: rgb(0, 0, 0);</string>
              <string>Gerar relatorio dos produtos</string>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Gerar Relatorio</string>
