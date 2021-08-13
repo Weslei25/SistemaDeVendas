@@ -227,110 +227,119 @@ def cadcliente():
         emaildocliente = str(TelaPrincipal.lineEdit_50.text())
 
         verificaCpfExiste = pd.read_sql(f"""select cpf_cnpj from parceiros p where cpf_cnpj ='{cpfdocliente}';""", conexao)
-        verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
-        if verificaCpfExiste == cpfdocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Cliente ja cadastrado!")
-            return
-        else:
-            aviso.show()
-            aviso.textBrowser.setText("Entrei aqui")
-        
-
-        cursor = conexao.cursor()
-
-        df = pd.read_sql(f"SELECT idestado from estados where sigla = '{estadodocliente}'", conexao)
-        estadodocliente = (df['idestado'][0])
-        
-
-        df = pd.read_sql(f"SELECT idcidade FROM cidades WHERE nome = '{cidadedocliente}'", conexao)
-        cidadedocliente = (df['idcidade'][0])
-        
-
-        if not bairrodocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Informe o nome da bairro.")
-            return
+        if verificaCpfExiste.empty ==True:
 
         
-        df = pd.read_sql(f"SELECT idbairro FROM bairros WHERE nome = '{bairrodocliente}'", conexao)
-        bairrodocliente = (df['idbairro'][0])
-        print(bairrodocliente)
-        
-        
-        if not estadodocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Informe o estado.")
-            return
-        if not cidadedocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Preencha os campos com os dados solicitados!")
-            return
-        if not sitedocliente:
-            sitedocliente = 'NULL'
+            cursor = conexao.cursor()
+
+            df = pd.read_sql(f"SELECT idestado from estados where sigla = '{estadodocliente}'", conexao)
+            if df.empty == True:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o nome da bairro.")
+            else:
+                estadodocliente = (df['idestado'][0])
             
-        if not emaildocliente:
-            emaildocliente = 'NULL'
 
-        if not nomedocliente:
+            df = pd.read_sql(f"SELECT idcidade FROM cidades WHERE nome = '{cidadedocliente}'", conexao)
+            
+            if df.empty == True:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o nome da Cidade.")
+            else:
+                cidadedocliente = (df['idcidade'][0])
+            
+
+            if not bairrodocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o nome da bairro.")
+                return
+
+            
+            df = pd.read_sql(f"SELECT idbairro FROM bairros WHERE nome = '{bairrodocliente}'", conexao)
+            bairrodocliente = (df['idbairro'][0])
+            print(bairrodocliente)
+            
+            
+            if not estadodocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o estado.")
+                return
+            if not cidadedocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Preencha os campos com os dados solicitados!")
+                return
+            if not sitedocliente:
+                sitedocliente = 'NULL'
+                
+            if not emaildocliente:
+                emaildocliente = 'NULL'
+
+            if not nomedocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o nome do cliente.")
+                return
+
+            if not numerodocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o numero da residencia.")
+                return
+
+            if not celulardocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Informe um numero de Celular.")
+                return
+
+            if not cpfdocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Informe o CPF do cliente.")
+                return
+
+
+
+            if categoriadocliente == 'OCASIONAL':
+                categoriadocliente = 'OCA'
+
+            elif categoriadocliente == 'CLIENTE EXTRA':
+                categoriadocliente = 'EXT'
+
+            else:
+                categoriadocliente = 'VIP'
+
+
+            sql_cliente = """ insert into parceiros (bairros_cidades_idcidade, bairros_cidades_estados_idestado,
+            bairros_idbairro, nomeparc, cpf_cnpj, tipo_pessoa, cliente,
+            cep, rua,numero, complemento, rg, tel_principal,
+            tel_secund, email, site) values(
+                {}, {}, {}, '{}', '{}', 'F', '{}', '{}', '{}', '{}',
+                '{}', '{}', '{}', '{}', '{}', '{}') """.format(
+                cidadedocliente, estadodocliente,
+                bairrodocliente,
+                nomedocliente,
+                cpfdocliente,
+                categoriadocliente,
+                cepdocliente,
+                ruadocliente,
+                numerodocliente,
+                complemento,
+                rgdocliente,
+                celulardocliente,
+                telefoneresidencial,
+                emaildocliente,
+                sitedocliente)
+
+            cursor.execute(sql_cliente)
+            conexao.commit()
+            cursor.close()
+
             aviso.show()
-            aviso.textBrowser.setText("Informe o nome do cliente.")
+            aviso.textBrowser.setText("Cliente cadastrado com sucesso!!!")
+            
+        else: 
+            verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
+            if verificaCpfExiste == cpfdocliente:
+                aviso.show()
+                aviso.textBrowser.setText("Cliente ja cadastrado!")
             return
-
-        if not numerodocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Informe o numero da residencia.")
-            return
-
-        if not celulardocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Informe um numero de Celular.")
-            return
-
-        if not cpfdocliente:
-            aviso.show()
-            aviso.textBrowser.setText("Informe o CPF do cliente.")
-            return
-
-
-
-        if categoriadocliente == 'OCASIONAL':
-            categoriadocliente = 'OCA'
-
-        elif categoriadocliente == 'CLIENTE EXTRA':
-            categoriadocliente = 'EXT'
-
-        else:
-            categoriadocliente = 'VIP'
-
-
-        sql_cliente = """ insert into parceiros (bairros_cidades_idcidade, bairros_cidades_estados_idestado,
-        bairros_idbairro, nomeparc, cpf_cnpj, tipo_pessoa, cliente,
-        cep, rua,numero, complemento, rg, tel_principal,
-        tel_secund, email, site) values(
-            {}, {}, {}, '{}', '{}', 'F', '{}', '{}', '{}', '{}',
-            '{}', '{}', '{}', '{}', '{}', '{}') """.format(
-            cidadedocliente, estadodocliente,
-            bairrodocliente,
-            nomedocliente,
-            cpfdocliente,
-            categoriadocliente,
-            cepdocliente,
-            ruadocliente,
-            numerodocliente,
-            complemento,
-            rgdocliente,
-            celulardocliente,
-            telefoneresidencial,
-            emaildocliente,
-            sitedocliente)
-
-        cursor.execute(sql_cliente)
-        conexao.commit()
-        cursor.close()
-
-        aviso.show()
-        aviso.textBrowser.setText("Cliente cadastrado com sucesso!!!")
     except Exception as e:
         aviso.show()
         aviso.textBrowser.setText('{}'.format(e))
@@ -1034,7 +1043,7 @@ def enviaremailcomarquivo():
         # email =  think_V1@outlook.com
         # senha = weslei080319
         # Email do sistema sistemadevendasecadastro2522@gmail.com
-        
+
         emailDestinatario = telaDeEmail.lineEdit_2.text() # pego o destinatario 
         anexodoemail = telaDeEmail.lineEdit.text()# Recebo o anexo do email se tiver.
         corpoDoEmail = telaDeEmail.textEdit.toPlainText()# QTextEdit.toPlainText é a propriedade que aceita a quebra de linha no qtextEdit
