@@ -244,7 +244,7 @@ def cadcliente():
             
             if df.empty == True:
                 aviso.show()
-                aviso.textBrowser.setText("Informe o nome da Cidade.")
+                aviso.textBrowser.setText("Informe o nome da Cidade-.")
             else:
                 cidadedocliente = (df['idcidade'][0])
             
