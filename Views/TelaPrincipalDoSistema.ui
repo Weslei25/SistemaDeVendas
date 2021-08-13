@@ -540,7 +540,7 @@ background-color: rgb(84, 126, 126);</string>
 background-color: rgb(84, 126, 126);</string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="icon">
@@ -1800,9 +1800,9 @@ background-color: rgb(255, 255, 255);</string>
           <property name="geometry">
            <rect>
             <x>740</x>
-            <y>70</y>
+            <y>60</y>
             <width>111</width>
-            <height>41</height>
+            <height>51</height>
            </rect>
           </property>
           <property name="font">
@@ -1851,9 +1851,9 @@ background-color: rgb(255, 255, 255);</string>
           <property name="geometry">
            <rect>
             <x>900</x>
-            <y>70</y>
-            <width>101</width>
-            <height>41</height>
+            <y>60</y>
+            <width>111</width>
+            <height>51</height>
            </rect>
           </property>
           <property name="font">
@@ -2163,7 +2163,7 @@ background-color: rgb(255, 255, 255);</string>
             <x>740</x>
             <y>10</y>
             <width>431</width>
-            <height>51</height>
+            <height>41</height>
            </rect>
           </property>
           <property name="title">
@@ -3422,7 +3422,7 @@ background-color: rgb(84, 126, 126);</string>
            <widget class="QPushButton" name="geraexcel">
             <property name="geometry">
              <rect>
-              <x>380</x>
+              <x>390</x>
               <y>20</y>
               <width>101</width>
               <height>81</height>
@@ -3485,7 +3485,7 @@ background-color: rgb(84, 126, 126);</string>
             </property>
             <property name="geometry">
              <rect>
-              <x>120</x>
+              <x>130</x>
               <y>20</y>
               <width>101</width>
               <height>81</height>
@@ -3536,7 +3536,7 @@ background-color: rgb(84, 126, 126);</string>
            <widget class="QPushButton" name="pushButton_15">
             <property name="geometry">
              <rect>
-              <x>250</x>
+              <x>260</x>
               <y>20</y>
               <width>101</width>
               <height>81</height>
@@ -3686,6 +3686,50 @@ background-color: rgb(84, 126, 126);</string>
              <bool>false</bool>
             </property>
            </widget>
+           <widget class="QPushButton" name="pushButton_14">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>91</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="toolTip">
+             <string>Consultar vendas</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Total</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
+            <property name="default">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
           </widget>
           <widget class="QGroupBox" name="groupBox_13">
            <property name="geometry">
@@ -3716,8 +3760,8 @@ background-color: rgb(84, 126, 126);</string>
             </property>
             <property name="geometry">
              <rect>
-              <x>60</x>
-              <y>20</y>
+              <x>10</x>
+              <y>25</y>
               <width>111</width>
               <height>21</height>
              </rect>
@@ -3769,8 +3813,8 @@ background-color: rgb(255, 255, 255);</string>
            <widget class="QDateEdit" name="dateEdit_5">
             <property name="geometry">
              <rect>
-              <x>220</x>
-              <y>20</y>
+              <x>140</x>
+              <y>26</y>
               <width>111</width>
               <height>21</height>
              </rect>
@@ -3796,10 +3840,10 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
            <widget class="QLineEdit" name="lineEdit_13">
             <property name="geometry">
              <rect>
-              <x>400</x>
-              <y>20</y>
-              <width>131</width>
-              <height>21</height>
+              <x>270</x>
+              <y>21</y>
+              <width>111</width>
+              <height>31</height>
              </rect>
             </property>
             <property name="font">
@@ -3814,8 +3858,8 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
            <widget class="QLabel" name="label_76">
             <property name="geometry">
              <rect>
-              <x>180</x>
-              <y>20</y>
+              <x>140</x>
+              <y>7</y>
               <width>31</width>
               <height>16</height>
              </rect>
@@ -3833,34 +3877,12 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <string>Fim</string>
             </property>
            </widget>
-           <widget class="QLabel" name="label_77">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>41</width>
-              <height>16</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string>Inicio</string>
-            </property>
-           </widget>
            <widget class="QLabel" name="label_80">
             <property name="geometry">
              <rect>
-              <x>352</x>
-              <y>20</y>
-              <width>44</width>
+              <x>270</x>
+              <y>5</y>
+              <width>51</width>
               <height>16</height>
              </rect>
             </property>
@@ -3874,16 +3896,16 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Codigo</string>
+             <string>Codigo:</string>
             </property>
            </widget>
            <widget class="QComboBox" name="comboBox_6">
             <property name="geometry">
              <rect>
               <x>402</x>
-              <y>58</y>
-              <width>131</width>
-              <height>21</height>
+              <y>21</y>
+              <width>128</width>
+              <height>31</height>
              </rect>
             </property>
             <property name="font">
@@ -3899,60 +3921,16 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_14">
-            <property name="geometry">
-             <rect>
-              <x>230</x>
-              <y>60</y>
-              <width>101</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="toolTip">
-             <string>Consultar vendas</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(85, 170, 255);</string>
-            </property>
-            <property name="text">
-             <string>Total</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>40</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="autoDefault">
-             <bool>true</bool>
-            </property>
-            <property name="default">
-             <bool>true</bool>
-            </property>
-            <property name="flat">
-             <bool>false</bool>
-            </property>
-           </widget>
            <widget class="QPushButton" name="pushButton_9">
             <property name="enabled">
              <bool>true</bool>
             </property>
             <property name="geometry">
              <rect>
-              <x>50</x>
-              <y>60</y>
-              <width>111</width>
-              <height>41</height>
+              <x>10</x>
+              <y>50</y>
+              <width>151</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="font">
@@ -3995,6 +3973,72 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
             </property>
             <property name="flat">
              <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_7">
+            <property name="geometry">
+             <rect>
+              <x>400</x>
+              <y>71</y>
+              <width>131</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_77">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>8</y>
+              <width>41</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Inicio</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_8">
+            <property name="geometry">
+             <rect>
+              <x>270</x>
+              <y>70</y>
+              <width>111</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
            </widget>
           </widget>

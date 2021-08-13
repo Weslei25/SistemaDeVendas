@@ -149,19 +149,19 @@ color: rgb(255, 255, 255);</string>
        <rect>
         <x>160</x>
         <y>10</y>
-        <width>41</width>
+        <width>61</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>8</pointsize>
+        <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(193, 193, 193);</string>
+       <string notr="true">background-color: rgb(85, 170, 255);</string>
       </property>
       <property name="text">
        <string>R$</string>
@@ -170,14 +170,19 @@ color: rgb(255, 255, 255);</string>
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>330</x>
         <y>10</y>
-        <width>31</width>
+        <width>51</width>
         <height>23</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(193, 193, 193);</string>
+       <string notr="true">background-color: rgb(85, 170, 255);</string>
       </property>
       <property name="text">
        <string>%</string>
@@ -191,7 +196,7 @@ color: rgb(255, 255, 255);</string>
        <rect>
         <x>230</x>
         <y>10</y>
-        <width>111</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>
@@ -459,10 +464,10 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="geometry">
       <rect>
-       <x>690</x>
-       <y>94</y>
-       <width>211</width>
-       <height>51</height>
+       <x>680</x>
+       <y>44</y>
+       <width>221</width>
+       <height>81</height>
       </rect>
      </property>
      <property name="font">
@@ -503,7 +508,7 @@ color: rgb(0, 0, 0);
         <x>10</x>
         <y>9</y>
         <width>41</width>
-        <height>31</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
@@ -528,8 +533,8 @@ color: rgb(0, 0, 0);
        <rect>
         <x>61</x>
         <y>10</y>
-        <width>112</width>
-        <height>32</height>
+        <width>141</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
@@ -743,10 +748,10 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="geometry">
       <rect>
-       <x>690</x>
-       <y>160</y>
-       <width>211</width>
-       <height>41</height>
+       <x>680</x>
+       <y>140</y>
+       <width>221</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
@@ -787,14 +792,29 @@ color: rgb(0, 0, 0);
         <x>10</x>
         <y>10</y>
         <width>91</width>
-        <height>23</height>
+        <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(193, 193, 193);</string>
+       <string notr="true">background-color: rgb(85, 170, 255);</string>
       </property>
       <property name="text">
        <string>Cancelar</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../Imagens/Atualizar.png</normaloff>../Imagens/Atualizar.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>30</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="finalizar_2">
@@ -802,15 +822,30 @@ color: rgb(0, 0, 0);
        <rect>
         <x>120</x>
         <y>10</y>
-        <width>81</width>
-        <height>23</height>
+        <width>91</width>
+        <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(193, 193, 193);</string>
+       <string notr="true">background-color: rgb(85, 170, 255);</string>
       </property>
       <property name="text">
-       <string>Finaliza</string>
+       <string>Finalizar</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../Imagens/vendaavista.ico</normaloff>../Imagens/vendaavista.ico</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </widget>
