@@ -1,9 +1,14 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import * 
-from PyQt5.QtGui import * 
-from PyQt5.QtCore import *
 import mysql.connector
 import win32com.client as win32
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+from PyQt5.QtGui import * 
+from PyQt5.QtCore import *
 from pycep_correios import get_address_from_cep, WebService, exceptions
 import requests
 import datetime as dt
@@ -28,10 +33,10 @@ saldoDevedor
 totalDeDesconto
 TotalVendas
 """
-with open('Config\\config.json') as f:
-    entrada = json.load(f)
+with open('Config\\config.json') as f:# Abrindo o arquivo que contem a string de conexao com o DB
+    entrada = json.load(f)# lendo o json e armazenando em uma variavel
 
-conexao = mysql.connector.Connect(
+conexao = mysql.connector.Connect(# string de conexao
     host=entrada["host"],
     user=entrada["user"],
     password=entrada["password"],
@@ -40,11 +45,11 @@ conexao = mysql.connector.Connect(
 )
 
 
-def chama_segunda_tela():
+def chama_segunda_tela():# função responsavel por chamar a tela principal
     
-    telaDeLogin.label_4.setText("")
-    nome_usuario = telaDeLogin.lineEdit.text()
-    senha = telaDeLogin.lineEdit_2.text()
+    telaDeLogin.label_4.setText("")# Sempre limpo o campo de avisos para que quando o usuario corrigir o erro o campo esteja limpo
+    nome_usuario = telaDeLogin.lineEdit.text()# Aqui pego o nome de usuario
+    senha = telaDeLogin.lineEdit_2.text()# Aqui pego a senha
     
 
     try:
@@ -1013,42 +1018,58 @@ def cadastrar_empresa():
    
 
 def arquivoaserenviado():
-   salvar = QtWidgets.QFileDialog.getOpenFileName()[0]
    
-   telaDeEmail.lineEdit.setText(salvar)
 
-   # salvar = QtWidgets.QFileDialog.getOpenFileName()[0]
+
+    try:
+        salvar = QtWidgets.QFileDialog.getOpenFileName()[0]# Pegando path co arquivo a ser enviado
+        telaDeEmail.lineEdit.setText(salvar)# Setando o caminho em um lineEdit
+    except Exception as erro:
+        print("\n{}\n".format(erro))
 
 def enviaremailcomarquivo():
     
     try:
         # email =  think_V1@outlook.com
         # senha = weslei080319
-        emailDestinatario = telaDeEmail.lineEdit_2.text()
-        anexodoemail = telaDeEmail.lineEdit.text()
-        corpoDoEmail = telaDeEmail.label_3.text()
+
+        emailDestinatario = telaDeEmail.lineEdit_2.text() # pego o destinatario 
+        anexodoemail = telaDeEmail.lineEdit.text()# Recebo o anexo do email se tiver.
+        corpoDoEmail = telaDeEmail.textEdit.toPlainText()# QTextEdit.toPlainText é a propriedade que aceita a quebra de linha no qtextEdit
         
+        fromaddr = "fiscaldefenderteste@gmail.com"# Email remetente
+        toaddr = emailDestinatario # Email destinatario
+        msg = MIMEMultipart()
+
+        msg['From'] = fromaddr 
+        msg['To'] = toaddr
+        msg['Subject'] = telaDeEmail.lineEdit_3.text()
+
+        body = corpoDoEmail # Corpo do email
+
+        msg.attach(MIMEText(body, 'plain'))
+
+        filename = anexodoemail # arquivo
+
+        attachment = open(f'{anexodoemail}','rb') # abrir e verificar arquivo
+
+        part = MIMEBase('application', 'octet-stream')
+        part.set_payload((attachment).read())# Carregar arquivo
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+
+        msg.attach(part)
+
+        attachment.close()
+        senha = entrada['senhaemail']# Pegando a senha do email
+
+        server = smtplib.SMTP('smtp.gmail.com', 587)# Servidor de email
+        server.starttls()# Criptografia de arquivo
+        server.login(fromaddr, senha)# login no email, passando a senha
+        text = msg.as_string()
+        server.sendmail(fromaddr, toaddr, text)# Finalizando envio email
+        server.quit()
         
-        outlook = win32.Dispatch('outlook.application')
-        
-        email = outlook.CreateItem(0)
-
-        email.To = str(emailDestinatario)
-
-        email.Subject = telaDeEmail.lineEdit_3.text()
-        email.HTMLBody = """
-
-        <p>Olá Tudo bem?</p>
-
-        <p>{}</p>
-
-        <p>{}</p>
-
-        <p>Att,</p>
-
-        <p>Sistema De Vendas em microempresas.</p>""".format(anexodoemail, corpoDoEmail)
-
-        email.Send()
         aviso.show()
         aviso.textBrowser.setText('Email enviado com sucesso para {}'.format(emailDestinatario))
                 
@@ -1057,7 +1078,8 @@ def enviaremailcomarquivo():
         aviso.textBrowser.setText('{}'.format(erro))
         return
 
-app = QtWidgets.QApplication([])
+
+app = QtWidgets.QApplication([]) # Criando um QApplication que faz a construcao da minha aplicacao.
 app.setStyle ( 'fusion' )
 # Carregar as telas.
 TelaPrincipal = uic.loadUi("views\\TelaPrincipalDoSistema.ui")
@@ -1068,9 +1090,7 @@ telaDeEmail = uic.loadUi("views\\telaDeEmail2.ui")
 telaDeVendas = uic.loadUi("views\\teladevendas.ui")
 tela_cadastro = uic.loadUi("Views\\tela_cadastro.ui")
 
-# Chamando as funções
-
-TelaPrincipal.consultar_cnpj.clicked.connect(consultarcnpj)
+TelaPrincipal.consultar_cnpj.clicked.connect(consultarcnpj)# Conectando o click dos botões nas funções
 TelaPrincipal.verificaCep.clicked.connect(virificacep)
 TelaPrincipal.pushButton_7.clicked.connect(pesquisarProduto)
 TelaPrincipal.salvarCliente.clicked.connect(cadcliente)
@@ -1093,27 +1113,15 @@ telaDeEmail.enviaremail.clicked.connect(enviaremailcomarquivo)
 TelaPrincipal.geraexcel_2.clicked.connect(gerarrelatorioprodutos)
 telaDeVendas.finalizar_2.clicked.connect(vender_produto)
 
-# Inplementando campo senha
-
-# chamando uma função externa 
-
-# TelaPrincipal.cadEmpresa.clicked.connect(cadastrampresa)
-
-
-
-
-# Pegando o Tipo de Pafamento 
-descricaoDopagamento = pd.read_sql('select descricao from tipo_pagamento', conexao)
+descricaoDopagamento = pd.read_sql('select descricao from tipo_pagamento', conexao)# Pegando o Tipo de Pafamento 
 TelaPrincipal.comboBox_6.addItems(descricaoDopagamento['descricao'])
 
-# Pegando o tipo de pagamento
-descricaoDaEntrsaida = pd.read_sql('SELECT descricao FROM etrada_saida;', conexao)
+descricaoDaEntrsaida = pd.read_sql('SELECT descricao FROM etrada_saida;', conexao)# Pegando o tipo de pagamento
 TelaPrincipal.comboBox_8.addItems(descricaoDaEntrsaida['descricao'])
 
-# Pegando o as categorias
-descreicaoDaCategotia = pd.read_sql('select descricao from categorias', conexao)
+descreicaoDaCategotia = pd.read_sql('select descricao from categorias', conexao)# Pegando o as categorias
 TelaPrincipal.comboBox_7.addItems(descreicaoDaCategotia['descricao'])
 
-telaDeLogin.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
+telaDeLogin.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)# Inplementando campo senha
 telaDeLogin.show()
 app.exec()
