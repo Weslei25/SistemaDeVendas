@@ -593,7 +593,11 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
-
+*tests
+*Cripto
+*.qt_for_python
+*Config
+*controllers/
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
