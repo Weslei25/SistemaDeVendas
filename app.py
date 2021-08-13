@@ -10,9 +10,24 @@ import datetime as dt
 import pandas as pd
 import json
 
-
-
-    
+"""
+vendedor
+entradaOuSaida
+clienteVenda
+cnpjCpf
+prosutoVenda
+quantidadeVenda
+cdDeBarras
+descontoVEnda
+PorcentoVenda
+categoriaVenda
+quantidadeitens
+quantidadeProdutos
+troco
+saldoDevedor
+totalDeDesconto
+TotalVendas
+"""
 with open('Config\\config.json') as f:
     entrada = json.load(f)
 
@@ -335,16 +350,56 @@ def geraRelatorioVendasEntSaida():
             ent_sai = int(1)
         elif ent_sai == '2 - Saida':
             ent_sai =  int(2)
+        
 
-        df = pd.read_sql("""select idvenda, tipo_negociacao_idtipo_negociacao, vendedores_usuarios_idusuarios,
-            vendedores_idvendedor, data_venda, vlr_total, nomecliente, nomeproduto,
+
+        df = pd.read_sql("""select idvenda, tipo_negociacao_idtipo_negociacao, vendedores_usuarios_idusuarios, vendedores_idvendedor, (DATE_FORMAT(data_venda , '%d/%m/%Y')), vlr_total, nomecliente, nomeproduto,
             quantproduto, precoproduto, descproduto, id_tipopagamento, vezesdeparcelas,
             observacao, dat_venv_fatuura, entrada_saida
             FROM vendas where entrada_saida = {} and data_venda >= '{}' and data_venda <= '{}'order
             by idvenda DESC limit 1000000;""".format(ent_sai,datavenda1, datavenda2), conexao)
+        
+        # Mudando o nome das colunas que seram geradas no excel
+        df = df.rename(columns={'idvenda': 'Codigo Da Venda', 'tipo_negociacao_idtipo_negociacao':'Tipo De Negociação', 'vendedores_usuarios_idusuarios':'Usuario','vendedores_idvendedor':'Vendedor', "(DATE_FORMAT(data_venda , '%d/%m/%Y'))":'Data Da Venda','vlr_total':'Valor Total', 'nomecliente':'Nome Do Cliente', 'nomeproduto':'Nome Do Produto',
+        'quantproduto':'Quantidade Vendida', 'precoproduto':'Preço Do Produto', 'descproduto':'Desconto','id_tipopagamento':'Tipo De Pagamento', 'vezesdeparcelas':'Vezes De Parcelas', 'observacao':'Observação', 'dat_venv_fatuura':'Data De Cobrança', 'entrada_saida':'Entrda ou Saida'})
 
         salvar = QtWidgets.QFileDialog.getSaveFileName()[0]
         df.to_excel(salvar + '.xlsx', index=False)
+
+        tela_progresso.show()
+        tela_progresso.progressBar.setValue(100)
+    except ValueError as er:
+        aviso.show()
+        aviso.textBrowser.setText('{}'.format(er))
+        
+    except Exception as e:
+        aviso.show()
+        aviso.textBrowser.setText('{}'.format(e))
+
+def gerarrelatorioprodutos():
+    
+    try:
+
+        datavenda1 = TelaPrincipal.dateEdit_8.text()
+        datavenda1 = dt.datetime.strptime(datavenda1, '%d/%m/%Y')
+        datavenda1 = datavenda1.strftime('%Y-%m-%d')
+
+        datavenda2 = TelaPrincipal.dateEdit_9.text()
+        datavenda2 = dt.datetime.strptime(datavenda2, '%d/%m/%Y')
+        datavenda2 = datavenda2.strftime('%Y-%m-%d')
+        
+
+
+        df = pd.read_sql("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), preco, observacao, marca,
+            referencia from produtos where dt_entrada >='{}' and dt_entrada <='{}' order by idproduto DESC limit 1200""".format(datavenda1, datavenda2), conexao)
+        
+        # Renomeando as colunas 
+        # df.rename(columns={'$a':'a', '$b':'b', '$c':'c', '$d':'d', '$e':'e'})
+        df = df.rename(columns={'idproduto':'Codigo Do Produto', 'descricao':'Descrição Do Produto', "(DATE_FORMAT(dt_entrada , '%d/%m/%Y'))":'Data Do Cadastro', 'preco':'Preço', 'observacao':'Obsercação Do Produto', 'marca':'Fabricante'})
+        
+
+        salvar = QtWidgets.QFileDialog.getSaveFileName()[0]
+        df.to_excel(salvar + '.xlsx', index=False, )
 
         tela_progresso.show()
         tela_progresso.progressBar.setValue(100)
@@ -364,6 +419,7 @@ def fecharbarradeprogreco():
 def vendasAvista():
     # Aqui é feito a converssão das datas
     categoriaDavenda = TelaPrincipal.comboBox_6.currentText()
+
     datavenda1 = TelaPrincipal.dateEdit_4.text()
     datavenda1 = dt.datetime.strptime(datavenda1, '%d/%m/%Y')
     datavenda1 = datavenda1.strftime('%Y-%m-%d')
@@ -383,19 +439,13 @@ def vendasAvista():
     elif  categoriaDavenda == ('Cheque'):
         categoriaDavenda = int(10)
     else:
-        categoriaDavenda = int(6)
+        categoriaDavenda = int(1)
 
 
     try:
         cursor =  conexao.cursor()
 
 
-        """select idvenda, nomecliente,
-            tipo_negociacao_idtipo_negociacao,
-            vendedores_idvendedor, (SELECT strftime('%d/%m/%Y',data_venda) as data), dat_venv_fatuura, nomeproduto,
-            quantproduto, precoproduto, descproduto, vlr_total, id_tipopagamento,
-            vezesdeparcelas, observacao, entrada_saida FROM vendas order by idvenda DESC limit 1000000		 
-		 """
         cursor.execute(""" select idvenda, nomecliente,
                 tipo_negociacao_idtipo_negociacao,
                 vendedores_idvendedor, (DATE_FORMAT(data_venda , '%d/%m/%Y')), dat_venv_fatuura, nomeproduto,
@@ -976,7 +1026,9 @@ def enviaremailcomarquivo():
         # senha = weslei080319
         emailDestinatario = telaDeEmail.lineEdit_2.text()
         anexodoemail = telaDeEmail.lineEdit.text()
-        anexodoemail = QFileSelector.select(anexodoemail)
+        corpoDoEmail = telaDeEmail.label_3.text()
+        
+        
         outlook = win32.Dispatch('outlook.application')
         
         email = outlook.CreateItem(0)
@@ -988,11 +1040,13 @@ def enviaremailcomarquivo():
 
         <p>Olá Tudo bem?</p>
 
-        <p>{}.</p>
+        <p>{}</p>
 
-        <p>Att, .</p>
+        <p>{}</p>
 
-        <p>Sistema De Vendas em microempresas.</p>""".format(anexodoemail)
+        <p>Att,</p>
+
+        <p>Sistema De Vendas em microempresas.</p>""".format(anexodoemail, corpoDoEmail)
 
         email.Send()
         aviso.show()
@@ -1015,7 +1069,7 @@ telaDeVendas = uic.loadUi("views\\teladevendas.ui")
 tela_cadastro = uic.loadUi("Views\\tela_cadastro.ui")
 
 # Chamando as funções
-df = pd.read_sql('select descricao from tipo_pagamento', conexao)
+
 TelaPrincipal.consultar_cnpj.clicked.connect(consultarcnpj)
 TelaPrincipal.verificaCep.clicked.connect(virificacep)
 TelaPrincipal.pushButton_7.clicked.connect(pesquisarProduto)
@@ -1036,23 +1090,30 @@ tela_cadastro.pushButton.clicked.connect(cadastrar_usuario)
 TelaPrincipal.cadEmpresa.clicked.connect(cadastrar_empresa)
 telaDeEmail.pushButton_3.clicked.connect(arquivoaserenviado)
 telaDeEmail.enviaremail.clicked.connect(enviaremailcomarquivo)
+TelaPrincipal.geraexcel_2.clicked.connect(gerarrelatorioprodutos)
+telaDeVendas.finalizar_2.clicked.connect(vender_produto)
 
 # Inplementando campo senha
 
 # chamando uma função externa 
-#from controllers.cadEmpresa import cadastrarempresa
-# TelaPrincipal.cadEmpresa.clicked.connect(cadastrarempresa)
 
+# TelaPrincipal.cadEmpresa.clicked.connect(cadastrampresa)
+
+
+
+
+# Pegando o Tipo de Pafamento 
+descricaoDopagamento = pd.read_sql('select descricao from tipo_pagamento', conexao)
+TelaPrincipal.comboBox_6.addItems(descricaoDopagamento['descricao'])
+
+# Pegando o tipo de pagamento
+descricaoDaEntrsaida = pd.read_sql('SELECT descricao FROM etrada_saida;', conexao)
+TelaPrincipal.comboBox_8.addItems(descricaoDaEntrsaida['descricao'])
+
+# Pegando o as categorias
+descreicaoDaCategotia = pd.read_sql('select descricao from categorias', conexao)
+TelaPrincipal.comboBox_7.addItems(descreicaoDaCategotia['descricao'])
 
 telaDeLogin.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-# 
-TelaPrincipal.comboBox_6.addItems(['1 - Entrada', '2 - Saida'])
-TelaPrincipal.comboBox_6.addItems(df['descricao'])
-
-df = pd.read_sql('select descricao from categorias', conexao)
-TelaPrincipal.categotiaproduto.addItems(df['descricao'])
-
-
-# TelaPrincipal.show()
 telaDeLogin.show()
 app.exec()
