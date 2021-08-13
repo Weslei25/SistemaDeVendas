@@ -1030,14 +1030,16 @@ def arquivoaserenviado():
 def enviaremailcomarquivo():
     
     try:
+        # 
         # email =  think_V1@outlook.com
         # senha = weslei080319
-
+        # Email do sistema sistemadevendasecadastro2522@gmail.com
+        
         emailDestinatario = telaDeEmail.lineEdit_2.text() # pego o destinatario 
         anexodoemail = telaDeEmail.lineEdit.text()# Recebo o anexo do email se tiver.
         corpoDoEmail = telaDeEmail.textEdit.toPlainText()# QTextEdit.toPlainText é a propriedade que aceita a quebra de linha no qtextEdit
         
-        fromaddr = "fiscaldefenderteste@gmail.com"# Email remetente
+        fromaddr = "sistemadevendasecadastro2522@gmail.com"# Email remetente
         toaddr = emailDestinatario # Email destinatario
         msg = MIMEMultipart()
 
@@ -1045,7 +1047,7 @@ def enviaremailcomarquivo():
         msg['To'] = toaddr
         msg['Subject'] = telaDeEmail.lineEdit_3.text()
 
-        body = corpoDoEmail # Corpo do email
+        body = corpoDoEmail + "\n\n\nAtt\n\nSistema de VEndas e Cadastro" # Corpo do email
 
         msg.attach(MIMEText(body, 'plain'))
 
@@ -1072,7 +1074,7 @@ def enviaremailcomarquivo():
         
         aviso.show()
         aviso.textBrowser.setText('Email enviado com sucesso para {}'.format(emailDestinatario))
-                
+        
     except Exception as erro:
         aviso.show()
         aviso.textBrowser.setText('{}'.format(erro))
