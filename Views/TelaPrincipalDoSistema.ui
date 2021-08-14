@@ -540,7 +540,7 @@ background-color: rgb(84, 126, 126);</string>
 background-color: rgb(84, 126, 126);</string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="icon">
@@ -5032,5 +5032,294 @@ color: rgb(255, 255, 255);</string>
   <tabstop>qtproduto</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>logradouroEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>979</x>
+     <y>632</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>974</x>
+     <y>573</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>cnpj_consulta</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>989</x>
+     <y>623</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>tipo_cnpj</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>947</x>
+     <y>638</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>671</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked()</signal>
+   <receiver>nomeEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>971</x>
+     <y>631</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>679</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>nomeFantazia</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>958</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>670</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>atividadePrincipal</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1006</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>710</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>naturezaJuridica</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>967</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>situacaoEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1011</x>
+     <y>638</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>756</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>atividadeSecundarias</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>959</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>496</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>capitalSocialEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>984</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>740</x>
+     <y>493</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>emailEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1027</x>
+     <y>633</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1072</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>cepEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1036</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>579</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>bairroEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>993</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>374</x>
+     <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked()</signal>
+   <receiver>ufEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>987</x>
+     <y>635</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>189</x>
+     <y>633</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked()</signal>
+   <receiver>municipioEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>998</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>703</x>
+     <y>570</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked()</signal>
+   <receiver>complementoEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1011</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>725</x>
+     <y>595</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked()</signal>
+   <receiver>numeroEnderecoEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>981</x>
+     <y>641</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>688</x>
+     <y>638</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>salvarCliente_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>porteEmpresa</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>997</x>
+     <y>614</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1108</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
