@@ -540,7 +540,7 @@ background-color: rgb(84, 126, 126);</string>
 background-color: rgb(84, 126, 126);</string>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="icon">
@@ -1448,8 +1448,8 @@ background-color: rgb(84, 126, 126);</string>
           <widget class="QPushButton" name="salvarCliente_2">
            <property name="geometry">
             <rect>
-             <x>758</x>
-             <y>15</y>
+             <x>610</x>
+             <y>10</y>
              <width>100</width>
              <height>51</height>
             </rect>
@@ -1521,8 +1521,8 @@ background-color: rgb(84, 126, 126);</string>
           <widget class="QPushButton" name="salvarCliente">
            <property name="geometry">
             <rect>
-             <x>620</x>
-             <y>15</y>
+             <x>472</x>
+             <y>10</y>
              <width>100</width>
              <height>51</height>
             </rect>
@@ -1608,6 +1608,57 @@ background-color: rgb(84, 126, 126);</string>
            </property>
            <property name="text">
             <string>27996646312</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="salvarCliente_3">
+           <property name="geometry">
+            <rect>
+             <x>740</x>
+             <y>10</y>
+             <width>100</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::WheelFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Salvar novo Cliente</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 255);</string>
+           </property>
+           <property name="text">
+            <string>Consultar</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../Imagens/cad_pessoas.ico</normaloff>../Imagens/cad_pessoas.ico</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>81</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>true</bool>
+           </property>
+           <property name="default">
+            <bool>true</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
            </property>
           </widget>
          </widget>
