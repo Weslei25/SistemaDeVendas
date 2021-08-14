@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import * 
+from PyQt5.QtWidgets import QMessageBox
 import mysql.connector
 import win32com.client as win32
 import smtplib
@@ -33,16 +33,30 @@ saldoDevedor
 totalDeDesconto
 TotalVendas
 """
-with open('Config\\config.json') as f:# Abrindo o arquivo que contem a string de conexao com o DB
-    entrada = json.load(f)# lendo o json e armazenando em uma variavel
 
-conexao = mysql.connector.Connect(# string de conexao
-    host=entrada["host"],
-    user=entrada["user"],
-    password=entrada["password"],
-    database=entrada["database"],
-    auth_plugin=entrada["auth_plugin"]
-)
+
+
+try:
+    global conexao
+    with open('Config\\config.json') as f:# Abrindo o arquivo que contem a string de conexao com o DB
+        entrada = json.load(f)# lendo o json e armazenando em uma variavel
+    
+    
+
+    conexao = mysql.connector.Connect(# string de conexao
+        host=entrada["host"],
+        user=entrada["user"],
+        password=entrada["password"],
+        database=entrada["database"],
+        auth_plugin=entrada["auth_plugin"]
+    )
+    with open('logs\\Sistema_De_Vendas_login.txt', 'w') as arquivo:
+        arquivo.write('Sistema_De_Vendas: Aplicação conectando ao banco de dados\n')
+        arquivo.write('Sistema_De_Vendas: Aplicação conectou ao banco de dados\n')
+except Exception as erro:
+    with open('logs\\Sistema_De_Vendas_erro.txt', 'w') as arquivo:
+        arquivo.write('Sistema_De_Vendas: "Erro: \n"{}\n'.format(erro))# Abrindo o arquivo que contem a string de conexao com o DB
+    
 
 
 def chama_segunda_tela():# função responsavel por chamar a tela principal
@@ -91,7 +105,11 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
         cursor.execute(f"INSERT INTO log_usuario(descricao, idusuarios, dt_logusuario) VALUES ('NULL', {nomedousuario}, '{datahoje}');")
         conexao.commit()
 
-        
+        with open('logs\\Sistema_De_Vendas_login.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Aplicação conectando ao banco de dados\n')
+            arquivo.write('Sistema_De_Vendas: Aplicação conectou ao banco de dados\n')
+            arquivo.write('Sistema_De_Vendas: Aplicação Entrou\n')
+
         def catalogarProdutos():
             
             cursor = conexao.cursor()
@@ -107,6 +125,9 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
                         i, j, QtWidgets.QTableWidgetItem(str(dados_lidos1[i][j])))
 
         catalogarProdutos()
+        with open('logs\\Sistema_De_Vendas_catalogaprodutos.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Aplicação catalogou todos os produtos\n')
+            
 
         cursor = conexao.cursor()
         cursor.execute("""select idvenda, nomecliente,
@@ -125,36 +146,26 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
             for j in range(0, 15):
                 TelaPrincipal.tableWidget_5.setItem(
                     i, j, QtWidgets.QTableWidgetItem(str(sql_vendas1[i][j])))
-
-        # Estou pegando a data do dia nessa variavél datavenda
-        datadehoje = dt.datetime.now()
-        # Estou setando o valor da variavél no objeto da data
-        #TelaPrincipal.dateEdit_4.setDate(datadehoje)
-        TelaPrincipal.dateEdit_5.setDate(datadehoje)
-        # TelaPrincipal.dateEdit_2.setDate(datadehoje)
+        
+        with open('logs\\Sistema_De_Vendas_vendas.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Aplicação ccatalogou todas as vendas\n')
+            
+        
+        datadehoje = dt.datetime.now()# Estou pegando a data do dia nessa variavél datavenda
+        
+        TelaPrincipal.dateEdit_5.setDate(datadehoje)# Estou setando o valor da variavél no objeto da data
         TelaPrincipal.dateEdit_4.setDate(datadehoje)
         TelaPrincipal.dateEdit.setDate(datadehoje)
         TelaPrincipal.dateEdit.setDate(datadehoje)
-        # TelaPrincipal.dateEdit_8.setDate(datadavenda)
-        # TelaPrincipal.dateEdit_9.setDate(datadavenda)
-        # TelaPrincipal.dateEdit_10.setDate(datadavenda)
-        # TelaPrincipal.dateEdit_14.setDate(datadavenda)
-        # TelaPrincipal.dateEdit_15.setDate(datadavenda)
-        # TelaPrincipal.dateEdit_16.setDate(datadavenda)
-
+        
         cursor.close()
         
     except Exception as indexx:
-        telaDeLogin.label_4.setText("{}".format(indexx))
-        return
-    else:
-        telaDeLogin.label_4.setText("Dados de login incorretos!")
+        QMessageBox.about(aviso, "Aviso", "{}".format(indexx))
+        with open('logs\\Sistema_De_Vendas_loginErro.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: IndexErro {}\n'.format(indexx))
         return
     
-
-
-
-
 
 
 def virificacep():
@@ -163,42 +174,40 @@ def virificacep():
         cep = TelaPrincipal.cepCliente.text()
 
         if not cep:
+            with open('logs\\Sistema_De_Vendas_ConsultarCep.txt', 'w') as arquivo:
+                arquivo.write('Cep não informado.')
             return False
         else:
-            aviso.textBrowser.setText("Sucesso na consulta do CEP.")
-
-
-        endereco = get_address_from_cep(cep, webservice=WebService.APICEP)
-
+            endereco = get_address_from_cep(cep, webservice=WebService.APICEP)
+        with open('logs\\Sistema_De_Vendas_ConsultarCep.txt', 'w') as arquivo:
+            arquivo.write('{}\n'.format(endereco))
+    
     except exceptions.CEPNotFound as notfound:
-        aviso.show()
-        aviso.textBrowser.setText("{}".format(notfound))
+        QMessageBox.about(aviso,"Aviso", "{}".format(notfound))
         return
 
-    except exceptions.ConnectionError as testaaa:
-        aviso.show()
-        aviso.textBrowser.setText("{}".format(testaaa))
+    except exceptions.ConnectionError as conctcaoerro:
+        QMessageBox.about(aviso, "Aviso", "{}".format(conctcaoerro))
         return
 
     except exceptions.Timeout as tempo:
-        aviso.show()
-        aviso.textBrowser.setText("{}".format(tempo))
+        QMessageBox.about(aviso, "Aviso", "{}".format(tempo))
         return
 
     except exceptions.HTTPError as erro:
-        aviso.show()
-        aviso.textBrowser.setText("{}".format(erro))
+        QMessageBox.about(aviso, "Aviso", "{}".format(erro))
         return
 
     except exceptions.BaseException as base:
-        aviso.show()
-        aviso.textBrowser.setText("{}". format(base))
-
+        QMessageBox.about(aviso, "Aviso", "{}".format(base))
         return
 
     except ValueError as erru:
-        aviso.show()
-        aviso.textBrowser.setText('Valor não aceito\n\n{}'.format(erru))
+        QMessageBox.about(aviso, "Aviso", "{}".format(erru))
+        return
+    except Exception as erro:
+        QMessageBox.warning(aviso, "Aviso", "{}".format(erro))
+        
 
     TelaPrincipal.enderecoCliente.setText(endereco['logradouro'])
     TelaPrincipal.bairroCliente.setText(endereco['bairro'])
@@ -234,8 +243,8 @@ def cadcliente():
 
             df = pd.read_sql(f"SELECT idestado from estados where sigla = '{estadodocliente}'", conexao)
             if df.empty == True:
-                aviso.show()
-                aviso.textBrowser.setText("Informe Estado.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o estado.\n\n")
+                return
             else:
                 estadodocliente = (df['idestado'][0])
             
@@ -243,61 +252,47 @@ def cadcliente():
             df = pd.read_sql(f"SELECT idcidade FROM cidades WHERE nome = '{cidadedocliente}'", conexao)
             
             if df.empty == True:
-                aviso.show()
-                aviso.textBrowser.setText("Informe o nome da Cidade-.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe a cidade.\n\n")
+                return
             else:
                 cidadedocliente = (df['idcidade'][0])
             
 
             if not bairrodocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Informe o nome da bairro.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o bairro\n\n")
                 return
 
-            
             pegaridbairro = pd.read_sql(f"SELECT idbairro FROM bairros WHERE nome = '{bairrodocliente}'", conexao)
             if pegaridbairro.empty ==True:
-                print(cidadedocliente, estadodocliente)
+                
                 cursor.execute(f"""INSERT INTO bairros (cidades_estados_idestado, cidades_idcidade, nome) VALUES({estadodocliente}, {cidadedocliente}, '{bairrodocliente}');""")
                 conexao.commit()
                 return
             else:
                 pegaridbairro = (pegaridbairro['idbairro'][0])
-            print(bairrodocliente)
-            
-            
-            if not estadodocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Informe o estado.")
-                return
-            if not cidadedocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Preencha os campos com os dados solicitados!")
-                return
+
             if not sitedocliente:
-                sitedocliente = 'NULL'
-                
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Caso o cliente não possua um site\n preencha o campo com NÃO INFORMADO")
+                return
+
             if not emaildocliente:
-                emaildocliente = 'NULL'
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Caso o cliente não possua um email\n preencha o campo com NÃO INFORMADO")
+                return
 
             if not nomedocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Informe o nome do cliente.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o nome do cliente")
                 return
 
             if not numerodocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Informe o numero da residencia.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o numero da residencia.")
                 return
 
             if not celulardocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Informe um numero de Celular.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe um numero de Celular.")
                 return
 
             if not cpfdocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Informe o CPF do cliente.")
+                QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o CPF do cliente.")
                 return
 
 
@@ -337,18 +332,15 @@ def cadcliente():
             conexao.commit()
             cursor.close()
 
-            aviso.show()
-            aviso.textBrowser.setText("Cliente cadastrado com sucesso!!!")
+            QMessageBox.about(TelaPrincipal,"mensagem de alerta", "Cliente cadastrado com sucesso.")
             
         else: 
             verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
             if verificaCpfExiste == cpfdocliente:
-                aviso.show()
-                aviso.textBrowser.setText("Cliente ja cadastrado!")
+                QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado")
             return
     except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(e))
         return
 
 
@@ -389,12 +381,10 @@ def geraRelatorioVendasEntSaida():
         tela_progresso.show()
         tela_progresso.progressBar.setValue(100)
     except ValueError as er:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(er))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(er))
         
-    except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+    except Exception as erro:
+        QMessageBox.information(aviso,"Aviso", "{}".format(erro))
 
 def gerarrelatorioprodutos():
     
@@ -424,12 +414,10 @@ def gerarrelatorioprodutos():
         tela_progresso.show()
         tela_progresso.progressBar.setValue(100)
     except ValueError as er:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(er))
+        QMessageBox.information(aviso,"Informação", "{}".format(er))
         
-    except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+    except Exception as eerro:
+        QMessageBox.information(aviso,"Informação", "{}".format(eerro))
 
 def fecharbarradeprogreco():
     
@@ -483,9 +471,8 @@ def vendasAvista():
                 TelaPrincipal.tableWidget_5.setItem(
                     i, j, QtWidgets.QTableWidgetItem(str(sqlVendasAvista[i][j])))
         cursor.close()
-    except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+    except Exception as erro:
+        QMessageBox.warning(aviso,"Aviso", "{}".format(erro))
         return
 
 def enviaemail():
@@ -507,108 +494,13 @@ def realizarvendas():
 
     telaDeVendas.nomevendedor.setText(pegaridusuario)
 
-def fecharteladeaviso():
-    aviso.close()
 
 def vender_produto():
 
     try:
-    	# dthoje = dt.datetime.now()
-        # Variaveis da tela de vendas
-        datadavenda = dt.datetime.now()
-        iddovendedor = TelaPrincipal.vendedor_2.currentText()
-        tipoNegociacao = TelaPrincipal.tipoNegociacao.currentText()
-        naturezavenda = TelaPrincipal.naturezadavenda.currentText()
-        vezesparcelas = TelaPrincipal.vezesdeparcelas.currentText()
-        datadevencimento = TelaPrincipal.vencimentoparcelado.currentText()
-        nomeclientevenda = TelaPrincipal.lineEdit_14.text()
-        nomeprodutovenda = TelaPrincipal.lineEdit_15.text()
-        quantidadedoprodutovenda = TelaPrincipal.lineEdit_16.text()
-        precodoproduto = TelaPrincipal.lineEdit_17.text()
-        descontodoproduto = TelaPrincipal.lineEdit_18.text()
-        valortotaldavenda = TelaPrincipal.lineEdit_19.text()
-        obcervacaovenda = TelaPrincipal.lineEdit_6.text()
-        entrada_saida = TelaPrincipal.comboBox_3.currentText()
-        idusuario = (3)
-
-
-        df = pd.read_sql(f"select idvendedor from vendedores where nome ='{iddovendedor}'", conexao)
-        iddovendedor = (df['idvendedor'][0])
-        # Aqui acontece a converssão de valores do tipo negociação
-
-        df = pd.read_sql(f"select idtipo_negociacao from tipo_negociacao where descricao ='{tipoNegociacao}'", conexao)
-        tipoNegociacao = (df['idtipo_negociacao'][0])
-        
-        
-        df = pd.read_sql(f"select id_entrada_saida from etrada_saida where descricao ='{entrada_saida}'", conexao)
-        entrada_saida = (df['idtipo_negociacao'][0])
-        
-
-        if naturezavenda == ('Dinheiro'):
-            naturezavenda = int(6)
-        elif naturezavenda == ('Credito'):
-            naturezavenda = int(7)
-        elif naturezavenda ==  ('Debito'):
-            naturezavenda = int(8)
-        elif naturezavenda == ('Crediario'):
-            naturezavenda = int(9)
-        elif  naturezavenda == ('Cheque'):
-            naturezavenda = int(10)
-        else:
-            return False
-
-        if not nomeclientevenda:
-            aviso.show()
-            aviso.textBrowser.setText("  Informe o NOME ou CPF do cliente.")
-            return
-        elif not nomeprodutovenda:
-            aviso.show()
-            aviso.textBrowser.setText("  Declare o nome do produto.")
-            return
-        else:
-
-            cursor = conexao.cursor()
-
-            sql_vendas = """ INSERT INTO vendas (tipo_negociacao_idtipo_negociacao, vendedores_usuarios_idusuarios,
-            vendedores_idvendedor, data_venda, vlr_total, nomecliente, nomeproduto,quantproduto, precoproduto,descproduto, id_tipopagamento, vezesdeparcelas, observacao, dat_venv_fatuura, entrada_saida)
-            VALUES({}, {}, {}, '{}',{}, '{}', '{}', {}, {}, {}, '{}', {}, '{}', {}, {});""".format(
-                tipoNegociacao, idusuario,
-                iddovendedor, datadavenda,valortotaldavenda, nomeclientevenda, nomeprodutovenda,
-                quantidadedoprodutovenda, precodoproduto, descontodoproduto, naturezavenda,
-                vezesparcelas, obcervacaovenda, datadevencimento, entrada_saida)
-
-            cursor.execute(sql_vendas)
-            conexao.commit()
-
-
-            cursor = conexao.cursor()
-            cursor.execute("""select idvenda, nomecliente,
-                tipo_negociacao_idtipo_negociacao,
-                vendedores_idvendedor, data_venda, dat_venv_fatuura, nomeproduto,
-                quantproduto, precoproduto, descproduto, vlr_total, id_tipopagamento,
-                vezesdeparcelas, observacao, entrada_saida FROM vendas order by idvenda DESC limit 1000000;""")
-
-
-            sql_vendas1 = cursor.fetchall()
-
-            TelaPrincipal.tableWidget_4.setRowCount(len(sql_vendas1))
-            TelaPrincipal.tableWidget_4.setColumnCount(15)
-
-            for i in range(0, len(sql_vendas1)):
-                for j in range(0, 15):
-                    TelaPrincipal.tableWidget_4.setItem(
-                        i, j, QtWidgets.QTableWidgetItem(str(sql_vendas1[i][j])))
-
-            TelaPrincipal.lineEdit_19.setText("")
-            # TelaPrincipal.lineEdit_10.setText("")
-            TelaPrincipal.lineEdit_17.setText("")
-            TelaPrincipal.lineEdit_14.setText("")
-            TelaPrincipal.lineEdit_15.setText("")
-            TelaPrincipal.lineEdit_16.setText("")
-
+        pass
     except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+        QMessageBox.warning(aviso, 'Aviso','{}'.format(e))
         return
         
 
@@ -645,27 +537,21 @@ def cadastrar_produtos():
             categoria = "5"
 
 
-
+        if not estoque:
+            QMessageBox.information(aviso, 'Aviso','Preencha o campo ESTOQUE.')
+            return
         cursor = conexao.cursor()
         SQL_produtos = """INSERT INTO produtos (categorias_idcategoria, descricao, preco, observacao,marca,referencia, dt_entrada)
          VALUES  ('{}', '{}', {}, '{}','{}', '{}', '{}')""".format(categoria, descricao, preco, observacao, marca, ref, datadaentrada)
-        # dados1 = (categoria), (descricao), (preco), (observacao), (marca), (ref), (datadaentrada)
         if not preco:
-            aviso.show()
-            aviso.textBrowser.setText("  Preencha os campos vazios EX: Preço.")
+            QMessageBox.information(aviso, 'Aviso','Preencha os campos vazios EX: Preço')
             return
         elif not descricao:
-            aviso.show()
-            aviso.textBrowser.setText("  Preencha os campos vazios EX:Descrição.")
+            QMessageBox.information(aviso, 'Aviso','Capo DESCRIÇÃO é obrigatorio.')
             return
-        cursor.execute(SQL_produtos)
+        cursor.execute(SQL_produtos)# Executando o sql para cadastrar o novo produto
         conexao.commit()
-    
-        if not estoque:
-            aviso.show()
-            aviso.textBrowser.setText("Preencha o campo estoque")
-            return
-
+ 
         cursor.execute("SELECT MAX(idproduto) FROM produtos")
         produtoult = cursor.fetchall()
         tratadoproduto = produtoult[0][0]
@@ -693,9 +579,8 @@ def cadastrar_produtos():
         TelaPrincipal.lineEdit_5.setText("")
         TelaPrincipal.lineEdit_9.setText("")
         """
-    except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+    except Exception as erro:
+        QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
         return
 
 def vendas_parceladas():
@@ -731,9 +616,8 @@ def vendas_parceladas():
 
         cursor.close()
 
-    except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+    except Exception as erro:
+        QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
         return
 
 
@@ -742,11 +626,10 @@ def deletarProduto():
         codigoestoque = TelaPrincipal.codEstoque.text()
         codigoDoproduto = TelaPrincipal.codProduto_2.text()
         if not codigoestoque:
-            aviso.show()
-            aviso.textBrowser.setText('Preencha o campo Codigo/Estoque')
+            QMessageBox.information(aviso, 'Aviso','Preencha o campo Codigo/Estoque')
+            return
         elif not codigoDoproduto:
-            aviso.show()
-            aviso.textBrowser.setText('Preencha o campo Codigo/Produto')
+            QMessageBox.information(aviso, 'Aviso','Preencha o campo Codigo/Produto')
 
         cursor = conexao.cursor()
         cursor.execute("""delete from estoque where produtos_idproduto ={}""".format(codigoestoque))
@@ -770,19 +653,14 @@ def deletarProduto():
         TelaPrincipal.codEstoque.setText("")
         TelaPrincipal.codProduto_2.setText("")
 
-        aviso.show()
-        aviso.textBrowser.setText('Produto codigo {} foi deletado com exito'.format(codigoDoproduto))
-
-    except Exception as e:
+        QMessageBox.information(aviso, 'Aviso','Produto deletado com exito {}'.format(codigoDoproduto))
+    except Exception as erro:
         if not codigoestoque:
-            aviso.show()
-            aviso.textBrowser.setText('Preencha o campo Codigo/Estoque')
+            QMessageBox.information(aviso, 'Aviso','Preencha o campo Codigo/Estoque')
         elif not codigoDoproduto:
-            aviso.show()
-            aviso.textBrowser.setText('Preencha o campo Codigo/Produto')
+            QMessageBox.information(aviso, 'Aviso','Preencha o campo Codigo/Produto')
         else:
-            aviso.show()
-            aviso.textBrowser.setText('{}'.format(e))
+            QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
         return
 
        
@@ -835,8 +713,7 @@ def consultarcnpj():
         # atividades_secundarias
 
     except Exception as erro:
-        aviso.show()
-        aviso.textBrowser.setText("{}". format(erro))
+        QMessageBox.information(aviso, 'Aviso','{}'.format(erro))
     finally:
         pass
 
@@ -870,23 +747,18 @@ def recuperasenhalogin():
 
         """.format(senha)
         if not email.to:
-            aviso.show()
-            aviso.textBrowser.setText('Email não localizado')
+            QMessageBox.information(aviso, 'Aviso','Email não localizado')
             return
         elif email == 'None':
-            aviso.show()
-            aviso.textBrowser.setText('Email não localizado')
+            QMessageBox.information(aviso, 'Aviso','Email não localizado')
+            return
         else:
             email.Send()
-            aviso.show()
-            aviso.textBrowser.setText('Sua senha foi enviada para o email {}'.format(email2))
-                
-    except Exception as e:
-        if e == "(-2147352567, 'Exceção.', (4096, 'Microsoft Outlook', 'O Outlook não reconhece um ou mais nomes. ', None, 0, -2147467259), None)":
-            e == 'Email não encontrado na nossa base de dados'
+            QMessageBox.information(aviso, 'Aviso','Sua senha foi enviada para o email \n{}'.format(email2))
             
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+                
+    except Exception as erro:
+        QMessageBox.warning(aviso, 'Atenção', '{}'.format(erro))
         return
 
 def tela_cadastrousuario():
@@ -957,9 +829,8 @@ def pesquisarProduto():
                     i, j, QtWidgets.QTableWidgetItem(str(sqlVerificacaoProduto[i][j])))
 
         cursor.close()
-    except Exception as e:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(e))
+    except Exception as erros:
+        QMessageBox.warning(aviso, 'Atenção', '{}'.format(Erros))
         return
 
 def cadastrar_empresa():
@@ -986,62 +857,57 @@ def cadastrar_empresa():
         abertura_empresa = dt.datetime.strptime(abertura_empresa, '%d/%m/%Y')
         abertura_empresa = abertura_empresa.strftime('%Y-%m-%d')
 
-        idcidade = pd.read_sql(f"select idcidade from cidades where nome ='{idcidade}'", conexao)
-        if idcidade.empty == True:
-            aviso.show()
-            aviso.textBrowser.setText('Cidade não informada!')
-            return
-        else:
-            idcidade = (idcidade['idcidade'][0])
-
-        idestado = pd.read_sql(f"select idestado from estados where sigla ='{idestado}'", conexao)
-        if idestado.empty == True:
-            aviso.show()
-            aviso.textBrowser.setText('Estado não informado!')
-            return
-        else:
-            idestado = (idestado['idestado'][0])
-
-        idbairro = pd.read_sql(f"select idbairro from bairros where nome ='{idbairros}'", conexao)
-        if idbairro.empty == True:
-            cursor =  conexao.cursor()
-            cursor.execute("""INSERT INTO think.bairros (cidades_estados_idestado, cidades_idcidade, nome) VALUES ({}, {}, '{}');""".format(idestado, idcidade, idbairros))
-            conexao.commit()
-            cursor.close()
-        else:
-            idbairro = (idbairro['idbairro'][0])
-
-        VerificaEmpresa = pd.read_sql(f"select cnpj from empresa where razao_social ='{razao_social}' and cnpj = '{cnpj}'", conexao)
+        VerificaEmpresa = pd.read_sql(f"select cnpj from empresa where cnpj = '{cnpj}'", conexao)
         if VerificaEmpresa.empty == True:
+
+            idcidade = pd.read_sql(f"select idcidade from cidades where nome ='{idcidade}'", conexao)
+            if idcidade.empty == True:
+                QMessageBox.warning(aviso, 'Atenção', 'Cidade não informada')
+                return
+            else:
+                idcidade = (idcidade['idcidade'][0])
+
+            idestado = pd.read_sql(f"select idestado from estados where sigla ='{idestado}'", conexao)
+            if idestado.empty == True:
+                QMessageBox.warning(aviso, 'Atenção', 'Estado não informado')
+                return
+            else:
+                idestado = (idestado['idestado'][0])
+
+            idbairro = pd.read_sql(f"select idbairro from bairros where nome ='{idbairros}'", conexao)
+            if idbairro.empty == True:
+                cursor =  conexao.cursor()
+                cursor.execute("""INSERT INTO think.bairros (cidades_estados_idestado, cidades_idcidade, nome) VALUES ({}, {}, '{}');""".format(idestado, idcidade, idbairros))
+                conexao.commit()
+                cursor.close()
+            else:
+                idbairro = (idbairro['idbairro'][0])
+
+            
             cursor = conexao.cursor()
             cursor.execute("""INSERT INTO think.empresa (cnpj, razao_social, nome_fantazia, tipo_empresa, atividade_principal, natureza_juridica, atividade_secundaria, situacao, capital_social, cep, complemento, email_empresa, telefone, abertura_empresa, porte_empresa, idbairro, idcidade, idestado)
                             VALUES('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', {}, '{}', '{}', '{}', '{}', '{}', '{}', {}, {}, {})""".format(cnpj, razao_social, nome_fantazia, tipo_empresa, atividade_principal, natureza_juridica, atividade_secundaria, situacao, capital_socia, cep_empresa, complemento, email_empresa, telefone_empresa, abertura_empresa, porte_empresa, idbairro, idcidade, idestado))
             conexao.commit()
             cursor.close()
-            aviso.show()
-            aviso.textBrowser.setText('Empresa cadastrada com sucesso!')
+            QMessageBox.information(aviso, 'Informação', 'Empresa cadastrada {}'.format(razao_social))
         
         else:
             VerificaEmpresa = (VerificaEmpresa['cnpj'][0])
             if VerificaEmpresa == cnpj:
-                aviso.show()
-                aviso.textBrowser.setText('Empresa ja cadastrada!')
-            return
+                QMessageBox.warning(aviso, 'Informação', 'Empresa já cadastrada anteriormente\n{}'.format(razao_social))
+                qDebug("Chegeui ao Debug {}".format(VerificaEmpresa))
+        return
     except Exception as erro:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(erro))
+        QMessageBox.warning(aviso, 'Informação', '{}'.format(erro))
    
 
 def arquivoaserenviado():
    
-
-
     try:
         salvar = QtWidgets.QFileDialog.getOpenFileName()[0]# Pegando path co arquivo a ser enviado
         telaDeEmail.lineEdit.setText(salvar)# Setando o caminho em um lineEdit
     except Exception as erro:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(erro))
+        QMessageBox.information(aviso, 'Informação', '{}'.format(erro))
 
 def enviaremailcomarquivo():
     
@@ -1088,12 +954,9 @@ def enviaremailcomarquivo():
         server.sendmail(fromaddr, toaddr, text)# Finalizando envio email
         server.quit()
         
-        aviso.show()
-        aviso.textBrowser.setText('Email enviado com sucesso para {}'.format(emailDestinatario))
-        
+        QMessageBox.about(TelaPrincipal,"Aviso", "Email enviado com sucesso para {}".format(emailDestinatario))
     except Exception as erro:
-        aviso.show()
-        aviso.textBrowser.setText('{}'.format(erro))
+        QMessageBox.about(aviso,"Aviso", "{}".format(erro))
         return
 
 
@@ -1117,7 +980,6 @@ TelaPrincipal.geraexcel.clicked.connect(geraRelatorioVendasEntSaida)
 TelaPrincipal.enviaemail.clicked.connect(enviaemail)
 TelaPrincipal.realizarVendas.clicked.connect(realizarvendas)
 tela_progresso.pushButton.clicked.connect(fecharbarradeprogreco)
-aviso.sairDaTelaAteno.clicked.connect(fecharteladeaviso)
 telaDeLogin.pushButton.clicked.connect(chama_segunda_tela)
 TelaPrincipal.realizarVendas_2.clicked.connect(cadastrar_produtos)
 TelaPrincipal.pushButton_10.clicked.connect(vendas_parceladas)
