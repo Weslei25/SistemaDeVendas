@@ -161,7 +161,7 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
         cursor.close()
         
     except Exception as indexx:
-        QMessageBox.about(aviso, "Aviso", "{}".format(indexx))
+        QMessageBox.warning(aviso, "Aviso", "{}".format(indexx))
         with open('logs\\Sistema_De_Vendas_loginErro.txt', 'w') as arquivo:
             arquivo.write('Sistema_De_Vendas: IndexErro {}\n'.format(indexx))
         return
@@ -183,27 +183,27 @@ def virificacep():
             arquivo.write('{}\n'.format(endereco))
     
     except exceptions.CEPNotFound as notfound:
-        QMessageBox.about(aviso,"Aviso", "{}".format(notfound))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(notfound))
         return
 
     except exceptions.ConnectionError as conctcaoerro:
-        QMessageBox.about(aviso, "Aviso", "{}".format(conctcaoerro))
+        QMessageBox.warning(aviso, "Aviso", "{}".format(conctcaoerro))
         return
 
     except exceptions.Timeout as tempo:
-        QMessageBox.about(aviso, "Aviso", "{}".format(tempo))
+        QMessageBox.warning(aviso, "Aviso", "{}".format(tempo))
         return
 
     except exceptions.HTTPError as erro:
-        QMessageBox.about(aviso, "Aviso", "{}".format(erro))
+        QMessageBox.warning(aviso, "Aviso", "{}".format(erro))
         return
 
     except exceptions.BaseException as base:
-        QMessageBox.about(aviso, "Aviso", "{}".format(base))
+        QMessageBox.warning(aviso, "Aviso", "{}".format(base))
         return
 
     except ValueError as erru:
-        QMessageBox.about(aviso, "Aviso", "{}".format(erru))
+        QMessageBox.warning(aviso, "Aviso", "{}".format(erru))
         return
     except Exception as erro:
         QMessageBox.warning(aviso, "Aviso", "{}".format(erro))
@@ -332,7 +332,7 @@ def cadcliente():
             conexao.commit()
             cursor.close()
 
-            QMessageBox.about(TelaPrincipal,"mensagem de alerta", "Cliente cadastrado com sucesso.")
+            QMessageBox.warning(TelaPrincipal,"mensagem de alerta", "Cliente cadastrado com sucesso.")
             
         else: 
             verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
@@ -356,11 +356,11 @@ def geraRelatorioVendasEntSaida():
         datavenda2 = TelaPrincipal.dateEdit_5.text()
         datavenda2 = dt.datetime.strptime(datavenda2, '%d/%m/%Y')
         datavenda2 = datavenda2.strftime('%Y-%m-%d')
-        ent_sai = TelaPrincipal.comboBox_6.currentText()
-
-        if ent_sai == '1 - Entrada':
+        
+        ent_sai = TelaPrincipal.comboBox_8.currentText()
+        if ent_sai == 'Entrada':
             ent_sai = int(1)
-        elif ent_sai == '2 - Saida':
+        elif ent_sai == 'Saida':
             ent_sai =  int(2)
         
 
@@ -895,9 +895,12 @@ def cadastrar_empresa():
             VerificaEmpresa = (VerificaEmpresa['cnpj'][0])
             if VerificaEmpresa == cnpj:
                 QMessageBox.warning(aviso, 'Informação', 'Empresa já cadastrada anteriormente\n{}'.format(razao_social))
-                qDebug("Chegeui ao Debug {}".format(VerificaEmpresa))
+                qInfo("{}".format(VerificaEmpresa))
+
+                return 
         return
     except Exception as erro:
+        qDebug('{}'.format(erro))
         QMessageBox.warning(aviso, 'Informação', '{}'.format(erro))
    
 
@@ -954,10 +957,20 @@ def enviaremailcomarquivo():
         server.sendmail(fromaddr, toaddr, text)# Finalizando envio email
         server.quit()
         
-        QMessageBox.about(TelaPrincipal,"Aviso", "Email enviado com sucesso para {}".format(emailDestinatario))
+        QMessageBox.information(TelaPrincipal,"Aviso", "Email enviado com sucesso para {}".format(emailDestinatario))
     except Exception as erro:
-        QMessageBox.about(aviso,"Aviso", "{}".format(erro))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(erro))
         return
+
+def atualizarcliente():
+    clientes.show()
+
+def atualizarclientenodb():
+    QMessageBox.critical(aviso,"Aviso", "Essa função ainda não esta em funcionamento.")
+    return
+def deletarregistro():
+    QMessageBox.critical(aviso,"Aviso", "Essa função ainda não esta em funcionamento.")
+    return
 
 
 app = QtWidgets.QApplication([]) # Criando um QApplication que faz a construcao da minha aplicacao.
@@ -970,6 +983,7 @@ telaDeLogin = uic.loadUi("views\\teladelogin.ui")
 telaDeEmail = uic.loadUi("views\\telaDeEmail2.ui")
 telaDeVendas = uic.loadUi("views\\teladevendas.ui")
 tela_cadastro = uic.loadUi("Views\\tela_cadastro.ui")
+clientes = uic.loadUi("Views\\Clientes.ui")
 
 TelaPrincipal.consultar_cnpj.clicked.connect(consultarcnpj)# Conectando o click dos botões nas funções
 TelaPrincipal.verificaCep.clicked.connect(virificacep)
@@ -992,6 +1006,9 @@ telaDeEmail.pushButton_3.clicked.connect(arquivoaserenviado)
 telaDeEmail.enviaremail.clicked.connect(enviaremailcomarquivo)
 TelaPrincipal.geraexcel_2.clicked.connect(gerarrelatorioprodutos)
 telaDeVendas.finalizar_2.clicked.connect(vender_produto)
+TelaPrincipal.salvarCliente_3.clicked.connect(atualizarcliente)
+clientes.atualizarcliente.clicked.connect(atualizarclientenodb)
+clientes.deletarregistro.clicked.connect(deletarregistro)
 
 descricaoDopagamento = pd.read_sql('select descricao from tipo_pagamento', conexao)# Pegando o Tipo de Pafamento 
 TelaPrincipal.comboBox_6.addItems(descricaoDopagamento['descricao'])
