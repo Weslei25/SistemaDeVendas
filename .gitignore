@@ -598,6 +598,7 @@ FodyWeavers.xsd
 *.qt_for_python
 *Config
 *controllers/
+*venv
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
