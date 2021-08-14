@@ -235,7 +235,7 @@ def cadcliente():
             df = pd.read_sql(f"SELECT idestado from estados where sigla = '{estadodocliente}'", conexao)
             if df.empty == True:
                 aviso.show()
-                aviso.textBrowser.setText("Informe o nome da bairro.")
+                aviso.textBrowser.setText("Informe Estado.")
             else:
                 estadodocliente = (df['idestado'][0])
             
@@ -255,8 +255,14 @@ def cadcliente():
                 return
 
             
-            df = pd.read_sql(f"SELECT idbairro FROM bairros WHERE nome = '{bairrodocliente}'", conexao)
-            bairrodocliente = (df['idbairro'][0])
+            pegaridbairro = pd.read_sql(f"SELECT idbairro FROM bairros WHERE nome = '{bairrodocliente}'", conexao)
+            if pegaridbairro.empty ==True:
+                print(cidadedocliente, estadodocliente)
+                cursor.execute(f"""INSERT INTO bairros (cidades_estados_idestado, cidades_idcidade, nome) VALUES({estadodocliente}, {cidadedocliente}, '{bairrodocliente}');""")
+                conexao.commit()
+                return
+            else:
+                pegaridbairro = (pegaridbairro['idbairro'][0])
             print(bairrodocliente)
             
             
@@ -313,7 +319,7 @@ def cadcliente():
                 {}, {}, {}, '{}', '{}', 'F', '{}', '{}', '{}', '{}',
                 '{}', '{}', '{}', '{}', '{}', '{}') """.format(
                 cidadedocliente, estadodocliente,
-                bairrodocliente,
+                pegaridbairro,
                 nomedocliente,
                 cpfdocliente,
                 categoriadocliente,
@@ -1034,7 +1040,8 @@ def arquivoaserenviado():
         salvar = QtWidgets.QFileDialog.getOpenFileName()[0]# Pegando path co arquivo a ser enviado
         telaDeEmail.lineEdit.setText(salvar)# Setando o caminho em um lineEdit
     except Exception as erro:
-        print("\n{}\n".format(erro))
+        aviso.show()
+        aviso.textBrowser.setText('{}'.format(erro))
 
 def enviaremailcomarquivo():
     
