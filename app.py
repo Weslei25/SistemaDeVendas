@@ -7,8 +7,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from PyQt5.QtGui import * 
-from PyQt5.QtCore import *
 from pycep_correios import get_address_from_cep, WebService, exceptions
 import requests
 import datetime as dt
@@ -109,12 +107,19 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
             arquivo.write('Sistema_De_Vendas: Aplicação conectando ao banco de dados\n')
             arquivo.write('Sistema_De_Vendas: Aplicação conectou ao banco de dados\n')
             arquivo.write('Sistema_De_Vendas: Aplicação Entrou\n')
+        
 
         def catalogarProdutos():
             
             cursor = conexao.cursor()
-            cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), preco, observacao, marca,
-            referencia from produtos order by idproduto DESC limit 1200""")
+            sql_cataloga = """
+            SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, marca,referencia
+            from produtos
+            order by idproduto DESC limit 1200"""
+            
+            cursor.execute(sql_cataloga)
+            with open('sql\\SQL_catalogarProdutos.sql', 'w') as arquivo:
+                arquivo.write(f'{sql_cataloga}')
 
             dados_lidos1 = cursor.fetchall()
             TelaPrincipal.tableWidget.setRowCount(len(dados_lidos1))
@@ -125,9 +130,10 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
                         i, j, QtWidgets.QTableWidgetItem(str(dados_lidos1[i][j])))
 
         catalogarProdutos()
+
         with open('logs\\Sistema_De_Vendas_catalogaprodutos.txt', 'w') as arquivo:
             arquivo.write('Sistema_De_Vendas: Aplicação catalogou todos os produtos\n')
-            
+        
 
         cursor = conexao.cursor()
         cursor.execute("""select idvenda, nomecliente,
@@ -183,29 +189,43 @@ def virificacep():
             arquivo.write('{}\n'.format(endereco))
     
     except exceptions.CEPNotFound as notfound:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(notfound))
         QMessageBox.warning(aviso,"Aviso", "{}".format(notfound))
         return
 
     except exceptions.ConnectionError as conctcaoerro:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(conctcaoerro))
         QMessageBox.warning(aviso, "Aviso", "{}".format(conctcaoerro))
         return
 
     except exceptions.Timeout as tempo:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(tempo))
         QMessageBox.warning(aviso, "Aviso", "{}".format(tempo))
         return
 
     except exceptions.HTTPError as erro:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erro))
         QMessageBox.warning(aviso, "Aviso", "{}".format(erro))
         return
 
     except exceptions.BaseException as base:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(base))
         QMessageBox.warning(aviso, "Aviso", "{}".format(base))
         return
 
     except ValueError as erru:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erru))
         QMessageBox.warning(aviso, "Aviso", "{}".format(erru))
         return
     except Exception as erro:
+        with open('logs\\Sistema_De_Vendas_ErroConsultaCEP.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erro))
         QMessageBox.warning(aviso, "Aviso", "{}".format(erro))
         
 
@@ -295,8 +315,6 @@ def cadcliente():
                 QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o CPF do cliente.")
                 return
 
-
-
             if categoriadocliente == 'OCASIONAL':
                 categoriadocliente = 'OCA'
 
@@ -339,7 +357,9 @@ def cadcliente():
             if verificaCpfExiste == cpfdocliente:
                 QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado")
             return
-    except Exception as e:
+    except Exception as erro:
+        with open('logs\\Sistema_De_Vendas_ErroCadastroCliente.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erro))
         QMessageBox.warning(aviso,"Aviso", "{}".format(e))
         return
 
@@ -363,8 +383,6 @@ def geraRelatorioVendasEntSaida():
         elif ent_sai == 'Saida':
             ent_sai =  int(2)
         
-
-
         df = pd.read_sql("""select idvenda, tipo_negociacao_idtipo_negociacao, vendedores_usuarios_idusuarios, vendedores_idvendedor, (DATE_FORMAT(data_venda , '%d/%m/%Y')), vlr_total, nomecliente, nomeproduto,
             quantproduto, precoproduto, descproduto, id_tipopagamento, vezesdeparcelas,
             observacao, dat_venv_fatuura, entrada_saida
@@ -380,11 +398,17 @@ def geraRelatorioVendasEntSaida():
 
         tela_progresso.show()
         tela_progresso.progressBar.setValue(100)
-    except ValueError as er:
-        QMessageBox.warning(aviso,"Aviso", "{}".format(er))
+    except ValueError as erros:
         
+        with open('logs\\Sistema_De_Vendas_ErroGeraRelatorio.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erros))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(erros))
+    
     except Exception as erro:
-        QMessageBox.information(aviso,"Aviso", "{}".format(erro))
+        
+        with open('logs\\Sistema_De_Vendas_ErroGeraRelatorio.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(erro))
 
 def gerarrelatorioprodutos():
     
@@ -413,11 +437,18 @@ def gerarrelatorioprodutos():
 
         tela_progresso.show()
         tela_progresso.progressBar.setValue(100)
-    except ValueError as er:
-        QMessageBox.information(aviso,"Informação", "{}".format(er))
+    except ValueError as errro:
         
+        with open('logs\\Sistema_De_Vendas_gerarrelatorioprodutos.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(errro))
+        QMessageBox.information(aviso,"Informação", "{}".format(errro))
+        return
     except Exception as eerro:
+        
+        with open('logs\\Sistema_De_Vendas_gerarrelatorioprodutos.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(eerro))
         QMessageBox.information(aviso,"Informação", "{}".format(eerro))
+        return
 
 def fecharbarradeprogreco():
     
@@ -472,6 +503,9 @@ def vendasAvista():
                     i, j, QtWidgets.QTableWidgetItem(str(sqlVendasAvista[i][j])))
         cursor.close()
     except Exception as erro:
+        
+        with open('logs\\Sistema_De_Vendas_vendasAvista.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
         QMessageBox.warning(aviso,"Aviso", "{}".format(erro))
         return
 
@@ -485,22 +519,28 @@ def enviaemail():
 def realizarvendas():
     
     telaDeVendas.show()
+    try:
+        pegaridusuario = pd.read_sql("select idusuarios from log_usuario where idusuarios is not null order by id_logusuario DESC limit 1", conexao)
+        pegaridusuario = (pegaridusuario['idusuarios'][0])
 
-    pegaridusuario = pd.read_sql("select idusuarios from log_usuario where idusuarios is not null order by id_logusuario DESC limit 1", conexao)
-    pegaridusuario = (pegaridusuario['idusuarios'][0])
+        df = pd.read_sql(f"select nome from usuarios where idusuarios='{pegaridusuario}'", conexao)
+        pegaridusuario = str(df['nome'][0])
 
-    df = pd.read_sql(f"select nome from usuarios where idusuarios='{pegaridusuario}'", conexao)
-    pegaridusuario = str(df['nome'][0])
-
-    telaDeVendas.nomevendedor.setText(pegaridusuario)
-
-
+        telaDeVendas.nomevendedor.setText(pegaridusuario)
+    except Exception as erro:
+        
+        with open('logs\\Sistema_De_Vendas_realizarvendas.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
+        QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
 def vender_produto():
 
     try:
         pass
-    except Exception as e:
-        QMessageBox.warning(aviso, 'Aviso','{}'.format(e))
+    except Exception as erro:
+        
+        with open('logs\\Sistema_De_Vendas_vender_produto.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
+        QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
         return
         
 
@@ -510,6 +550,7 @@ def cadastrar_produtos():
 
         datadaentrada = dt.datetime.now()
         
+        
         estoque = (TelaPrincipal.estoque.text())
         descricao = str(TelaPrincipal.descricao.text())
         preco = (TelaPrincipal.preco.text())
@@ -518,69 +559,65 @@ def cadastrar_produtos():
         marca = str(TelaPrincipal.marca.text())
         categoria = str(TelaPrincipal.categotiaproduto.currentText())
 
-        if categoria == "Alimentos":
-            categoria = "1"
 
-        elif categoria == "Teste":
-            categoria = "2"
+        pegardescicao = pd.read_sql(f"select descricao from produtos p where descricao ='{descricao}'", conexao)
+        if pegardescicao.empty == True:
 
-        elif categoria == "Uso interno":
-            categoria = "3"
+            pegarcategoria = pd.read_sql(f"select idcategoria from categorias c where descricao ='{categoria}'", conexao)
+            categoria = (pegarcategoria['idcategoria'][0])
+            
+            if not estoque:
+                QMessageBox.information(aviso, 'Aviso','Preencha o campo ESTOQUE.')
+                return
+            cursor = conexao.cursor()
+            SQL_produtos = """INSERT INTO produtos (categorias_idcategoria, descricao, preco, observacao,marca,referencia, dt_entrada)
+            VALUES  ('{}', '{}', {}, '{}','{}', '{}', '{}')""".format(categoria, descricao, preco, observacao, marca, ref, datadaentrada)
+            if not preco:
+                QMessageBox.information(aviso, 'Aviso','Preencha os campos vazios EX: Preço')
+                return
+            elif not descricao:
+                QMessageBox.information(aviso, 'Aviso','Capo DESCRIÇÃO é obrigatorio.')
+                return
+            cursor.execute(SQL_produtos)# Executando o sql para cadastrar o novo produto
+            conexao.commit()
+    
+            cursor.execute("SELECT MAX(idproduto) FROM produtos")
+            produtoult = cursor.fetchall()
+            tratadoproduto = produtoult[0][0]
+            cursor.execute("INSERT INTO estoque (estoque, produtos_idproduto) values ({},{})".format(estoque,tratadoproduto))
+            conexao.commit()
+            
+            cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, marca,
+            referencia from produtos order by idproduto DESC limit 1200""")
+            sql_tprodu = cursor.fetchall()
 
-        elif categoria == "Perfumaria":
-            categoria = "4"
+            TelaPrincipal.tableWidget.setRowCount(len(sql_tprodu))
+            TelaPrincipal.tableWidget.setColumnCount(7)
 
-        elif categoria == "Roupa":
-            categoria = "5"
+            for i in range(0, len(sql_tprodu)):
+                for j in range(0, 7):
+                    TelaPrincipal.tableWidget.setItem(
+                        i, j, QtWidgets.QTableWidgetItem(str(sql_tprodu[i][j])))
 
+            cursor.close()
+
+            """
+            TelaPrincipal.lineEdit_2.setText("")
+            TelaPrincipal.lineEdit_3.setText("")
+            TelaPrincipal.lineEdit_4.setText("")
+            TelaPrincipal.lineEdit_5.setText("")
+            TelaPrincipal.lineEdit_9.setText("")
+            """
         else:
-            categoria = "5"
+            descricao = (pegardescicao['descricao'][0])
+            QMessageBox.warning(aviso, 'Aviso','Produto ja cadastrado anteriormente.   \n*{}*\n Caso não seja o mesmo produto adicione uma descrição diferente'.format(descricao))
+            
 
-
-        if not estoque:
-            QMessageBox.information(aviso, 'Aviso','Preencha o campo ESTOQUE.')
-            return
-        cursor = conexao.cursor()
-        SQL_produtos = """INSERT INTO produtos (categorias_idcategoria, descricao, preco, observacao,marca,referencia, dt_entrada)
-         VALUES  ('{}', '{}', {}, '{}','{}', '{}', '{}')""".format(categoria, descricao, preco, observacao, marca, ref, datadaentrada)
-        if not preco:
-            QMessageBox.information(aviso, 'Aviso','Preencha os campos vazios EX: Preço')
-            return
-        elif not descricao:
-            QMessageBox.information(aviso, 'Aviso','Capo DESCRIÇÃO é obrigatorio.')
-            return
-        cursor.execute(SQL_produtos)# Executando o sql para cadastrar o novo produto
-        conexao.commit()
- 
-        cursor.execute("SELECT MAX(idproduto) FROM produtos")
-        produtoult = cursor.fetchall()
-        tratadoproduto = produtoult[0][0]
-        cursor.execute("INSERT INTO estoque (estoque, produtos_idproduto) values ({},{})".format(estoque,tratadoproduto))
-        conexao.commit()
-        
-        cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), preco, observacao, marca,
-         referencia from produtos order by idproduto DESC limit 1200""")
-        sql_tprodu = cursor.fetchall()
-
-        TelaPrincipal.tableWidget.setRowCount(len(sql_tprodu))
-        TelaPrincipal.tableWidget.setColumnCount(7)
-
-        for i in range(0, len(sql_tprodu)):
-            for j in range(0, 7):
-                TelaPrincipal.tableWidget.setItem(
-                    i, j, QtWidgets.QTableWidgetItem(str(sql_tprodu[i][j])))
-
-        cursor.close()
-
-        """
-        TelaPrincipal.lineEdit_2.setText("")
-        TelaPrincipal.lineEdit_3.setText("")
-        TelaPrincipal.lineEdit_4.setText("")
-        TelaPrincipal.lineEdit_5.setText("")
-        TelaPrincipal.lineEdit_9.setText("")
-        """
     except Exception as erro:
-        QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
+        
+        with open('logs\\Sistema_De_Vendas_cadastrar_produtos.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
+        QMessageBox.critical(aviso, 'Aviso','{}'.format(erro))
         return
 
 def vendas_parceladas():
@@ -617,6 +654,10 @@ def vendas_parceladas():
         cursor.close()
 
     except Exception as erro:
+    
+        with open('logs\\Sistema_De_Vendas_vendas_parceladas.txt', 'w') as arquivo:    
+            arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
+        QMessageBox.critical(aviso, 'Aviso','{}'.format(erro))
         QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
         return
 
@@ -626,7 +667,7 @@ def deletarProduto():
         codigoestoque = TelaPrincipal.codEstoque.text()
         codigoDoproduto = TelaPrincipal.codProduto_2.text()
         if not codigoestoque:
-            QMessageBox.information(aviso, 'Aviso','Preencha o campo Codigo/Estoque')
+            QMessageBox.information(aviso, 'Aviso','Para atualizar o estoque de um produto é necessario\n passar o codigo do PRODUTO e o codigo do ESTOQUE referente\n ao produto')
             return
         elif not codigoDoproduto:
             QMessageBox.information(aviso, 'Aviso','Preencha o campo Codigo/Produto')
@@ -816,7 +857,7 @@ def pesquisarProduto():
     try:
         pesquisar = TelaPrincipal.lineEdit_12.text()
         cursor = conexao.cursor()
-        cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), preco, observacao, marca,
+        cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, marca,
          referencia from produtos where descricao like '{}'""".format(pesquisar))
 
         sqlVerificacaoProduto = cursor.fetchall()
@@ -830,7 +871,9 @@ def pesquisarProduto():
 
         cursor.close()
     except Exception as erros:
-        QMessageBox.warning(aviso, 'Atenção', '{}'.format(Erros))
+        with open('logs\\Sistema_De_Vendas_ErroPesquisarProdutos.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erros))
+        QMessageBox.warning(aviso, 'Atenção', '{}'.format(erros))
         return
 
 def cadastrar_empresa():
@@ -895,12 +938,13 @@ def cadastrar_empresa():
             VerificaEmpresa = (VerificaEmpresa['cnpj'][0])
             if VerificaEmpresa == cnpj:
                 QMessageBox.warning(aviso, 'Informação', 'Empresa já cadastrada anteriormente\n{}'.format(razao_social))
-                qInfo("{}".format(VerificaEmpresa))
 
                 return 
         return
     except Exception as erro:
-        qDebug('{}'.format(erro))
+        
+        with open('logs\\Sistema_De_Vendas_ErroCadastarEmpresa.txt', 'w') as arquivo:
+            arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erro))
         QMessageBox.warning(aviso, 'Informação', '{}'.format(erro))
    
 
@@ -923,7 +967,7 @@ def enviaremailcomarquivo():
         emailDestinatario = telaDeEmail.lineEdit_2.text() # pego o destinatario 
         anexodoemail = telaDeEmail.lineEdit.text()# Recebo o anexo do email se tiver.
         corpoDoEmail = telaDeEmail.textEdit.toPlainText()# QTextEdit.toPlainText é a propriedade que aceita a quebra de linha no qtextEdit
-        
+       
         fromaddr = "sistemadevendasecadastro2522@gmail.com"# Email remetente
         toaddr = emailDestinatario # Email destinatario
         msg = MIMEMultipart()
@@ -957,7 +1001,7 @@ def enviaremailcomarquivo():
         server.sendmail(fromaddr, toaddr, text)# Finalizando envio email
         server.quit()
         
-        QMessageBox.information(TelaPrincipal,"Aviso", "Email enviado com sucesso para {}".format(emailDestinatario))
+        QMessageBox.information(TelaPrincipal,"Aviso", "Email enviado com sucesso para \n{}".format(emailDestinatario))
     except Exception as erro:
         QMessageBox.warning(aviso,"Aviso", "{}".format(erro))
         return
@@ -976,14 +1020,14 @@ def deletarregistro():
 app = QtWidgets.QApplication([]) # Criando um QApplication que faz a construcao da minha aplicacao.
 app.setStyle ( 'fusion' )
 # Carregar as telas.
-TelaPrincipal = uic.loadUi("views\\TelaPrincipalDoSistema.ui")
-aviso = uic.loadUi("views\\avisosnovos.ui")
-tela_progresso = uic.loadUi("views\\barradeprogreço.ui")
-telaDeLogin = uic.loadUi("views\\teladelogin.ui")
-telaDeEmail = uic.loadUi("views\\telaDeEmail2.ui")
-telaDeVendas = uic.loadUi("views\\teladevendas.ui")
-tela_cadastro = uic.loadUi("Views\\tela_cadastro.ui")
-clientes = uic.loadUi("Views\\Clientes.ui")
+TelaPrincipal = uic.loadUi("Views/TelaPrincipalDoSistema.ui")
+aviso = uic.loadUi("Views/avisosnovos.ui")
+tela_progresso = uic.loadUi("views/barradeprogreço.ui")
+telaDeLogin = uic.loadUi("Views/teladelogin.ui")
+telaDeEmail = uic.loadUi("Views/telaDeEmail2.ui")
+telaDeVendas = uic.loadUi("Views/teladevendas.ui")
+tela_cadastro = uic.loadUi("Views/tela_cadastro.ui")
+clientes = uic.loadUi("Views/Clientes.ui")
 
 TelaPrincipal.consultar_cnpj.clicked.connect(consultarcnpj)# Conectando o click dos botões nas funções
 TelaPrincipal.verificaCep.clicked.connect(virificacep)
@@ -1017,7 +1061,7 @@ descricaoDaEntrsaida = pd.read_sql('SELECT descricao FROM etrada_saida;', conexa
 TelaPrincipal.comboBox_8.addItems(descricaoDaEntrsaida['descricao'])
 
 descreicaoDaCategotia = pd.read_sql('select descricao from categorias', conexao)# Pegando o as categorias
-TelaPrincipal.comboBox_7.addItems(descreicaoDaCategotia['descricao'])
+TelaPrincipal.categotiaproduto.addItems(descreicaoDaCategotia['descricao'])
 
 telaDeLogin.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)# Inplementando campo senha
 telaDeLogin.show()
