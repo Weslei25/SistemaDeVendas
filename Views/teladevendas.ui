@@ -137,8 +137,7 @@ color: rgb(0, 0, 0);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>2.00</string>
@@ -208,8 +207,7 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>2</string>
@@ -423,8 +421,7 @@ color: rgb(0, 0, 0);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>0</string>
@@ -450,8 +447,7 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>0</string>
@@ -465,7 +461,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>680</x>
-       <y>44</y>
+       <y>14</y>
        <width>221</width>
        <height>81</height>
       </rect>
@@ -545,8 +541,7 @@ color: rgb(0, 0, 0);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>                        0,00  </string>
@@ -742,112 +737,67 @@ color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_11">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
+    <widget class="QPushButton" name="finalizar_2">
      <property name="geometry">
       <rect>
-       <x>680</x>
-       <y>140</y>
-       <width>221</width>
-       <height>61</height>
+       <x>690</x>
+       <y>110</y>
+       <width>91</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>15</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
+       <pointsize>10</pointsize>
       </font>
      </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 170, 255);</string>
      </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
+     <property name="text">
+      <string>Finalizar</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Imagens/vendaavista.ico</normaloff>../Imagens/vendaavista.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cancelar_2">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>110</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 127);
-background-color: rgb(231, 231, 231);
-color: rgb(0, 0, 0);
-
-</string>
+      <string notr="true">background-color: rgb(85, 170, 255);</string>
      </property>
-     <property name="inputMethodHints">
-      <set>Qt::ImhNone</set>
+     <property name="text">
+      <string>Cancelar</string>
      </property>
-     <property name="title">
-      <string/>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Imagens/Atualizar.png</normaloff>../Imagens/Atualizar.png</iconset>
      </property>
-     <property name="flat">
-      <bool>false</bool>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>30</height>
+      </size>
      </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <widget class="QPushButton" name="cancelar_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(85, 170, 255);</string>
-      </property>
-      <property name="text">
-       <string>Cancelar</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../Imagens/Atualizar.png</normaloff>../Imagens/Atualizar.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>32</width>
-        <height>30</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="finalizar_2">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(85, 170, 255);</string>
-      </property>
-      <property name="text">
-       <string>Finalizar</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../Imagens/vendaavista.ico</normaloff>../Imagens/vendaavista.ico</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>30</width>
-        <height>32</height>
-       </size>
-      </property>
-     </widget>
     </widget>
    </widget>
    <widget class="QFrame" name="frame_11">
@@ -952,8 +902,7 @@ color: rgb(0, 0, 0);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Motor de CBX-250</string>
@@ -1000,8 +949,7 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>287621518202017646</string>
@@ -1048,8 +996,7 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>01</string>
@@ -1259,8 +1206,7 @@ color: rgb(0, 0, 0);
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Weslei Santos De Jesus</string>
@@ -1307,8 +1253,7 @@ color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>07649765432</string>
@@ -1322,9 +1267,9 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>766</x>
-       <y>10</y>
+       <y>60</y>
        <width>141</width>
-       <height>101</height>
+       <height>91</height>
       </rect>
      </property>
      <property name="font">
@@ -1379,9 +1324,9 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>770</x>
-       <y>112</y>
+       <y>153</y>
        <width>139</width>
-       <height>14</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -1428,6 +1373,9 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="acceptDrops">
       <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 170, 255);</string>
      </property>
      <property name="sizeAdjustPolicy">
       <enum>QAbstractScrollArea::AdjustIgnored</enum>
@@ -1709,125 +1657,10 @@ color: rgb(255, 255, 255);</string>
   <tabstop>radioButton_10</tabstop>
   <tabstop>radioButton_11</tabstop>
   <tabstop>radioButton_12</tabstop>
-  <tabstop>cancelar_2</tabstop>
-  <tabstop>finalizar_2</tabstop>
   <tabstop>total_2</tabstop>
   <tabstop>pushButton_4</tabstop>
   <tabstop>pushButton_5</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>cliente_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>582</x>
-     <y>584</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>253</x>
-     <y>103</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>cpf_cnpj_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>610</x>
-     <y>589</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>479</x>
-     <y>105</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>produto_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>613</x>
-     <y>589</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>163</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>quantidade_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>582</x>
-     <y>595</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>332</x>
-     <y>169</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>codigo_de_barras_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>586</x>
-     <y>590</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>579</x>
-     <y>166</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>desconto_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>617</x>
-     <y>591</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>118</x>
-     <y>449</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancelar_2</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>porcento_2</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>600</x>
-     <y>598</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>206</x>
-     <y>454</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

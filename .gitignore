@@ -599,6 +599,8 @@ FodyWeavers.xsd
 *Config
 *controllers/
 *venv
+*models
+*sql
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 

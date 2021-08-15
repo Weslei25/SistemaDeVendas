@@ -235,7 +235,8 @@ background-color: rgb(84, 126, 126);</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_60">
@@ -354,9 +355,9 @@ background-color: rgb(84, 126, 126);</string>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="geometry">
           <rect>
-           <x>760</x>
+           <x>750</x>
            <y>10</y>
-           <width>521</width>
+           <width>541</width>
            <height>131</height>
           </rect>
          </property>
@@ -447,7 +448,7 @@ background-color: rgb(84, 126, 126);</string>
            <rect>
             <x>100</x>
             <y>80</y>
-            <width>401</width>
+            <width>311</width>
             <height>20</height>
            </rect>
           </property>
@@ -467,10 +468,10 @@ background-color: rgb(84, 126, 126);</string>
          <widget class="QPushButton" name="realizarVendas_2">
           <property name="geometry">
            <rect>
-            <x>410</x>
+            <x>415</x>
             <y>10</y>
-            <width>91</width>
-            <height>61</height>
+            <width>111</width>
+            <height>111</height>
            </rect>
           </property>
           <property name="font">
@@ -540,7 +541,7 @@ background-color: rgb(84, 126, 126);</string>
 background-color: rgb(84, 126, 126);</string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="icon">
@@ -1208,7 +1209,8 @@ background-color: rgb(84, 126, 126);</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
            </property>
           </widget>
           <widget class="QLineEdit" name="telResid">
@@ -3969,7 +3971,8 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
             </property>
            </widget>
            <widget class="QPushButton" name="pushButton_9">
@@ -4045,7 +4048,8 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
             </property>
            </widget>
            <widget class="QLabel" name="label_77">
@@ -4089,7 +4093,8 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
             </property>
            </widget>
           </widget>
@@ -4345,9 +4350,9 @@ background-color: rgb(85, 170, 255);</string>
             <property name="geometry">
              <rect>
               <x>510</x>
-              <y>40</y>
+              <y>17</y>
               <width>111</width>
-              <height>71</height>
+              <height>101</height>
              </rect>
             </property>
             <property name="font">
@@ -4480,9 +4485,9 @@ color: rgb(0, 0, 0);</string>
             <property name="geometry">
              <rect>
               <x>360</x>
-              <y>40</y>
+              <y>17</y>
               <width>121</width>
-              <height>71</height>
+              <height>101</height>
              </rect>
             </property>
             <property name="font">
