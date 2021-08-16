@@ -1,5 +1,8 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import * 
+from PyQt5.QtGui import * 
+from PyQt5.QtCore import *
+#from PyQt5.QtWidgets import QMessageBox
 import mysql.connector
 import win32com.client as win32
 import smtplib
@@ -35,7 +38,7 @@ TotalVendas
 
 
 try:
-    global conexao
+    
     with open('Config\\config.json') as f:# Abrindo o arquivo que contem a string de conexao com o DB
         entrada = json.load(f)# lendo o json e armazenando em uma variavel
     
@@ -88,12 +91,12 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
             telaDeLogin.label_4.setText("Preencha o campo SENHA!")
             return
 
-        if senha == verificaSenha:
+        if senha == verificaSenha and nome_usuario == verificaUsuario:
             telaDeLogin.close()
             TelaPrincipal.show()
         else:
             telaDeLogin.label_4.setText("Usuario ou Senha incorretos!")
-        
+            return
         TelaPrincipal.usuarios.setText('Usuario Logado: {}'.format(nome_usuario))
         datahoje = dt.datetime.now()
 
@@ -254,6 +257,7 @@ def cadcliente():
         rgdocliente = str(TelaPrincipal.rgCliente.text())
         sitedocliente = str(TelaPrincipal.siteCliente.text())
         emaildocliente = str(TelaPrincipal.lineEdit_50.text())
+        informacaocliente = str(TelaPrincipal.infoCliente.toPlainText())
 
         verificaCpfExiste = pd.read_sql(f"""select cpf_cnpj from parceiros p where cpf_cnpj ='{cpfdocliente}';""", conexao)
         if verificaCpfExiste.empty ==True:
@@ -328,9 +332,9 @@ def cadcliente():
             sql_cliente = """ insert into parceiros (bairros_cidades_idcidade, bairros_cidades_estados_idestado,
             bairros_idbairro, nomeparc, cpf_cnpj, tipo_pessoa, cliente,
             cep, rua,numero, complemento, rg, tel_principal,
-            tel_secund, email, site) values(
+            tel_secund, email, site, observacao) values(
                 {}, {}, {}, '{}', '{}', 'F', '{}', '{}', '{}', '{}',
-                '{}', '{}', '{}', '{}', '{}', '{}') """.format(
+                '{}', '{}', '{}', '{}', '{}', '{}', '{}') """.format(
                 cidadedocliente, estadodocliente,
                 pegaridbairro,
                 nomedocliente,
@@ -344,7 +348,7 @@ def cadcliente():
                 celulardocliente,
                 telefoneresidencial,
                 emaildocliente,
-                sitedocliente)
+                sitedocliente, informacaocliente)
 
             cursor.execute(sql_cliente)
             conexao.commit()
@@ -360,7 +364,7 @@ def cadcliente():
     except Exception as erro:
         with open('logs\\Sistema_De_Vendas_ErroCadastroCliente.txt', 'w') as arquivo:
             arquivo.write('Sistema_De_Vendas: Erro: \n{}'.format(erro))
-        QMessageBox.warning(aviso,"Aviso", "{}".format(e))
+        QMessageBox.warning(aviso,"Aviso", "{}".format(erro))
         return
 
 
