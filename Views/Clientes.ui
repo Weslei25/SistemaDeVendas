@@ -57,6 +57,35 @@
           <enum>QFrame::Plain</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_15">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Nome do Cliente</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_38">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0" colspan="2">
            <widget class="QLabel" name="label_2">
             <property name="font">
@@ -81,38 +110,12 @@
             <property name="styleSheet">
              <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QLabel" name="label_38">
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
+            <property name="placeholderText">
              <string>(Auto Sequêncial)</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_15">
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Nome do Cliente</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1" colspan="3">
+          <item row="1" column="1" colspan="4">
            <widget class="QLineEdit" name="nomeCliente_2">
             <property name="font">
              <font>
@@ -127,6 +130,19 @@
              <string>Weslei santos de jesus</string>
             </property>
            </widget>
+          </item>
+          <item row="0" column="3">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -346,6 +362,12 @@
           </item>
           <item row="2" column="5" rowspan="2" colspan="2">
            <widget class="QPushButton" name="atualizarcliente">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -412,19 +434,6 @@
             </property>
             <property name="text">
              <string>Categotia de Cliente:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="QLabel" name="label_60">
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Tel Comercia:</string>
             </property>
            </widget>
           </item>
@@ -505,7 +514,20 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="2" colspan="3">
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_60">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Tel Comercial:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="4">
            <widget class="QLineEdit" name="telCom_2">
             <property name="font">
              <font>

@@ -1026,7 +1026,8 @@ color: rgb(255, 255, 255);</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(85, 170, 255);</string>
+      <string notr="true">background-color: rgb(85, 170, 255);
+background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="sizeAdjustPolicy">
       <enum>QAbstractScrollArea::AdjustIgnored</enum>

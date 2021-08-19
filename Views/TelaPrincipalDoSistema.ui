@@ -54,7 +54,7 @@
 background-color: rgb(84, 126, 126);</string>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tab_4">
           <attribute name="icon">
@@ -153,7 +153,7 @@ background-color: rgb(84, 126, 126);</string>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Telefone Comercia:l</string>
+                    <string>Telefone Comercial:</string>
                    </property>
                   </widget>
                  </item>
@@ -673,143 +673,14 @@ color: rgb(0, 0, 0);</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
-                  <widget class="QLineEdit" name="cpfCliente">
-                   <property name="font">
-                    <font>
-                     <family>Arial</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>27996646312</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="label_52">
-                   <property name="font">
-                    <font>
-                     <family>Arial</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Insc.Estadual</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QLineEdit" name="inscrCliente">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Arial</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="4" rowspan="2">
-                  <widget class="QPushButton" name="salvarCliente">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
-                   </property>
-                   <property name="focusPolicy">
-                    <enum>Qt::WheelFocus</enum>
-                   </property>
-                   <property name="toolTip">
-                    <string>Salvar novo Cliente</string>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(85, 170, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>Salvar</string>
-                   </property>
-                   <property name="icon">
-                    <iconset>
-                     <normaloff>../Imagens/Savar.png</normaloff>../Imagens/Savar.png</iconset>
-                   </property>
-                   <property name="iconSize">
-                    <size>
-                     <width>81</width>
-                     <height>31</height>
-                    </size>
-                   </property>
-                   <property name="autoDefault">
-                    <bool>true</bool>
-                   </property>
-                   <property name="default">
-                    <bool>true</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="5" rowspan="2">
-                  <widget class="QPushButton" name="salvarCliente_2">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
-                   </property>
-                   <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
-                   </property>
-                   <property name="toolTip">
-                    <string>Limpar Formulario</string>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(85, 170, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>Limpar</string>
-                   </property>
-                   <property name="icon">
-                    <iconset>
-                     <normaloff>../Imagens/Atualizar.png</normaloff>../Imagens/Atualizar.png</iconset>
-                   </property>
-                   <property name="iconSize">
+                  <widget class="QPushButton" name="salvarCliente_3">
+                   <property name="maximumSize">
                     <size>
-                     <width>81</width>
-                     <height>31</height>
+                     <width>111</width>
+                     <height>111</height>
                     </size>
                    </property>
-                   <property name="autoDefault">
-                    <bool>true</bool>
-                   </property>
-                   <property name="default">
-                    <bool>true</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="6" rowspan="2">
-                  <widget class="QPushButton" name="salvarCliente_3">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -853,6 +724,19 @@ color: rgb(0, 0, 0);</string>
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="label_52">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Insc.Estadual</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_51">
                    <property name="font">
@@ -863,6 +747,89 @@ color: rgb(0, 0, 0);</string>
                    </property>
                    <property name="text">
                     <string>RG:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="cpfCliente">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>27996646312</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QLineEdit" name="incriMunoci">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4" rowspan="2">
+                  <widget class="QPushButton" name="salvarCliente">
+                   <property name="maximumSize">
+                    <size>
+                     <width>111</width>
+                     <height>111</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>50</weight>
+                     <bold>false</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::WheelFocus</enum>
+                   </property>
+                   <property name="toolTip">
+                    <string>Salvar novo Cliente</string>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(85, 170, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Salvar</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>../Imagens/Savar.png</normaloff>../Imagens/Savar.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>81</width>
+                     <height>31</height>
+                    </size>
+                   </property>
+                   <property name="autoDefault">
+                    <bool>true</bool>
+                   </property>
+                   <property name="default">
+                    <bool>true</bool>
+                   </property>
+                   <property name="flat">
+                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -882,21 +849,8 @@ color: rgb(0, 0, 0);</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="2">
-                  <widget class="QLabel" name="label_53">
-                   <property name="font">
-                    <font>
-                     <family>Arial</family>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Insc.Municipal</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="3">
-                  <widget class="QLineEdit" name="incriMunoci">
+                 <item row="0" column="3">
+                  <widget class="QLineEdit" name="inscrCliente">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
@@ -908,6 +862,19 @@ color: rgb(0, 0, 0);</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLabel" name="label_53">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Insc.Municipal</string>
                    </property>
                   </widget>
                  </item>
@@ -1797,7 +1764,7 @@ background-color: rgb(255, 255, 255);</string>
                   <widget class="QPushButton" name="salvarCliente_4">
                    <property name="maximumSize">
                     <size>
-                     <width>82</width>
+                     <width>86</width>
                      <height>70</height>
                     </size>
                    </property>
@@ -1821,11 +1788,11 @@ background-color: rgb(255, 255, 255);</string>
                     <string notr="true">background-color: rgb(85, 170, 255);</string>
                    </property>
                    <property name="text">
-                    <string>Limpar</string>
+                    <string>Consultar</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/Atualizar.png</normaloff>../Imagens/Atualizar.png</iconset>
+                     <normaloff>../Imagens/visao-da-empresa.png</normaloff>../Imagens/visao-da-empresa.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
