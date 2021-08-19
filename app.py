@@ -51,9 +51,10 @@ try:
         database=entrada["database"],
         auth_plugin=entrada["auth_plugin"]
     )
+    dataagoraservico = dt.datetime.now()
     with open('logs\\Sistema_De_Vendas_login.txt', 'w') as arquivo:
-        arquivo.write('Sistema_De_Vendas: Aplicação conectando ao banco de dados\n')
-        arquivo.write('Sistema_De_Vendas: Aplicação conectou ao banco de dados\n')
+        arquivo.write('{}:Sistema_De_Vendas: Aplicação conectando ao banco de dados\n'.format(dataagoraservico))
+        arquivo.write('{}:Sistema_De_Vendas: Aplicação conectou ao banco de dados\n'.format(dataagoraservico))
 except Exception as erro:
     with open('logs\\Sistema_De_Vendas_erro.txt', 'w') as arquivo:
         arquivo.write('Sistema_De_Vendas: "Erro: \n"{}\n'.format(erro))# Abrindo o arquivo que contem a string de conexao com o DB
@@ -359,7 +360,7 @@ def cadcliente():
         else: 
             verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
             if verificaCpfExiste == cpfdocliente:
-                QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado")
+                QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado anteritormente \nCPF {}".format(verificaCpfExiste))
             return
     except Exception as erro:
         with open('logs\\Sistema_De_Vendas_ErroCadastroCliente.txt', 'w') as arquivo:
@@ -516,6 +517,7 @@ def vendasAvista():
 def enviaemail():
 
     telaDeEmail.show()
+
     pass
 
 
@@ -809,6 +811,7 @@ def recuperasenhalogin():
 def tela_cadastrousuario():
 
     tela_cadastro.show()
+    pass
 
 def cadastrar_usuario():
 
