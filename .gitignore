@@ -601,6 +601,8 @@ FodyWeavers.xsd
 *venv
 *models
 *sql
+*dist_1
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
