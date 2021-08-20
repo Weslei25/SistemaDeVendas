@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import * 
 from PyQt5.QtCore import *
-#from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox
 import mysql.connector
 import win32com.client as win32
 import smtplib
@@ -15,7 +15,7 @@ import requests
 import datetime as dt
 import pandas as pd
 import json
-
+import bcrypt
 """
 vendedor
 entradaOuSaida
@@ -69,34 +69,38 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
     
 
     try:
+
+        if not nome_usuario:
+            telaDeLogin.label_4.setText("Usuario ou Senha incorretos.")
+            return
+        elif not senha:
+            telaDeLogin.label_4.setText("Usuario ou Senha incorretos.")
+            return
+
         verificaUsuario = pd.read_sql(f"select nome from usuarios where nome='{nome_usuario}'", conexao)
 
         if verificaUsuario.empty == True:
-            telaDeLogin.label_4.setText("Usuario não encontrado!")
+            telaDeLogin.label_4.setText("Usuario não encontrado.")
             return
         else:
             verificaUsuario = (verificaUsuario['nome'][0])
 
-        verificaSenha = pd.read_sql(f"select senha FROM usuarios WHERE nome ='{nome_usuario}'", conexao)
-        if verificaSenha.empty == True:
-            telaDeLogin.label_4.setText("Usuario não encontrado!")
-            return
-        else:
-            verificaSenha = (verificaSenha['senha'][0])
+        cursor = conexao.cursor()
+        cursor.execute("select senha FROM usuarios WHERE nome ='{}'".format(nome_usuario))
+        pegasenha = cursor.fetchall()
+        verificaSenha = pegasenha[0][0]
         
-        
-        if not nome_usuario:
-            telaDeLogin.label_4.setText("Preencha o campo LOGIN!")
-            return
-        elif not senha:
-            telaDeLogin.label_4.setText("Preencha o campo SENHA!")
-            return
+        verificaSenha = (verificaSenha).encode('utf-8')
+    
+        senha2 = (senha).encode('utf-8')
 
-        if senha == verificaSenha and nome_usuario == verificaUsuario:
+       
+        if bcrypt.hashpw(senha2, verificaSenha)==verificaSenha:
             telaDeLogin.close()
             TelaPrincipal.show()
         else:
-            telaDeLogin.label_4.setText("Usuario ou Senha incorretos!")
+            telaDeLogin.label_4.setText("Usuario ou Senha incorretos.")
+            
             return
         TelaPrincipal.usuarios.setText('Usuario Logado: {}'.format(nome_usuario))
         datahoje = dt.datetime.now()
@@ -175,7 +179,7 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
         with open('logs\\Sistema_De_Vendas_loginErro.txt', 'w') as arquivo:
             arquivo.write('Sistema_De_Vendas: IndexErro {}\n'.format(indexx))
         return
-    
+       
 
 
 def virificacep():
@@ -360,7 +364,7 @@ def cadcliente():
         else: 
             verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
             if verificaCpfExiste == cpfdocliente:
-                QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado anteritormente \nCPF {}".format(verificaCpfExiste))
+                QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado")
             return
     except Exception as erro:
         with open('logs\\Sistema_De_Vendas_ErroCadastroCliente.txt', 'w') as arquivo:
@@ -815,21 +819,32 @@ def tela_cadastrousuario():
 
 def cadastrar_usuario():
 
+    
     nome = tela_cadastro.lineEdit.text()
     email = tela_cadastro.lineEdit_2.text()
     senha = tela_cadastro.lineEdit_3.text()
     c_senha = tela_cadastro.lineEdit_4.text()
     data_criacao = dt.datetime.now()
-
-    if not nome:
+    if not nome and email:
         tela_cadastro.label_2.setText('Preencha os campos')
         return
-    if (senha == c_senha):
-        try:
+    
+    senha = (senha).encode('utf-8')
+    c_senha = (c_senha).encode('utf-8')
+    try:
+        hashed = bcrypt.hashpw(senha, bcrypt.gensalt())
+        
+    except Exception as erro:
+        QMessageBox.critical(aviso, 'Atenção', '{}'.format(erro))
 
+    
+    if (senha == c_senha):
+        
+        try:
+            hashed = (hashed).decode('utf-8')
             cursor = conexao.cursor()
             sql_user = """INSERT INTO usuarios (nome, email, senha, created_at)
-            VALUES ('{}','{}','{}', '{}')""".format(nome, email, senha, data_criacao)
+            VALUES ('{}','{}',"{}", '{}')""".format(nome, email, hashed, data_criacao)
             cursor.execute(sql_user)
             conexao.commit()
 
@@ -844,21 +859,23 @@ def cadastrar_usuario():
             cursor.close()
 
         except NameError as erro:
-            tela_cadastro.label_2.setText('{}'.format(erro))
+            tela_cadastro.label_2.setText('\n\n{}'.format(erro))
             return
         except IndexError as erro2:
-            tela_cadastro.label_2.setText('{}'.format(erro2))
+            tela_cadastro.label_2.setText('\n\n{}'.format(erro2))
             return
         except ValueError as erro3:
-            tela_cadastro.label_2.setText('{}'.format(erro3))
+            tela_cadastro.label_2.setText('\n\n{}'.format(erro3))
             return
         except AttributeError as erro4:
-           tela_cadastro.label_2.setText('{}'.format(erro4))
+           tela_cadastro.label_2.setText('\n\n{}'.format(erro4))
            return
+        except mysql.connector.errors.ProgrammingError as erro:
+            tela_cadastro.label_2.setText('\n\n{}'.format(erro))
     # Um else caso somente a senha se estiver errada
     else:
         tela_cadastro.label_2.setText("As senhas digitadas estão diferentes")
-
+    
     
 def pesquisarProduto():
     try:
@@ -1017,10 +1034,10 @@ def atualizarcliente():
     clientes.show()
 
 def atualizarclientenodb():
-    QMessageBox.critical(aviso,"Aviso", "Essa função ainda não esta em funcionamento.")
+    QMessageBox.information(aviso,"Aviso", "Essa função ainda esta em faze de desenvolvimento.")
     return
 def deletarregistro():
-    QMessageBox.critical(aviso,"Aviso", "Essa função ainda não esta em funcionamento.")
+    QMessageBox.information(aviso,"Aviso", "Essa função ainda esta em faze de desenvolvimento.")
     return
 
 
