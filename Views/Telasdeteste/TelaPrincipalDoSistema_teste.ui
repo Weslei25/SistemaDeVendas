@@ -24,28 +24,10 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Imagens/carrinhodecompras.png</normaloff>../Imagens/carrinhodecompras.png</iconset>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
+    <normaloff>SistemaDeVendas/Imagens/carrinhodecompras.png</normaloff>SistemaDeVendas/Imagens/carrinhodecompras.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_19">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
-    <property name="spacing">
-     <number>6</number>
-    </property>
     <item row="0" column="0">
      <widget class="QFrame" name="frame">
       <property name="styleSheet">
@@ -77,7 +59,7 @@ background-color: rgb(84, 126, 126);</string>
          <widget class="QWidget" name="tab_4">
           <attribute name="icon">
            <iconset>
-            <normaloff>../Imagens/cad_pessoas.ico</normaloff>../Imagens/cad_pessoas.ico</iconset>
+            <normaloff>SistemaDeVendas/Imagens/cad_pessoas.ico</normaloff>SistemaDeVendas/Imagens/cad_pessoas.ico</iconset>
           </attribute>
           <attribute name="title">
            <string>Cadastro de clientes</string>
@@ -313,7 +295,7 @@ color: rgb(0, 0, 0);</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
+                     <normaloff>SistemaDeVendas/Imagens/lupa.ico</normaloff>SistemaDeVendas/Imagens/lupa.ico</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -723,7 +705,7 @@ color: rgb(0, 0, 0);</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/cad_pessoas.ico</normaloff>../Imagens/cad_pessoas.ico</iconset>
+                     <normaloff>SistemaDeVendas/Imagens/cad_pessoas.ico</normaloff>SistemaDeVendas/Imagens/cad_pessoas.ico</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -832,7 +814,7 @@ color: rgb(0, 0, 0);</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/Savar.png</normaloff>../Imagens/Savar.png</iconset>
+                     <normaloff>SistemaDeVendas/Imagens/Savar.png</normaloff>SistemaDeVendas/Imagens/Savar.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1030,7 +1012,7 @@ background-color: rgb(255, 255, 255);</string>
          <widget class="QWidget" name="tab_6">
           <attribute name="icon">
            <iconset>
-            <normaloff>../Imagens/visao-da-empresa.png</normaloff>../Imagens/visao-da-empresa.png</iconset>
+            <normaloff>SistemaDeVendas/Imagens/visao-da-empresa.png</normaloff>SistemaDeVendas/Imagens/visao-da-empresa.png</iconset>
           </attribute>
           <attribute name="title">
            <string>Cadastro de empresas</string>
@@ -1138,7 +1120,7 @@ background-color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
+                     <normaloff>SistemaDeVendas/Imagens/lupa.ico</normaloff>SistemaDeVendas/Imagens/lupa.ico</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1810,7 +1792,7 @@ background-color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/visao-da-empresa.png</normaloff>../Imagens/visao-da-empresa.png</iconset>
+                     <normaloff>SistemaDeVendas/Imagens/visao-da-empresa.png</normaloff>SistemaDeVendas/Imagens/visao-da-empresa.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1907,7 +1889,7 @@ background-color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>../Imagens/Savar.png</normaloff>../Imagens/Savar.png</iconset>
+                     <normaloff>SistemaDeVendas/Imagens/Savar.png</normaloff>SistemaDeVendas/Imagens/Savar.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1966,7 +1948,7 @@ background-color: rgb(255, 255, 255);</string>
          <widget class="QWidget" name="tab_5">
           <attribute name="icon">
            <iconset>
-            <normaloff>../Imagens/excel.png</normaloff>../Imagens/excel.png</iconset>
+            <normaloff>SistemaDeVendas/Imagens/excel.png</normaloff>SistemaDeVendas/Imagens/excel.png</iconset>
           </attribute>
           <attribute name="title">
            <string>Relatorios de vendas</string>
@@ -2009,365 +1991,6 @@ background-color: rgb(84, 126, 126);</string>
                     <enum>QFrame::Plain</enum>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_29">
-                    <item row="0" column="0">
-                     <widget class="QPushButton" name="pushButton_14">
-                      <property name="maximumSize">
-                       <size>
-                        <width>82</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Consultar vendas</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>Total</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>40</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QPushButton" name="pushButton_10">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>82</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Vendas parceladas</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>Parceladas</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/vendaparcelada.png</normaloff>../Imagens/vendaparcelada.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>92</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="2">
-                     <widget class="QPushButton" name="pushButton_15">
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Vendas a vista</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>A Vista</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/vendaavista.ico</normaloff>../Imagens/vendaavista.ico</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>30</width>
-                        <height>64</height>
-                       </size>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="3">
-                     <widget class="QPushButton" name="geraexcel">
-                      <property name="maximumSize">
-                       <size>
-                        <width>82</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Gerar relatorio de vendas</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>Relatorio</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/excel.png</normaloff>../Imagens/excel.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>65</width>
-                        <height>32</height>
-                       </size>
-                      </property>
-                      <property name="shortcut">
-                       <string/>
-                      </property>
-                      <property name="checkable">
-                       <bool>false</bool>
-                      </property>
-                      <property name="checked">
-                       <bool>false</bool>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="4">
-                     <widget class="QPushButton" name="enviaemail">
-                      <property name="maximumSize">
-                       <size>
-                        <width>82</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Enviar email</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>Email</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/o-email.png</normaloff>../Imagens/o-email.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>37</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="5">
-                     <widget class="QPushButton" name="realizarVendas">
-                      <property name="maximumSize">
-                       <size>
-                        <width>82</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Enviar email</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>Vender</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/carrinhodecompras.png</normaloff>../Imagens/carrinhodecompras.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>37</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="6">
-                     <widget class="QPushButton" name="pushButton_9">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>82</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="focusPolicy">
-                       <enum>Qt::NoFocus</enum>
-                      </property>
-                      <property name="toolTip">
-                       <string>Dar baixa em vendas</string>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
-                      <property name="text">
-                       <string>Deletar</string>
-                      </property>
-                      <property name="icon">
-                       <iconset>
-                        <normaloff>../Imagens/fdelete_256.ico</normaloff>../Imagens/fdelete_256.ico</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>37</width>
-                        <height>68</height>
-                       </size>
-                      </property>
-                      <property name="autoDefault">
-                       <bool>true</bool>
-                      </property>
-                      <property name="default">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="0" column="7">
                      <widget class="QFrame" name="frame_35">
                       <property name="frameShape">
@@ -2549,6 +2172,365 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
                       </layout>
                      </widget>
                     </item>
+                    <item row="0" column="6">
+                     <widget class="QPushButton" name="pushButton_9">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>82</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Dar baixa em vendas</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Deletar</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/fdelete_256.ico</normaloff>SistemaDeVendas/Imagens/fdelete_256.ico</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>37</width>
+                        <height>68</height>
+                       </size>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="5">
+                     <widget class="QPushButton" name="realizarVendas">
+                      <property name="maximumSize">
+                       <size>
+                        <width>82</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Enviar email</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Vender</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/carrinhodecompras.png</normaloff>SistemaDeVendas/Imagens/carrinhodecompras.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>37</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="4">
+                     <widget class="QPushButton" name="enviaemail">
+                      <property name="maximumSize">
+                       <size>
+                        <width>82</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Enviar email</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Email</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/o-email.png</normaloff>SistemaDeVendas/Imagens/o-email.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>37</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QPushButton" name="geraexcel">
+                      <property name="maximumSize">
+                       <size>
+                        <width>82</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Gerar relatorio de vendas</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Relatorio</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/excel.png</normaloff>SistemaDeVendas/Imagens/excel.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>65</width>
+                        <height>32</height>
+                       </size>
+                      </property>
+                      <property name="shortcut">
+                       <string/>
+                      </property>
+                      <property name="checkable">
+                       <bool>false</bool>
+                      </property>
+                      <property name="checked">
+                       <bool>false</bool>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QPushButton" name="pushButton_15">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Vendas a vista</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>A Vista</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/vendaavista.ico</normaloff>SistemaDeVendas/Imagens/vendaavista.ico</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>64</height>
+                       </size>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QPushButton" name="pushButton_10">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>82</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Vendas parceladas</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Parceladas</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/vendaparcelada.png</normaloff>SistemaDeVendas/Imagens/vendaparcelada.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>92</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_14">
+                      <property name="maximumSize">
+                       <size>
+                        <width>82</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Consultar vendas</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Total</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/lupa.ico</normaloff>SistemaDeVendas/Imagens/lupa.ico</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>40</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
                    </layout>
                   </widget>
                  </item>
@@ -2556,313 +2538,504 @@ background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</stri
                </widget>
               </item>
               <item row="1" column="0">
-               <widget class="QTableWidget" name="tableWidget_5">
-                <property name="enabled">
-                 <bool>true</bool>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Segoe UI</family>
-                  <pointsize>10</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
-                 </font>
-                </property>
+               <widget class="QStackedWidget" name="stackedWidget">
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(85, 170, 255);
+                 <string notr="true">background-color: rgb(0, 255, 127);</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>1</number>
+                </property>
+                <property name="midLineWidth">
+                 <number>0</number>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <widget class="QWidget" name="vendas">
+                 <layout class="QGridLayout" name="gridLayout_45">
+                  <item row="0" column="0">
+                   <widget class="QTableWidget" name="tableWidget_5">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI</family>
+                      <pointsize>10</pointsize>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(85, 170, 255);
 background-color: rgb(255, 255, 255);</string>
-                </property>
-                <property name="alternatingRowColors">
-                 <bool>true</bool>
-                </property>
-                <property name="verticalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerPixel</enum>
-                </property>
-                <property name="horizontalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerPixel</enum>
-                </property>
-                <attribute name="horizontalHeaderMinimumSectionSize">
-                 <number>35</number>
-                </attribute>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>132</number>
-                </attribute>
-                <attribute name="verticalHeaderMinimumSectionSize">
-                 <number>20</number>
-                </attribute>
-                <attribute name="verticalHeaderDefaultSectionSize">
-                 <number>21</number>
-                </attribute>
-                <column>
-                 <property name="text">
-                  <string>CODIGO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>CPF DO CLIENTE</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>TIPO NEGOCIAÇÃO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>VENDEDOR</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>DATA DA VENDA</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>VENCIMENTO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>NOME DO PRODUTO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>QUANTIDADE</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>PREÇO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>255</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>DESCONTO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>255</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>VALOR TOTAL</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>NATUREZA DA VENDA</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>PERCELAS</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>OBSERVAÇÃO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>ENTRADA E SAIDA</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
+                    <property name="verticalScrollMode">
+                     <enum>QAbstractItemView::ScrollPerPixel</enum>
+                    </property>
+                    <property name="horizontalScrollMode">
+                     <enum>QAbstractItemView::ScrollPerPixel</enum>
+                    </property>
+                    <attribute name="horizontalHeaderMinimumSectionSize">
+                     <number>35</number>
+                    </attribute>
+                    <attribute name="horizontalHeaderDefaultSectionSize">
+                     <number>132</number>
+                    </attribute>
+                    <attribute name="verticalHeaderMinimumSectionSize">
+                     <number>20</number>
+                    </attribute>
+                    <attribute name="verticalHeaderDefaultSectionSize">
+                     <number>21</number>
+                    </attribute>
+                    <column>
+                     <property name="text">
+                      <string>CODIGO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>CPF DO CLIENTE</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>TIPO NEGOCIAÇÃO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>VENDEDOR</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>DATA DA VENDA</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>VENCIMENTO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>NOME DO PRODUTO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>QUANTIDADE</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PREÇO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>255</red>
+                       <green>0</green>
+                       <blue>0</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>DESCONTO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>255</red>
+                       <green>0</green>
+                       <blue>0</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>VALOR TOTAL</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>NATUREZA DA VENDA</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PERCELAS</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>OBSERVAÇÃO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>ENTRADA E SAIDA</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="Produtos">
+                 <layout class="QGridLayout" name="gridLayout_46">
+                  <item row="0" column="0">
+                   <widget class="QTableWidget" name="tableWidget">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);</string>
+                    </property>
+                    <property name="autoScrollMargin">
+                     <number>11</number>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
+                    <property name="verticalScrollMode">
+                     <enum>QAbstractItemView::ScrollPerPixel</enum>
+                    </property>
+                    <property name="horizontalScrollMode">
+                     <enum>QAbstractItemView::ScrollPerPixel</enum>
+                    </property>
+                    <property name="gridStyle">
+                     <enum>Qt::SolidLine</enum>
+                    </property>
+                    <attribute name="horizontalHeaderDefaultSectionSize">
+                     <number>187</number>
+                    </attribute>
+                    <attribute name="verticalHeaderMinimumSectionSize">
+                     <number>20</number>
+                    </attribute>
+                    <attribute name="verticalHeaderDefaultSectionSize">
+                     <number>21</number>
+                    </attribute>
+                    <column>
+                     <property name="text">
+                      <string>CODIGO       </string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>DESCRIÇAO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>DATA DE ENTRADA</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PREÇO</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>255</red>
+                       <green>0</green>
+                       <blue>0</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>OBSERVAÇAO         </string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>MARCA</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>REFERENCIA</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>85</red>
+                       <green>170</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -2873,7 +3046,7 @@ background-color: rgb(255, 255, 255);</string>
          <widget class="QWidget" name="tab_2">
           <attribute name="icon">
            <iconset>
-            <normaloff>../Imagens/Cadastro_produtos.jpeg</normaloff>../Imagens/Cadastro_produtos.jpeg</iconset>
+            <normaloff>SistemaDeVendas/Imagens/Cadastro_produtos.jpeg</normaloff>SistemaDeVendas/Imagens/Cadastro_produtos.jpeg</iconset>
           </attribute>
           <attribute name="title">
            <string>Cadastro de produtos</string>
@@ -2894,8 +3067,343 @@ background-color: rgb(84, 126, 126);</string>
              <property name="frameShadow">
               <enum>QFrame::Plain</enum>
              </property>
-             <layout class="QGridLayout" name="gridLayout_39">
+             <layout class="QGridLayout" name="gridLayout_43">
               <item row="0" column="0">
+               <widget class="QFrame" name="frame_10">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_4">
+                 <item row="0" column="0">
+                  <widget class="QFrame" name="frame_30">
+                   <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Plain</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_5">
+                    <item row="0" column="7" colspan="2">
+                     <widget class="QLabel" name="label_9">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Codigo de Matrícula</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_79">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Estoque</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="4">
+                     <widget class="QLabel" name="label_58">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Preço</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="10" rowspan="4">
+                     <widget class="QPushButton" name="realizarVendas_2">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
+                      </property>
+                      <property name="toolTip">
+                       <string>Cadastrar novo produto</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Salvar</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>SistemaDeVendas/Imagens/cadastro.png</normaloff>SistemaDeVendas/Imagens/cadastro.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>24</width>
+                        <height>77</height>
+                       </size>
+                      </property>
+                      <property name="checkable">
+                       <bool>false</bool>
+                      </property>
+                      <property name="autoDefault">
+                       <bool>true</bool>
+                      </property>
+                      <property name="default">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="9">
+                     <widget class="QLineEdit" name="codMatricula_2">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="toolTip">
+                       <string>Auto Sequêncial</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>(Auto Sequêncial)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="label_20">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Descrção</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1" colspan="3">
+                     <widget class="QLineEdit" name="descricao">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Amortecedor de bicicleta</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QLineEdit" name="marca">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Cesar Bick</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QLineEdit" name="referencia">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>peça de bicicletas</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="6" colspan="4">
+                     <widget class="QLineEdit" name="observacao">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>482</width>
+                        <height>29</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Peças para promoção de black friday</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="5" colspan="2">
+                     <widget class="QLineEdit" name="preco">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>200</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="4" colspan="2">
+                     <widget class="QLabel" name="label_54">
+                      <property name="maximumSize">
+                       <size>
+                        <width>74</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Observação</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="3">
+                     <widget class="QComboBox" name="categotiaproduto">
+                      <property name="maximumSize">
+                       <size>
+                        <width>181</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QLabel" name="label_60">
+                      <property name="maximumSize">
+                       <size>
+                        <width>64</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Categoria</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="label_49">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Referêcia</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLineEdit" name="estoque">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>1200</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="label_57">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Marca</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="0">
                <widget class="QFrame" name="frame_9">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -2925,22 +3433,6 @@ background-color: rgb(84, 126, 126);</string>
                        <enum>QFrame::Plain</enum>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_34">
-                       <item row="0" column="0">
-                        <widget class="QLineEdit" name="codproduto">
-                         <property name="font">
-                          <font>
-                           <pointsize>10</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-                         </property>
-                         <property name="placeholderText">
-                          <string>Codigo/Produto:</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item row="0" column="1" rowspan="3">
                         <widget class="QPushButton" name="pushButton_7">
                          <property name="font">
@@ -2967,57 +3459,12 @@ color: rgb(0, 0, 0);</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../Imagens/lupa.ico</normaloff>../Imagens/lupa.ico</iconset>
+                           <normaloff>SistemaDeVendas/Imagens/lupa.ico</normaloff>SistemaDeVendas/Imagens/lupa.ico</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
                            <width>34</width>
                            <height>39</height>
-                          </size>
-                         </property>
-                         <property name="autoDefault">
-                          <bool>true</bool>
-                         </property>
-                         <property name="default">
-                          <bool>true</bool>
-                         </property>
-                         <property name="flat">
-                          <bool>false</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="2" rowspan="3">
-                        <widget class="QPushButton" name="pushButton_11">
-                         <property name="font">
-                          <font>
-                           <pointsize>10</pointsize>
-                           <weight>50</weight>
-                           <bold>false</bold>
-                          </font>
-                         </property>
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
-                         </property>
-                         <property name="toolTip">
-                          <string>Atualizar estoque dos produtos</string>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>Atualizar</string>
-                         </property>
-                         <property name="icon">
-                          <iconset>
-                           <normaloff>../Imagens/Atualizar.png</normaloff>../Imagens/Atualizar.png</iconset>
-                         </property>
-                         <property name="iconSize">
-                          <size>
-                           <width>32</width>
-                           <height>42</height>
                           </size>
                          </property>
                          <property name="autoDefault">
@@ -3047,6 +3494,22 @@ color: rgb(0, 0, 0);</string>
                          </property>
                         </widget>
                        </item>
+                       <item row="0" column="0">
+                        <widget class="QLineEdit" name="codproduto">
+                         <property name="font">
+                          <font>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Codigo/Produto:</string>
+                         </property>
+                        </widget>
+                       </item>
                        <item row="2" column="0">
                         <widget class="QLineEdit" name="lineEdit_12">
                          <property name="font">
@@ -3068,36 +3531,8 @@ color: rgb(0, 0, 0);</string>
                          </property>
                         </widget>
                        </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QFrame" name="frame_33">
-                      <property name="frameShape">
-                       <enum>QFrame::Box</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Plain</enum>
-                      </property>
-                      <layout class="QGridLayout" name="gridLayout_35">
-                       <item row="0" column="0">
-                        <widget class="QLabel" name="label_138">
-                         <property name="font">
-                          <font>
-                           <family>Arial</family>
-                           <pointsize>10</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>Data/Inicio</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="1" rowspan="4">
-                        <widget class="QPushButton" name="geraexcel_2">
+                       <item row="0" column="2" rowspan="3">
+                        <widget class="QPushButton" name="pushButton_11">
                          <property name="font">
                           <font>
                            <pointsize>10</pointsize>
@@ -3112,32 +3547,23 @@ color: rgb(0, 0, 0);</string>
                           <enum>Qt::NoFocus</enum>
                          </property>
                          <property name="toolTip">
-                          <string>Gerar relatorio dos produtos</string>
+                          <string>Atualizar estoque dos produtos</string>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>Gerar Relatorio</string>
+                          <string>Atualizar</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../Imagens/excel.png</normaloff>../Imagens/excel.png</iconset>
+                           <normaloff>SistemaDeVendas/Imagens/Atualizar.png</normaloff>SistemaDeVendas/Imagens/Atualizar.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
                            <width>32</width>
                            <height>42</height>
                           </size>
-                         </property>
-                         <property name="shortcut">
-                          <string/>
-                         </property>
-                         <property name="checkable">
-                          <bool>false</bool>
-                         </property>
-                         <property name="checked">
-                          <bool>false</bool>
                          </property>
                          <property name="autoDefault">
                           <bool>true</bool>
@@ -3147,93 +3573,6 @@ color: rgb(0, 0, 0);</string>
                          </property>
                          <property name="flat">
                           <bool>false</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="0">
-                        <widget class="QDateEdit" name="dateEdit_8">
-                         <property name="enabled">
-                          <bool>true</bool>
-                         </property>
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>MS Shell Dlg 2</family>
-                          </font>
-                         </property>
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-                         </property>
-                         <property name="accelerated">
-                          <bool>false</bool>
-                         </property>
-                         <property name="correctionMode">
-                          <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
-                         </property>
-                         <property name="showGroupSeparator" stdset="0">
-                          <bool>false</bool>
-                         </property>
-                         <property name="currentSection">
-                          <enum>QDateTimeEdit::DaySection</enum>
-                         </property>
-                         <property name="calendarPopup">
-                          <bool>true</bool>
-                         </property>
-                         <property name="timeSpec">
-                          <enum>Qt::TimeZone</enum>
-                         </property>
-                         <property name="date">
-                          <date>
-                           <year>2021</year>
-                           <month>1</month>
-                           <day>1</day>
-                          </date>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="2" column="0">
-                        <widget class="QLabel" name="label_137">
-                         <property name="font">
-                          <font>
-                           <family>Arial</family>
-                           <pointsize>10</pointsize>
-                          </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>Data/Fim</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="3" column="0">
-                        <widget class="QDateEdit" name="dateEdit_9">
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</string>
-                         </property>
-                         <property name="calendarPopup">
-                          <bool>true</bool>
-                         </property>
-                         <property name="date">
-                          <date>
-                           <year>2021</year>
-                           <month>7</month>
-                           <day>21</day>
-                          </date>
                          </property>
                         </widget>
                        </item>
@@ -3294,7 +3633,7 @@ color: rgb(0, 0, 0);</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../Imagens/excluir-arquivo.png</normaloff>../Imagens/excluir-arquivo.png</iconset>
+                           <normaloff>SistemaDeVendas/Imagens/excluir-arquivo.png</normaloff>SistemaDeVendas/Imagens/excluir-arquivo.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -3338,174 +3677,179 @@ color: rgb(0, 0, 0);</string>
                       </layout>
                      </widget>
                     </item>
+                    <item row="0" column="1">
+                     <widget class="QFrame" name="frame_33">
+                      <property name="frameShape">
+                       <enum>QFrame::Box</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Plain</enum>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_35">
+                       <item row="0" column="1" rowspan="4">
+                        <widget class="QPushButton" name="geraexcel_2">
+                         <property name="font">
+                          <font>
+                           <pointsize>10</pointsize>
+                           <weight>50</weight>
+                           <bold>false</bold>
+                          </font>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="focusPolicy">
+                          <enum>Qt::NoFocus</enum>
+                         </property>
+                         <property name="toolTip">
+                          <string>Gerar relatorio dos produtos</string>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>Gerar Relatorio</string>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>SistemaDeVendas/Imagens/excel.png</normaloff>SistemaDeVendas/Imagens/excel.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>32</width>
+                           <height>42</height>
+                          </size>
+                         </property>
+                         <property name="shortcut">
+                          <string/>
+                         </property>
+                         <property name="checkable">
+                          <bool>false</bool>
+                         </property>
+                         <property name="checked">
+                          <bool>false</bool>
+                         </property>
+                         <property name="autoDefault">
+                          <bool>true</bool>
+                         </property>
+                         <property name="default">
+                          <bool>true</bool>
+                         </property>
+                         <property name="flat">
+                          <bool>false</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_138">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>Data/Inicio</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="label_137">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>10</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>Data/Fim</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QDateEdit" name="dateEdit_8">
+                         <property name="enabled">
+                          <bool>true</bool>
+                         </property>
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>MS Shell Dlg 2</family>
+                          </font>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="accelerated">
+                          <bool>false</bool>
+                         </property>
+                         <property name="correctionMode">
+                          <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+                         </property>
+                         <property name="showGroupSeparator" stdset="0">
+                          <bool>false</bool>
+                         </property>
+                         <property name="currentSection">
+                          <enum>QDateTimeEdit::DaySection</enum>
+                         </property>
+                         <property name="calendarPopup">
+                          <bool>true</bool>
+                         </property>
+                         <property name="timeSpec">
+                          <enum>Qt::TimeZone</enum>
+                         </property>
+                         <property name="date">
+                          <date>
+                           <year>2021</year>
+                           <month>1</month>
+                           <day>1</day>
+                          </date>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QDateEdit" name="dateEdit_9">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="calendarPopup">
+                          <bool>true</bool>
+                         </property>
+                         <property name="date">
+                          <date>
+                           <year>2021</year>
+                           <month>7</month>
+                           <day>21</day>
+                          </date>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
                    </layout>
                   </widget>
                  </item>
                 </layout>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QTableWidget" name="tableWidget">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
-                </property>
-                <property name="autoScrollMargin">
-                 <number>11</number>
-                </property>
-                <property name="alternatingRowColors">
-                 <bool>true</bool>
-                </property>
-                <property name="verticalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerPixel</enum>
-                </property>
-                <property name="horizontalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerPixel</enum>
-                </property>
-                <property name="gridStyle">
-                 <enum>Qt::SolidLine</enum>
-                </property>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>187</number>
-                </attribute>
-                <attribute name="verticalHeaderMinimumSectionSize">
-                 <number>20</number>
-                </attribute>
-                <attribute name="verticalHeaderDefaultSectionSize">
-                 <number>21</number>
-                </attribute>
-                <column>
-                 <property name="text">
-                  <string>CODIGO       </string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>DESCRIÇAO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>DATA DE ENTRADA</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>PREÇO</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>255</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>OBSERVAÇAO         </string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>MARCA</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>REFERENCIA</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="background">
-                  <color>
-                   <red>85</red>
-                   <green>170</green>
-                   <blue>255</blue>
-                  </color>
-                 </property>
-                </column>
                </widget>
               </item>
              </layout>
@@ -3515,16 +3859,76 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </widget>
        </item>
+       <item row="0" column="0">
+        <widget class="QFrame" name="frame_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(83, 127, 90);
+background-color: rgb(84, 126, 126);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="1" column="0">
+           <widget class="QFrame" name="frame_36">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_44">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>SistemaDeVendas/Imagens/carrinhodecompras.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
        <item row="2" column="0">
         <widget class="QLineEdit" name="usuarios">
          <property name="enabled">
           <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
          </property>
          <property name="font">
           <font>
@@ -3548,357 +3952,6 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QFrame" name="frame_2">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(83, 127, 90);
-background-color: rgb(84, 126, 126);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="QFrame" name="frame_10">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_4">
-             <item row="0" column="0">
-              <widget class="QFrame" name="frame_30">
-               <property name="frameShape">
-                <enum>QFrame::Box</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_5">
-                <item row="0" column="10" rowspan="4">
-                 <widget class="QPushButton" name="realizarVendas_2">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                    <weight>50</weight>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>Cadastrar novo produto</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
-                  <property name="text">
-                   <string>Salvar</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>../Imagens/cadastro.png</normaloff>../Imagens/cadastro.png</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>24</width>
-                    <height>77</height>
-                   </size>
-                  </property>
-                  <property name="checkable">
-                   <bool>false</bool>
-                  </property>
-                  <property name="autoDefault">
-                   <bool>true</bool>
-                  </property>
-                  <property name="default">
-                   <bool>true</bool>
-                  </property>
-                  <property name="flat">
-                   <bool>false</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="7" colspan="2">
-                 <widget class="QLabel" name="label_9">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Codigo de Matrícula</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="4">
-                 <widget class="QLabel" name="label_58">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Preço</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_49">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Referêcia</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="9">
-                 <widget class="QLineEdit" name="codMatricula_2">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="toolTip">
-                   <string>Auto Sequêncial</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>(Auto Sequêncial)</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="5" colspan="2">
-                 <widget class="QLineEdit" name="preco">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="text">
-                   <string>200</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1" colspan="3">
-                 <widget class="QLineEdit" name="descricao">
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="text">
-                   <string>Amortecedor de bicicleta</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QLineEdit" name="estoque">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="text">
-                   <string>1200</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QLabel" name="label_60">
-                  <property name="maximumSize">
-                   <size>
-                    <width>64</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Categoria</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="3">
-                 <widget class="QComboBox" name="categotiaproduto">
-                  <property name="maximumSize">
-                   <size>
-                    <width>181</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QLabel" name="label_57">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Marca</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_20">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Descrção</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="4" colspan="2">
-                 <widget class="QLabel" name="label_54">
-                  <property name="maximumSize">
-                   <size>
-                    <width>74</width>
-                    <height>24</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                    <weight>50</weight>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Observação</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="3">
-                 <widget class="QLineEdit" name="marca">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="text">
-                   <string>Cesar Bick</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_79">
-                  <property name="font">
-                   <font>
-                    <family>Arial</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Estoque</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLineEdit" name="referencia">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="text">
-                   <string>peça de bicicletas</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="6" colspan="4">
-                 <widget class="QLineEdit" name="observacao">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>482</width>
-                    <height>29</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                  <property name="text">
-                   <string>Peças para promoção de black friday</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -3912,11 +3965,9 @@ color: rgb(0, 0, 0);</string>
  </widget>
  <tabstops>
   <tabstop>tabWidget_2</tabstop>
-  <tabstop>tableWidget_5</tabstop>
-  <tabstop>tableWidget</tabstop>
  </tabstops>
  <resources>
-  <include location="../Imagens/imagensrecursos2.qrc"/>
+  <include location="../Imagens/teste.qrc"/>
  </resources>
  <connections/>
 </ui>

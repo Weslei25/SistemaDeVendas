@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>vamos.qrc</file>
+    <file>background-159244.png</file>
+  </qresource>
+</RCC>
