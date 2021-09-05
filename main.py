@@ -546,16 +546,24 @@ def cadastrar_produtos():
             categoria = (pegarcategoria['idcategoria'][0])
             
             if not estoque:
-                QMessageBox.information(aviso, 'Aviso','Preencha o campo ESTOQUE.')
+                QMessageBox.information(aviso, 'Aviso','Preencha os campos obrigatorios')
+                TelaPrincipal.estoque.setStyleSheet('background-color: rgb(255, 0, 0);color: rgb(255, 255, 255);')
                 return
+            
             cursor = conexao.cursor()
             SQL_produtos = """INSERT INTO produtos (categorias_idcategoria, descricao, preco, observacao,marca,referencia, dt_entrada, codbarras)
             VALUES  ('{}', '{}', {}, '{}','{}', '{}', '{}','{}')""".format(categoria, descricao, preco, observacao, marca, ref, datadaentrada, codBarras)
             if not preco:
-                QMessageBox.information(aviso, 'Aviso','Preencha os campos vazios EX: Preço')
+                QMessageBox.information(aviso, 'Aviso','Preencha os campos obrigatorios')
+                TelaPrincipal.preco.setStyleSheet('background-color: rgb(255, 0, 0);color: rgb(255, 255, 255);')
                 return
-            elif not descricao:
-                QMessageBox.information(aviso, 'Aviso','Capo DESCRIÇÃO é obrigatorio.')
+            if not descricao:
+                QMessageBox.information(aviso, 'Aviso','Preencha os campos obrigatorios')
+                TelaPrincipal.descricao.setStyleSheet('background-color: rgb(255, 0, 0);color: rgb(255, 255, 255);')
+                return
+            if not codBarras:
+                QMessageBox.information(aviso, 'Aviso','Preencha os campos obrigatorios')
+                TelaPrincipal.codBarras.setStyleSheet('background-color: rgb(255, 0, 0);color: rgb(255, 255, 255);')
                 return
             cursor.execute(SQL_produtos)# Executando o sql para cadastrar o novo produto
             conexao.commit()
@@ -586,11 +594,18 @@ def cadastrar_produtos():
             TelaPrincipal.lineEdit_4.setText("")
             TelaPrincipal.lineEdit_5.setText("")
             TelaPrincipal.lineEdit_9.setText("")
+            TelaPrincipal.codBarras.setText("")
             """
+            
+            TelaPrincipal.codBarras.setStyleSheet('background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);')
+            TelaPrincipal.estoque.setStyleSheet('background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);')
+            TelaPrincipal.preco.setStyleSheet('background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);')
+            TelaPrincipal.descricao.setStyleSheet('background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);')
         else:
             descricao = (pegarcodbarras['codbarras'][0])
             logging.warning(f"Produto ja cadastrado anteriormente {descricao}")
             QMessageBox.warning(aviso, 'Aviso','Produto ja cadastrado anteriormente\nCodigo de Barras {}\nCaso não seja o mesmo produto verifique o codigo de barras'.format(descricao))
+            TelaPrincipal.codBarras.setStyleSheet('background-color: rgb(255, 0, 0);color: rgb(255, 255, 255);')
     except Exception as erro:
         logging.exception(erro)
         QMessageBox.critical(aviso, 'Aviso','{}'.format(erro))
@@ -1110,7 +1125,7 @@ def acessarindiceclientecadastrados():
 
 
 def acessarsair():
-    TelaPrincipal.close()
+    exit()
 
 
 def acessarindicepesquisarprodutos():
@@ -1267,4 +1282,5 @@ if __name__ == "__main__":
     consultas()
     tentaracesar()
     telaDeLogin.show()
+    TelaPrincipal.stackedWidget.setCurrentIndex(1)
     app.exec()

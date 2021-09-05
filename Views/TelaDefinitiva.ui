@@ -61,7 +61,7 @@
           <number>0</number>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_68">
@@ -1481,10 +1481,13 @@ color: rgb(0, 0, 0);</string>
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      <string notr="true">background-color: rgb(255, 255, 255);
+
+
+</string>
                      </property>
                      <property name="text">
-                      <string>2697716656839276</string>
+                      <string>78996827795556</string>
                      </property>
                     </widget>
                    </item>
@@ -3391,6 +3394,35 @@ color: rgb(0, 0, 0);</string>
                     <enum>QFrame::Plain</enum>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_44">
+                    <item row="2" column="0" colspan="2">
+                     <widget class="QLabel" name="label_18">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Nome fantasia:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="2" colspan="4">
+                     <widget class="QLineEdit" name="nomeEmpresa">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_102">
                       <property name="font">
@@ -3401,6 +3433,35 @@ color: rgb(0, 0, 0);</string>
                       </property>
                       <property name="text">
                        <string>CNPJ:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="2" colspan="4">
+                     <widget class="QLineEdit" name="nomeFantazia">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" colspan="2">
+                     <widget class="QLabel" name="label_17">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Nome da empresa:</string>
                       </property>
                      </widget>
                     </item>
@@ -3416,6 +3477,34 @@ color: rgb(0, 0, 0);</string>
                       </property>
                       <property name="text">
                        <string>71139406017335</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="5">
+                     <widget class="QLineEdit" name="tipo_cnpj">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="4">
+                     <widget class="QLabel" name="label_103">
+                      <property name="font">
+                       <font>
+                        <family>Arial</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Tipo:</string>
                       </property>
                      </widget>
                     </item>
@@ -3503,92 +3592,6 @@ color: rgb(0, 0, 0);</string>
                       </property>
                       <property name="flat">
                        <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="4">
-                     <widget class="QLabel" name="label_103">
-                      <property name="font">
-                       <font>
-                        <family>Arial</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Tipo:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="5">
-                     <widget class="QLineEdit" name="tipo_cnpj">
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(255, 255, 255);</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QLabel" name="label_17">
-                      <property name="font">
-                       <font>
-                        <family>Arial</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Nome da empresa:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="2" colspan="4">
-                     <widget class="QLineEdit" name="nomeEmpresa">
-                      <property name="font">
-                       <font>
-                        <family>Arial</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(255, 255, 255);</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="0" colspan="2">
-                     <widget class="QLabel" name="label_18">
-                      <property name="font">
-                       <font>
-                        <family>Arial</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Nome fantasia:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="2" colspan="4">
-                     <widget class="QLineEdit" name="nomeFantazia">
-                      <property name="font">
-                       <font>
-                        <family>Arial</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(255, 255, 255);</string>
-                      </property>
-                      <property name="text">
-                       <string/>
                       </property>
                      </widget>
                     </item>
