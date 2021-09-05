@@ -37,29 +37,6 @@ TotalVendas
 
 
 
-try:
-    
-    with open('Config\\config.json') as f:# Abrindo o arquivo que contem a string de conexao com o DB
-        entrada = json.load(f)# lendo o json e armazenando em uma variavel
-    
-    
-
-    conexao = mysql.connector.Connect(# string de conexao
-        host=entrada["host"],
-        user=entrada["user"],
-        password=entrada["password"],
-        database=entrada["database"],
-        auth_plugin=entrada["auth_plugin"]
-    )
-    dataagoraservico = dt.datetime.now()
-    with open('logs\\Sistema_De_Vendas_login.txt', 'w') as arquivo:
-        arquivo.write('{}:Sistema_De_Vendas: Aplicação conectando ao banco de dados\n'.format(dataagoraservico))
-        arquivo.write('{}:Sistema_De_Vendas: Aplicação conectou ao banco de dados\n'.format(dataagoraservico))
-except Exception as erro:
-    with open('logs\\Sistema_De_Vendas_erro.txt', 'w') as arquivo:
-        arquivo.write('Sistema_De_Vendas: "Erro: \n"{}\n'.format(erro))# Abrindo o arquivo que contem a string de conexao com o DB
-    
-
 
 def chama_segunda_tela():# função responsavel por chamar a tela principal
     
@@ -291,7 +268,7 @@ def cadcliente():
                 QMessageBox.warning(TelaPrincipal, "Atenção", "Informe o bairro\n\n")
                 return
 
-            pegaridbairro = pd.read_sql(f"SELECT idbairro FROM bairros WHERE nome = '{bairrodocliente}'", conexao)
+            pegaridbairro = pd.read_sql(f"select idbairro from bairros where nome='{bairrodocliente}' and cidades_idcidade='{cidadedocliente}'", conexao)
             if pegaridbairro.empty ==True:
                 
                 cursor.execute(f"""INSERT INTO bairros (cidades_estados_idestado, cidades_idcidade, nome) VALUES({estadodocliente}, {cidadedocliente}, '{bairrodocliente}');""")
@@ -359,12 +336,12 @@ def cadcliente():
             conexao.commit()
             cursor.close()
 
-            QMessageBox.warning(TelaPrincipal,"mensagem de alerta", "Cliente cadastrado com sucesso.")
+            QMessageBox.information(TelaPrincipal,"mensagem de alerta", "Cliente cadastrado com sucesso.")
             
         else: 
             verificaCpfExiste = (verificaCpfExiste['cpf_cnpj'][0])
             if verificaCpfExiste == cpfdocliente:
-                QMessageBox.warning(TelaPrincipal, "Aviso", "Cliente ja cadastrado")
+                QMessageBox.information(TelaPrincipal, "Aviso", "Cliente ja cadastrado anteriormente \nCPF {}".format(cpfdocliente))
             return
     except Exception as erro:
         with open('logs\\Sistema_De_Vendas_ErroCadastroCliente.txt', 'w') as arquivo:
@@ -542,6 +519,7 @@ def realizarvendas():
         with open('logs\\Sistema_De_Vendas_realizarvendas.txt', 'w') as arquivo:    
             arquivo.write('Sistema_De_Vendas: Erro: \n \n{}'.format(erro))
         QMessageBox.warning(aviso, 'Aviso','{}'.format(erro))
+
 def vender_produto():
 
     try:
@@ -767,51 +745,60 @@ def consultarcnpj():
         QMessageBox.information(aviso, 'Aviso','{}'.format(erro))
     finally:
         pass
+def recuperausuario():
 
-def recuperasenhalogin():
+    nomeUsuario = recuperasenha.nomeDoUsuario.text()
+    emailUsuario = recuperasenha.emailDoUsuario.text()
+    novaSenha = recuperasenha.senhaDoUsuario.text()
+    verificaMesmaSenha = recuperasenha.c_senhaUsuario.text()
+    dataDaAtualizacao = dt.datetime.now()
 
-    nomeusuario = telaDeLogin.lineEdit.text()
-    
-    retorno = pd.read_sql(f"select email, senha from usuarios where nome ='{nomeusuario}'", conexao)
+    if not nomeUsuario:
+        recuperasenha.avisosUsuario.setText("Preencha todos os campos.")
+        return
+    if not emailUsuario:
+        recuperasenha.avisosUsuario.setText("Preencha todos os campos.")
+        return
+    if not novaSenha:
+        recuperasenha.avisosUsuario.setText("Preencha todos os campos.")
+        return
+    if not verificaMesmaSenha:
+        recuperasenha.avisosUsuario.setText("Preencha todos os campos.")
+        return
 
-    emaildb = (retorno['email'][0])
-    
-    senha = (retorno['senha'][0])
-    
+    if novaSenha != verificaMesmaSenha:
+        recuperasenha.avisosUsuario.setText("Senhas informadas são diferentes.")
+        return
     try:
-        outlook = win32.Dispatch('outlook.application')
-
-        email = outlook.CreateItem(0)
-
-        email.To = str(emaildb)
-        email2 = email.to
-        email.Subject = ('Recuperação De Senha Do Sistema De VEndas;')
-        email.HTMLBody = """
-
-        <p>Olá Tudo bem?</p>
-
-        <p>A sua senha do sistema de vendas é {}.</p>
-
-        <p>Att, .</p>
-
-        <p>Sistema De Vendas em microempresas.</p>
-
-        """.format(senha)
-        if not email.to:
-            QMessageBox.information(aviso, 'Aviso','Email não localizado')
-            return
-        elif email == 'None':
-            QMessageBox.information(aviso, 'Aviso','Email não localizado')
+        hashed = (novaSenha).encode('utf-8')
+        hashed = bcrypt.hashpw(hashed, bcrypt.gensalt())
+        print(hashed)
+    except Exception as erro:
+        QMessageBox.critical(aviso, 'Atenção', '{}'.format(erro))
+    try:
+        retorno = pd.read_sql(f"select idusuarios from usuarios where nome ='{nomeUsuario}' and email ='{emailUsuario}';", conexao)
+        if retorno.empty == True:
+            QMessageBox.information(aviso, 'Atenção', 'Usuario não encontrado, verifique se o nome e email estão corretos.\nCaso você não possua um usuario pode criar um na aba de cadastro.')
             return
         else:
-            email.Send()
-            QMessageBox.information(aviso, 'Aviso','Sua senha foi enviada para o email \n{}'.format(email2))
-            
+            idUsuario = (retorno['idusuarios'][0])
+        
+        if novaSenha == verificaMesmaSenha:
+            cursor = conexao.cursor()
+            hashed = (hashed).decode('utf-8')
+            print(hashed)
+            cursor.execute(f"update usuarios set senha ='{hashed}', updated_at ='{dataDaAtualizacao}' where idusuarios = {idUsuario};")
+            conexao.commit()
                 
+        recuperasenha.avisosUsuario.setText("Sua senha foi atualizada com sucesso.")
     except Exception as erro:
         QMessageBox.warning(aviso, 'Atenção', '{}'.format(erro))
         return
 
+
+def recuperasenhalogin():
+    recuperasenha.show()
+    
 def tela_cadastrousuario():
 
     tela_cadastro.show()
@@ -825,12 +812,29 @@ def cadastrar_usuario():
     senha = tela_cadastro.lineEdit_3.text()
     c_senha = tela_cadastro.lineEdit_4.text()
     data_criacao = dt.datetime.now()
-    if not nome and email:
-        tela_cadastro.label_2.setText('Preencha os campos')
+
+    verificaUsuario = pd.read_sql(f"select nome from usuarios where nome='{nome}'", conexao)
+    if verificaUsuario.empty == True:
+        pass
+    else:
+        tela_cadastro.label_2.setText('Ja existe um usuario com esse nome.')
         return
+    if not nome:
+        tela_cadastro.label_2.setText('Preencha todos os campos.')
+        return
+    if not email:
+        tela_cadastro.label_2.setText('Preencha todos os campos.')
+        return
+    if not senha:
+        tela_cadastro.label_2.setText('Preencha todos os campos.')
+        return
+    if not c_senha:
+        tela_cadastro.label_2.setText('Preencha todos os campos.')
+        return
+
+    senha = (senha).encode('utf-8')# Codificando a senha para utf-8
+    c_senha = (c_senha).encode('utf-8')# Codificando a contra_senha para utf-8
     
-    senha = (senha).encode('utf-8')
-    c_senha = (c_senha).encode('utf-8')
     try:
         hashed = bcrypt.hashpw(senha, bcrypt.gensalt())
         
@@ -920,7 +924,9 @@ def cadastrar_empresa():
         idbairros = TelaPrincipal.bairroEmpresa.text()
         idcidade = TelaPrincipal.municipioEmpresa.text()
         idestado = TelaPrincipal.ufEmpresa.text()
-        
+
+        nomedacidade = idcidade
+        nomedobairro = idbairros
         abertura_empresa = dt.datetime.strptime(abertura_empresa, '%d/%m/%Y')
         abertura_empresa = abertura_empresa.strftime('%Y-%m-%d')
 
@@ -941,7 +947,7 @@ def cadastrar_empresa():
             else:
                 idestado = (idestado['idestado'][0])
 
-            idbairro = pd.read_sql(f"select idbairro from bairros where nome ='{idbairros}'", conexao)
+            idbairro = pd.read_sql(f"select idbairro from bairros where nome='{nomedobairro}' and cidades_idcidade='{nomedacidade}'", conexao)
             if idbairro.empty == True:
                 cursor =  conexao.cursor()
                 cursor.execute("""INSERT INTO think.bairros (cidades_estados_idestado, cidades_idcidade, nome) VALUES ({}, {}, '{}');""".format(idestado, idcidade, idbairros))
@@ -1040,6 +1046,19 @@ def deletarregistro():
     QMessageBox.information(aviso,"Aviso", "Essa função ainda esta em faze de desenvolvimento.")
     return
 
+def consultas():
+    descricaoDopagamento = pd.read_sql('select descricao from tipo_pagamento', conexao)# Pegando o Tipo de Pafamento 
+    TelaPrincipal.comboBox_6.addItems(descricaoDopagamento['descricao'])
+
+    descricaoDaEntrsaida = pd.read_sql('SELECT descricao FROM etrada_saida;', conexao)# Pegando o tipo de pagamento
+    TelaPrincipal.comboBox_8.addItems(descricaoDaEntrsaida['descricao'])
+
+    descreicaoDaCategotia = pd.read_sql('select descricao from categorias', conexao)# Pegando o as categorias
+    TelaPrincipal.categotiaproduto.addItems(descreicaoDaCategotia['descricao'])
+
+    descreicaoDaCategotia = pd.read_sql('select tipo_cliente from cat_cliente', conexao)# Adicionando as categorias dos clientes
+    TelaPrincipal.catCliente.addItems(descreicaoDaCategotia['tipo_cliente'])
+
 
 app = QtWidgets.QApplication([]) # Criando um QApplication que faz a construcao da minha aplicacao.
 app.setStyle ( 'fusion' )
@@ -1052,6 +1071,7 @@ telaDeEmail = uic.loadUi("Views/telaDeEmail2.ui")
 telaDeVendas = uic.loadUi("Views/teladevendas.ui")
 tela_cadastro = uic.loadUi("Views/tela_cadastro.ui")
 clientes = uic.loadUi("Views/Clientes.ui")
+recuperasenha = uic.loadUi("Views/recuperar_senha.ui")
 
 TelaPrincipal.consultar_cnpj.clicked.connect(consultarcnpj)# Conectando o click dos botões nas funções
 TelaPrincipal.verificaCep.clicked.connect(virificacep)
@@ -1077,16 +1097,36 @@ telaDeVendas.finalizar_2.clicked.connect(vender_produto)
 TelaPrincipal.salvarCliente_3.clicked.connect(atualizarcliente)
 clientes.atualizarcliente.clicked.connect(atualizarclientenodb)
 clientes.deletarregistro.clicked.connect(deletarregistro)
+recuperasenha.recuperarSenha.clicked.connect(recuperausuario)
 
-descricaoDopagamento = pd.read_sql('select descricao from tipo_pagamento', conexao)# Pegando o Tipo de Pafamento 
-TelaPrincipal.comboBox_6.addItems(descricaoDopagamento['descricao'])
-
-descricaoDaEntrsaida = pd.read_sql('SELECT descricao FROM etrada_saida;', conexao)# Pegando o tipo de pagamento
-TelaPrincipal.comboBox_8.addItems(descricaoDaEntrsaida['descricao'])
-
-descreicaoDaCategotia = pd.read_sql('select descricao from categorias', conexao)# Pegando o as categorias
-TelaPrincipal.categotiaproduto.addItems(descreicaoDaCategotia['descricao'])
 
 telaDeLogin.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)# Inplementando campo senha
+
+
+# Conexão com o DB
+try:
+    
+    with open('Config\\config.json') as f:# Abrindo o arquivo que contem a string de conexao com o DB
+        entrada = json.load(f)# lendo o json e armazenando em uma variavel
+    
+    
+
+    conexao = mysql.connector.Connect(# string de conexao
+        host=entrada["host"],
+        user=entrada["user"],
+        password=entrada["password"],
+        database=entrada["database"],
+        auth_plugin=entrada["auth_plugin"]
+    )
+    dataagoraservico = dt.datetime.now()
+    with open('logs\\Sistema_De_Vendas_login.txt', 'w') as arquivo:
+        arquivo.write('{}:Sistema_De_Vendas: Aplicação conectando ao banco de dados\n'.format(dataagoraservico))
+        arquivo.write('{}:Sistema_De_Vendas: Aplicação conectou ao banco de dados\n'.format(dataagoraservico))
+except Exception as erro:
+    with open('logs\\Sistema_De_Vendas_Conexao_erro.txt', 'w') as arquivo:
+        arquivo.write('Sistema_De_Vendas: "Erro: \n"{}\n'.format(erro))# Abrindo o arquivo que contem a string de conexao com o DB
+    QMessageBox.critical(TelaPrincipal, "Aviso", "{}".format(erro))
+
+consultas()
 telaDeLogin.show()
 app.exec()

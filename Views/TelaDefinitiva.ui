@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1152</width>
-    <height>664</height>
+    <height>665</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,7 +49,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(0, 91, 136);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -61,16 +61,14 @@
           <number>0</number>
          </property>
          <property name="currentIndex">
-          <number>6</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_68">
            <item row="0" column="0">
             <widget class="QFrame" name="frame_4">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1062,8 +1060,7 @@ background-color: rgb(255, 255, 255);</string>
            <item row="0" column="0">
             <widget class="QFrame" name="frame_41">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 3,stop: 0 blue, stop: 0.4 gray,stop: 1 green);
-
+              <string notr="true">
 </string>
              </property>
              <property name="frameShape">
@@ -1072,6 +1069,33 @@ background-color: rgb(255, 255, 255);</string>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
+             <layout class="QGridLayout" name="gridLayout_25">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>571</width>
+                  <height>491</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>571</width>
+                  <height>491</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../Imagens/carrinhodecompras.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>
@@ -1081,9 +1105,7 @@ background-color: rgb(255, 255, 255);</string>
            <item row="0" column="0">
             <widget class="QFrame" name="frame_3">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::Box</enum>
@@ -1097,7 +1119,7 @@ background-color: rgb(255, 255, 255);</string>
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
-                  <height>190</height>
+                  <height>183</height>
                  </size>
                 </property>
                 <property name="styleSheet">
@@ -1116,7 +1138,7 @@ background-color: rgb(255, 255, 255);</string>
                     <number>3</number>
                    </property>
                    <property name="verticalSpacing">
-                    <number>32</number>
+                    <number>21</number>
                    </property>
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_113">
@@ -1223,8 +1245,31 @@ background-color: rgb(255, 255, 255);</string>
                    </item>
                    <item row="3" column="1">
                     <widget class="QDateTimeEdit" name="dateTimeEdit">
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="currentSection">
+                      <enum>QDateTimeEdit::DaySection</enum>
+                     </property>
+                     <property name="calendarPopup">
+                      <bool>true</bool>
+                     </property>
+                     <property name="currentSectionIndex">
+                      <number>0</number>
+                     </property>
+                     <property name="timeSpec">
+                      <enum>Qt::TimeZone</enum>
                      </property>
                     </widget>
                    </item>
@@ -1233,7 +1278,7 @@ background-color: rgb(255, 255, 255);</string>
                  <item row="0" column="1">
                   <layout class="QFormLayout" name="formLayout_5">
                    <property name="verticalSpacing">
-                    <number>32</number>
+                    <number>21</number>
                    </property>
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_111">
@@ -1274,6 +1319,11 @@ background-color: rgb(255, 255, 255);</string>
                        <width>16777215</width>
                        <height>16777215</height>
                       </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
                      </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
@@ -1352,7 +1402,7 @@ color: rgb(0, 0, 0);</string>
                  <item row="0" column="2">
                   <layout class="QFormLayout" name="formLayout_6">
                    <property name="verticalSpacing">
-                    <number>32</number>
+                    <number>21</number>
                    </property>
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_108">
@@ -1407,6 +1457,11 @@ color: rgb(0, 0, 0);</string>
                      <property name="enabled">
                       <bool>false</bool>
                      </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
                      <property name="toolTip">
                       <string>Auto Sequêncial</string>
                      </property>
@@ -1420,6 +1475,11 @@ color: rgb(0, 0, 0);</string>
                    </item>
                    <item row="2" column="1">
                     <widget class="QLineEdit" name="lineEdit_4">
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(255, 255, 255);</string>
                      </property>
@@ -1502,9 +1562,7 @@ color: rgb(0, 0, 0);</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::Box</enum>
@@ -2187,9 +2245,7 @@ color: rgb(0, 0, 0);</string>
            <item row="0" column="0">
             <widget class="QFrame" name="frame_47">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(0, 91, 136);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -2204,7 +2260,7 @@ color: rgb(0, 0, 0);</string>
                  <bool>true</bool>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true"/>
+                 <string notr="true">background-color: rgb(85, 170, 127);</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::Box</enum>
@@ -2909,7 +2965,7 @@ background-color: rgb(255, 255, 255);</string>
               <item row="0" column="0">
                <widget class="QFrame" name="frame_52">
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(236, 236, 236);</string>
+                 <string notr="true">background-color: rgb(85, 170, 127);</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::Box</enum>
@@ -2920,6 +2976,9 @@ background-color: rgb(255, 255, 255);</string>
                 <layout class="QGridLayout" name="gridLayout_62">
                  <item row="1" column="0">
                   <widget class="QFrame" name="frame_51">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::Box</enum>
                    </property>
@@ -3253,36 +3312,6 @@ color: rgb(0, 0, 0);</string>
                          <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
                         </property>
-                        <item>
-                         <property name="text">
-                          <string>New Item</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>New Item</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>New Item</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>New Item</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>New Item</string>
-                         </property>
-                        </item>
-                        <item>
-                         <property name="text">
-                          <string>New Item</string>
-                         </property>
-                        </item>
                        </widget>
                       </item>
                      </layout>
@@ -3309,9 +3338,7 @@ color: rgb(0, 0, 0);</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -4254,7 +4281,7 @@ color: rgb(0, 0, 0);</string>
            <item row="1" column="0">
             <widget class="QFrame" name="frame_9">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(236, 236, 236);</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::Box</enum>
@@ -4524,9 +4551,7 @@ background-color: rgb(255, 255, 255);</string>
            <item row="0" column="0">
             <widget class="QFrame" name="frame_54">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -4577,6 +4602,18 @@ background-color: rgb(255, 255, 255);</string>
                  </item>
                  <item row="0" column="2" rowspan="3">
                   <layout class="QVBoxLayout" name="verticalLayout">
+                   <property name="spacing">
+                    <number>6</number>
+                   </property>
+                   <property name="sizeConstraint">
+                    <enum>QLayout::SetNoConstraint</enum>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
                    <item>
                     <widget class="QLineEdit" name="lineEdit_2">
                      <property name="font">
@@ -4658,25 +4695,6 @@ background-color: rgb(255, 255, 255);</string>
                    </item>
                   </layout>
                  </item>
-                 <item row="2" column="0">
-                  <widget class="QPushButton" name="pushButton_3">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Anexar</string>
-                   </property>
-                   <property name="icon">
-                    <iconset>
-                     <normaloff>../Imagens/Savar.png</normaloff>../Imagens/Savar.png</iconset>
-                   </property>
-                   <property name="default">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="3" column="0" colspan="3">
                   <widget class="QFrame" name="frame_56">
                    <property name="frameShape">
@@ -4706,6 +4724,25 @@ p, li { white-space: pre-wrap; }
                      </widget>
                     </item>
                    </layout>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QPushButton" name="pushButton_3">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Anexar</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>../Imagens/Savar.png</normaloff>../Imagens/Savar.png</iconset>
+                   </property>
+                   <property name="default">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="0" rowspan="2">
@@ -4751,9 +4788,7 @@ p, li { white-space: pre-wrap; }
            <item row="0" column="0">
             <widget class="QFrame" name="frame_57">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -4764,6 +4799,9 @@ p, li { white-space: pre-wrap; }
              <layout class="QGridLayout" name="gridLayout_87">
               <item row="1" column="0">
                <widget class="QFrame" name="frame_64">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -5899,9 +5937,7 @@ color: rgb(255, 255, 255);</string>
            <item row="0" column="0">
             <widget class="QFrame" name="frame_24">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(0, 91, 136);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -5912,6 +5948,9 @@ color: rgb(255, 255, 255);</string>
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="0" column="1">
                <widget class="QFrame" name="frame_25">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(85, 170, 127);</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::Box</enum>
                 </property>
@@ -6326,44 +6365,7 @@ color: rgb(255, 255, 255);</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QGridLayout" name="gridLayout_13">
-                 <item row="0" column="0">
-                  <layout class="QFormLayout" name="formLayout_3">
-                   <property name="horizontalSpacing">
-                    <number>6</number>
-                   </property>
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="label_3">
-                     <property name="text">
-                      <string>Nome da empresa</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QLineEdit" name="lineEdit_5"/>
-                   </item>
-                   <item row="1" column="0">
-                    <widget class="QLabel" name="label_14">
-                     <property name="text">
-                      <string>Cnpj</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="1">
-                    <widget class="QLineEdit" name="lineEdit_6"/>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QTableWidget" name="tableWidget_3">
-                <column>
-                 <property name="text">
-                  <string>New Column</string>
-                 </property>
-                </column>
+                <layout class="QGridLayout" name="gridLayout_13"/>
                </widget>
               </item>
              </layout>
@@ -6376,9 +6378,7 @@ color: rgb(255, 255, 255);</string>
            <item row="0" column="0">
             <widget class="QFrame" name="frame_10">
              <property name="styleSheet">
-              <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
-
-</string>
+              <string notr="true">background-color: rgb(85, 170, 127);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -7130,6 +7130,7 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="font">
        <font>
+        <family>MS Shell Dlg 2</family>
         <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -7158,7 +7159,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1152</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">
