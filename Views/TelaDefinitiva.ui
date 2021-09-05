@@ -61,7 +61,7 @@
           <number>0</number>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_68">
@@ -5228,6 +5228,11 @@ background-color: rgb(255, 255, 255);</string>
                          </property>
                          <item>
                           <widget class="QRadioButton" name="radioButton_7">
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
                            <property name="text">
                             <string>Dinheiro</string>
                            </property>
@@ -5238,6 +5243,11 @@ background-color: rgb(255, 255, 255);</string>
                          </item>
                          <item>
                           <widget class="QRadioButton" name="radioButton_8">
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
                            <property name="text">
                             <string>Cheque</string>
                            </property>
@@ -5245,6 +5255,11 @@ background-color: rgb(255, 255, 255);</string>
                          </item>
                          <item>
                           <widget class="QRadioButton" name="radioButton_9">
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
                            <property name="text">
                             <string>Cartão de Credito</string>
                            </property>
@@ -5252,6 +5267,11 @@ background-color: rgb(255, 255, 255);</string>
                          </item>
                          <item>
                           <widget class="QRadioButton" name="radioButton_10">
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
                            <property name="text">
                             <string>Cartão de Debito</string>
                            </property>
@@ -5259,6 +5279,11 @@ background-color: rgb(255, 255, 255);</string>
                          </item>
                          <item>
                           <widget class="QRadioButton" name="radioButton_11">
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
                            <property name="text">
                             <string>Troca</string>
                            </property>
@@ -5266,6 +5291,11 @@ background-color: rgb(255, 255, 255);</string>
                          </item>
                          <item>
                           <widget class="QRadioButton" name="radioButton_12">
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
                            <property name="text">
                             <string>Cartão Presente</string>
                            </property>
