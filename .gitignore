@@ -205,6 +205,7 @@ compile_commands.json
 !.vscode/extensions.json
 *.code-workspace
 
+
 # Local History for Visual Studio Code
 .history/
 
@@ -602,6 +603,7 @@ FodyWeavers.xsd
 *models
 *sql
 *dist_1
+*.vscode/
 
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio

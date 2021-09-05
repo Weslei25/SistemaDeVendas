@@ -1,4 +1,3 @@
-import re
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import * 
@@ -17,6 +16,9 @@ import pandas as pd
 import json
 import bcrypt
 import logging
+from PyQt5.QtWidgets import * 
+from PyQt5.QtCore import Qt, QSortFilterProxyModel
+from PyQt5.QtGui import QStandardItem, QStandardItemModel
 """
 vendedor
 entradaOuSaida
@@ -97,9 +99,8 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
             try:
                 cursor = conexao.cursor()
                 sql_cataloga = """
-                SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, marca,referencia
-                from produtos
-                order by idproduto DESC limit 1200"""
+                SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, codbarras, marca,
+                referencia from produtos order by idproduto DESC limit 1200"""
                 
                 cursor.execute(sql_cataloga)
                 with open('sql\\SQL_catalogarProdutos.sql', 'w') as arquivo:
@@ -107,9 +108,9 @@ def chama_segunda_tela():# função responsavel por chamar a tela principal
 
                 dados_lidos1 = cursor.fetchall()
                 TelaPrincipal.tableWidget.setRowCount(len(dados_lidos1))
-                TelaPrincipal.tableWidget.setColumnCount(7)
+                TelaPrincipal.tableWidget.setColumnCount(8)
                 for i in range(0, len(dados_lidos1)):
-                    for j in range(0, 7):
+                    for j in range(0, 8):
                         TelaPrincipal.tableWidget.setItem(
                             i, j, QtWidgets.QTableWidgetItem(str(dados_lidos1[i][j])))
                 logging.info("Todos os produtos catalogados")
@@ -535,10 +536,11 @@ def cadastrar_produtos():
         observacao = str(TelaPrincipal.observacao.text())
         marca = str(TelaPrincipal.marca.text())
         categoria = str(TelaPrincipal.categotiaproduto.currentText())
+        codBarras = str(TelaPrincipal.codBarras.text())
 
 
-        pegardescicao = pd.read_sql(f"select descricao from produtos p where descricao ='{descricao}'", conexao)
-        if pegardescicao.empty == True:
+        pegarcodbarras = pd.read_sql(f"select codbarras from produtos where codbarras ='{codBarras}'", conexao)
+        if pegarcodbarras.empty == True:
 
             pegarcategoria = pd.read_sql(f"select idcategoria from categorias c where descricao ='{categoria}'", conexao)
             categoria = (pegarcategoria['idcategoria'][0])
@@ -547,8 +549,8 @@ def cadastrar_produtos():
                 QMessageBox.information(aviso, 'Aviso','Preencha o campo ESTOQUE.')
                 return
             cursor = conexao.cursor()
-            SQL_produtos = """INSERT INTO produtos (categorias_idcategoria, descricao, preco, observacao,marca,referencia, dt_entrada)
-            VALUES  ('{}', '{}', {}, '{}','{}', '{}', '{}')""".format(categoria, descricao, preco, observacao, marca, ref, datadaentrada)
+            SQL_produtos = """INSERT INTO produtos (categorias_idcategoria, descricao, preco, observacao,marca,referencia, dt_entrada, codbarras)
+            VALUES  ('{}', '{}', {}, '{}','{}', '{}', '{}','{}')""".format(categoria, descricao, preco, observacao, marca, ref, datadaentrada, codBarras)
             if not preco:
                 QMessageBox.information(aviso, 'Aviso','Preencha os campos vazios EX: Preço')
                 return
@@ -564,15 +566,15 @@ def cadastrar_produtos():
             cursor.execute("INSERT INTO estoque (estoque, produtos_idproduto) values ({},{})".format(estoque,tratadoproduto))
             conexao.commit()
             
-            cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, marca,
+            cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, codbarras, marca,
             referencia from produtos order by idproduto DESC limit 1200""")
             sql_tprodu = cursor.fetchall()
 
             TelaPrincipal.tableWidget.setRowCount(len(sql_tprodu))
-            TelaPrincipal.tableWidget.setColumnCount(7)
+            TelaPrincipal.tableWidget.setColumnCount(8)
 
             for i in range(0, len(sql_tprodu)):
-                for j in range(0, 7):
+                for j in range(0, 8):
                     TelaPrincipal.tableWidget.setItem(
                         i, j, QtWidgets.QTableWidgetItem(str(sql_tprodu[i][j])))
 
@@ -586,9 +588,9 @@ def cadastrar_produtos():
             TelaPrincipal.lineEdit_9.setText("")
             """
         else:
-            descricao = (pegardescicao['descricao'][0])
+            descricao = (pegarcodbarras['codbarras'][0])
             logging.warning(f"Produto ja cadastrado anteriormente {descricao}")
-            QMessageBox.warning(aviso, 'Aviso','Produto ja cadastrado anteriormente.   \n*{}*\n Caso não seja o mesmo produto adicione uma descrição diferente'.format(descricao))
+            QMessageBox.warning(aviso, 'Aviso','Produto ja cadastrado anteriormente\nCodigo de Barras {}\nCaso não seja o mesmo produto verifique o codigo de barras'.format(descricao))
     except Exception as erro:
         logging.exception(erro)
         QMessageBox.critical(aviso, 'Aviso','{}'.format(erro))
@@ -876,8 +878,8 @@ def pesquisarProduto():
     try:
         pesquisar = TelaPrincipal.lineEdit_12.text()
         cursor = conexao.cursor()
-        cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, marca,
-         referencia from produtos where descricao like '{}'""".format(pesquisar))
+        cursor.execute("""SELECT idproduto, descricao, (DATE_FORMAT(dt_entrada , '%d/%m/%Y')), format(preco,2,'de_DE'), observacao, codbarras, marca,
+            referencia from produtos where descricao like '{}'""".format(pesquisar))
 
         sqlVerificacaoProduto = cursor.fetchall()
         TelaPrincipal.tableWidget.setRowCount(len(sqlVerificacaoProduto))
@@ -1106,9 +1108,36 @@ def acessarindicereverlogin():
 def acessarindiceclientecadastrados():
     TelaPrincipal.stackedWidget.setCurrentIndex(9)
 
+
 def acessarsair():
     TelaPrincipal.close()
-    
+
+
+def acessarindicepesquisarprodutos():
+    TelaPrincipal.stackedWidget.setCurrentIndex(8)
+
+def tentaracesar():
+    carros = pd.read_sql("select descricao from produtos", conexao)
+    carros = (carros['descricao'])
+
+    # carros = ('Gol', 'Celta', 'Corsa', 'Uno', 'Fox', 'Cruze', 'Brasilia', 'Saveiro', 'Fusca', 'Hilux', 'Onix')
+    modelo = QStandardItemModel(len(carros),1)
+    modelo.setHorizontalHeaderLabels(['Carros'])
+
+    for linha, carro in enumerate(carros):    # [(1, 'Gol'), (2,'Celta') ]     
+        elemento = QStandardItem(carro)
+        modelo.setItem(linha, 0, elemento)
+
+    # global filtro
+    filtro = QSortFilterProxyModel()
+    filtro.setSourceModel(modelo)
+    filtro.setFilterKeyColumn(0)
+    filtro.setFilterCaseSensitivity(Qt.CaseInsensitive)
+
+    TelaPrincipal.tableView.setModel(filtro)
+    TelaPrincipal.tableView.horizontalHeader().setStyleSheet("font-size: 35px;color: rgb(50, 50, 255);")
+    TelaPrincipal.pesquisar.textChanged.connect(filtro.setFilterRegExp)
+
 def consultarempresas(cnpj):
 
     try:
@@ -1150,7 +1179,10 @@ def consultarempresas(cnpj):
         logging.exception(erro)
         QMessageBox.warning(aviso, 'Atenção', '{}'.format(erro))
         return
-    
+
+
+
+
 
 if __name__ == "__main__":
     
@@ -1164,7 +1196,7 @@ if __name__ == "__main__":
     # Configuracao de logs
     log_format = '%(asctime)s:%(levelname)s:%(filename)s:%(message)s'
     logging.basicConfig(filename='SistemaDeVendas.log',
-                    filemode='a',
+                    filemode='w',
                     level=logging.DEBUG,
                     format=log_format,
                     encoding='UTF-8')
@@ -1210,6 +1242,8 @@ if __name__ == "__main__":
     TelaPrincipal.actionSair.triggered.connect(acessarsair)
     TelaPrincipal.actionClientes_cadastrados.triggered.connect(acessarindiceclientecadastrados)
     TelaPrincipal.consultarEmpresa.clicked.connect(consultarempresas)
+    TelaPrincipal.actionRelatorios_de_produtos.triggered.connect(acessarindicepesquisarprodutos)
+    # TelaPrincipal.pesquisar.textChanged.connect(tentaracesar)
     telaDeLogin.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)# Inplementando campo senha
     # Conexão com o DB
     try:
@@ -1231,5 +1265,6 @@ if __name__ == "__main__":
         QMessageBox.critical(TelaPrincipal, "Aviso", "{}".format(erro))
 
     consultas()
+    tentaracesar()
     telaDeLogin.show()
     app.exec()
